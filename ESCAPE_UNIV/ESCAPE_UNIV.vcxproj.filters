@@ -40,9 +40,6 @@
     <ClInclude Include="Item.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Cursor_Function.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Console.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
