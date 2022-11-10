@@ -15,8 +15,9 @@ void GameManager::MainLoop() {
 	console.SetConsoleSize(150, 40);
 
 	Inventory map;
-	map.Constructor_Inventory_Boundary();
-	system("mode con: cols=150 lines=40 | title Escape_Univ");// 창크기 150 40 고정 함수 Title 설정 함수 by 이해규
+	system("mode con: cols=150 lines=40 | title Escape_Univ");
+	map.Constructor_All_Init_Inventory();// 아이템 창 구현
+	// 창크기 150 40 고정 함수 Title 설정 함수 by 이해규
 	while (true) {
 		
 
