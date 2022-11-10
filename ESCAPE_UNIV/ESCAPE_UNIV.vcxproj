@@ -42,8 +42,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -141,7 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapManager.cpp" />
   </ItemGroup>
@@ -151,7 +151,7 @@
   <ItemGroup>
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="GameManager.hpp" />
-    <ClInclude Include="Item.h" />
+    <ClInclude Include="Inventory.hpp" />
     <ClInclude Include="MapManager.hpp" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
