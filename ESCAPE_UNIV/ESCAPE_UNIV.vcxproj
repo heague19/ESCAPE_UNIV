@@ -142,6 +142,8 @@
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapManager.cpp" />
   </ItemGroup>
@@ -152,6 +154,8 @@
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="Inventory.hpp" />
+    <ClInclude Include="Item.hpp" />
+    <ClInclude Include="ItemManager.hpp" />
     <ClInclude Include="MapManager.hpp" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
