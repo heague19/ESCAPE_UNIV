@@ -16,9 +16,8 @@ void GameManager::MainLoop() {
 	// 창크기 150 40 고정 함수 Title 설정 함수 by 이해규
 	system("mode con: cols=150 lines=40 | title Escape_Univ");
 	inventory.Constructor_All_Init_Inventory();// 아이템 창 구현
+	playermove.Move();
 
 	while (true) {
-		
-
 	}// 게임 구성 실행 코드 현
 }
