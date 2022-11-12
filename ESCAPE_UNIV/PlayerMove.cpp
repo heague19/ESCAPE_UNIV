@@ -57,9 +57,9 @@ void PlayerMove::ShowPlayer() {
 
 void PlayerMove::DeletePlayer() {
     COORD curPos = console.GetCurrentCursorPos();
-    console.SetCurrentCursorPos(curPos.X, curPos.Y);
+    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
     cout << "  ";
-    console.SetCurrentCursorPos(curPos.X, curPos.Y);
+    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
 }
 
 void PlayerMove::getkey() {

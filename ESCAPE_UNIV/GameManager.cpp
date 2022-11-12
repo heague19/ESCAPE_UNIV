@@ -17,7 +17,7 @@ void GameManager::MainLoop() {
 	system("mode con: cols=150 lines=40 | title Escape_Univ");
 	inventory.Constructor_All_Init_Inventory();// 아이템 창 구현
 	
-
+	
 	while (true) {
 		console.SetCurrentCursorPos(4, 2);
 		mapManager.DisplayMap();
