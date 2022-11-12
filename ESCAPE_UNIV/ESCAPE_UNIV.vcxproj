@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Box.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -152,8 +153,10 @@
     <ResourceCompile Include="ESCAPE_UNIV.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Box.hpp" />
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="GameManager.hpp" />
+    <ClInclude Include="GameTool.hpp" />
     <ClInclude Include="Inventory.hpp" />
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="ItemManager.hpp" />

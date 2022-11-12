@@ -1,5 +1,5 @@
 #include "Inventory.hpp"
-#include "Console.hpp"
+
 using namespace std;
 Console console;
 
@@ -7,13 +7,16 @@ void Inventory::Constructor_All_Init_Inventory()
 {
     Constructor_Inventory_Boundary();
     Constructor_Item_List();
-    Constructor_Player_State_HP_Bar();
-    Constructor_Player_State_Stamina_Bar();
+    //Constructor_Player_State_HP_Bar();
+    //Constructor_Player_State_Stamina_Bar();
 }
 
 void Inventory:: Constructor_Inventory_Boundary()
 {
-    
+    Box Main_Inventory(WIDTH, HEIGTH, INVENTORY_ORIGIN_X, INVENTORY_ORIGIN_Y);
+    Main_Inventory.ConstructorBox();
+
+    /*
     for (int x = 0; x < WIDTH + 2; x++)
     {
         Inventory_Board[HEIGTH+ 1][x] = 1;
@@ -50,6 +53,7 @@ void Inventory:: Constructor_Inventory_Boundary()
     }
 
     console.SetCurrentCursorPos(0, 0);
+    */
 }
 
 void Inventory:: Constructor_Item_List()
@@ -63,7 +67,7 @@ void Inventory:: Constructor_Item_List()
         }
     }
 }
-
+/*
 void Inventory::Constructor_Player_State_HP_Bar()
 {
     for (int i = 0; i < _HP; i++)
@@ -98,3 +102,4 @@ void Inventory::Constructor_Player_State_Stamina_Bar()
             cout << "бс";
     }
 }
+*/
