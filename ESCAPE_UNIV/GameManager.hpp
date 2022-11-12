@@ -17,5 +17,6 @@ public:
 	Inventory inventory;
 	ItemManager itemManager;
 	PlayerMove playermove;
+	MapManager mapManager;
 
 };

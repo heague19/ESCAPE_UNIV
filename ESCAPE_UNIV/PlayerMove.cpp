@@ -3,16 +3,13 @@
 
 PlayerMove::PlayerMove()
 {
-    
-}
-void PlayerMove::Move() {
     term_pos_x = 10;
     term_pos_y = 10;
     console.SetCurrentCursorPos(term_pos_x, term_pos_y);
     ShowPlayer();
-    while (1) {
-        getkey();
-    }
+}
+void PlayerMove::Move() {
+    getkey();
 }
 
 void PlayerMove::down() {
