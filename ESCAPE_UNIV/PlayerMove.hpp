@@ -3,7 +3,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include "Console.hpp"
-
+#include "MapManager.hpp"
 using namespace std;
 
 class PlayerMove {

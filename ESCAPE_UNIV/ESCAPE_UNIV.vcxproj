@@ -43,7 +43,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -139,8 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddContent.cpp" />
+    <ClCompile Include="Box.cpp" />
     <ClCompile Include="AggresiveNPC.cpp" />
     <ClCompile Include="Console.cpp" />
+    <ClCompile Include="CursorColor.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -153,13 +156,15 @@
     <ResourceCompile Include="ESCAPE_UNIV.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AggresiveNPC.hpp" />
     <ClInclude Include="Console.hpp" />
+    <ClInclude Include="CursorColor.hpp" />
     <ClInclude Include="GameManager.hpp" />
+    <ClInclude Include="GameTool.hpp" />
     <ClInclude Include="Inventory.hpp" />
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="ItemManager.hpp" />
     <ClInclude Include="MapManager.hpp" />
+    <ClInclude Include="PartPos.hpp" />
     <ClInclude Include="PlayerMove.hpp" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
