@@ -5,7 +5,8 @@ GameManager& GameManager::Instance() {
 	static GameManager instance;
 	return instance;
 }
-GameManager::GameManager() {
+GameManager::GameManager()
+	:aggresiveNPC(mapManager,playermove,timer) {
 	mapManager.ChangeMap(0);
 }
 void GameManager::MainLoop() {
@@ -14,8 +15,11 @@ void GameManager::MainLoop() {
 	inventory.Constructor_All_Init_Inventory();// 아이템 창 구현
 
 	while (true) {
-		console.SetCurrentCursorPos(4, 2);
+		timer.Update();
+		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
 		mapManager.DisplayMap();
 		playermove.Move();
+		aggresiveNPC.NPCMove();
+		
 	}// 게임 구성 실행 코드 현
 }

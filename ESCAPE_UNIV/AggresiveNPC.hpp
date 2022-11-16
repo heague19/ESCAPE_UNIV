@@ -1,21 +1,43 @@
 #pragma once
-#include<vector>
-#include<iostream>
+#include <vector>
+#include <iostream>
+#include <queue>
 #include "Console.hpp"
+#include "MapManager.hpp"
+#include "PlayerMove.hpp"
+#include "Timer.hpp"
+#include "PartPos.hpp"
 using namespace std;
+#define N 50
 class AggresiveNPC
 {
 private:
 	Console console;
+	MapManager& mapManager;
+	PlayerMove& playerMove;
+	//이동 주기와 이동주기 체크용 타이머
+	double moveRate = 0.5;
+	double moveTimer = 0.0;
+	Timer& timer;
 
-
+	//경로 탐색용
+	queue<COORD> bfs;
+	vector<vector<int>> check;
+	vector<vector<COORD>> from;
+	const int dx[4] = { 1,-1,0,0 };
+	const int dy[4] = { 0,0,1,-1 };
 public:
-	AggresiveNPC();
+	AggresiveNPC(MapManager& mapManager,PlayerMove& playerMove,Timer& timer);
+	//현재 위치
 	COORD pos;
+	//출력
 	void ShowNPC();
 	void DeleteNPC();
+	//이동
 	void NPCMove();
+	//경로찾기
 	COORD NPCPathFind();
+	//충돌판정
 	bool NPCDetectCollision(COORD nextPos);
 };
 

@@ -4,6 +4,7 @@
 #include <conio.h>
 #include "Console.hpp"
 #include "MapManager.hpp"
+#include "PartPos.hpp"
 using namespace std;
 
 class PlayerMove {
@@ -23,4 +24,6 @@ public:
     bool DetectCollision(int, int);
     void getkey();
     void Move();
+    //플레이어 좌표상 위치 반환
+    COORD GetPos();
 };

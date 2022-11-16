@@ -91,3 +91,9 @@ bool PlayerMove::DetectCollision(int x, int y) {
     }*/
     return 1;
 }
+COORD PlayerMove::GetPos() {
+    COORD pos;
+    pos.X = term_pos_x/2-MAP_ORIGIN_X/2;
+    pos.Y = term_pos_y-MAP_ORIGIN_Y;
+    return pos;
+}

@@ -43,3 +43,8 @@ void MapManager::DisplayMap() {
 	}
 	console.SetCurrentCursorPos(curPos.X, curPos.Y);
 }
+bool MapManager::CheckMap(COORD pos) {
+	if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0)return false;
+	if (mapData[mapid][pos.Y][pos.X] == 0)return true;
+	return false;
+}
