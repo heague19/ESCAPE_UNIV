@@ -5,14 +5,15 @@
 #include "Console.hpp"
 #include "MapManager.hpp"
 #include "PartPos.hpp"
+
 using namespace std;
 
 class PlayerMove {
 private:
     char model = { 9 };
-    int term_pos_x =10;
-    int term_pos_y =10;
+    COORD pos;
     Console console;
+    MapManager Map;
 public:
     PlayerMove();
     void down();
