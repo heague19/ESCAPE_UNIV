@@ -49,9 +49,9 @@ void Box::ConstructorBox()
                 cout << "¦¦";
             else if (y == height + 1 && x == width + 1)
                 cout << "¦¥";
-            else if (Info[y][x] == 1 && !(y == HEIGTH + 1 || y == 0))
+            else if (Info[y][x] == 1 && !(y == height + 1 || y == 0))
                 cout << "¦¢";
-            else if (Info[y][x] == 1 && (y == HEIGTH + 1 || y == 0))
+            else if (Info[y][x] == 1 && (y == height + 1 || y == 0))
                 cout << "¦¡";
         }
     }

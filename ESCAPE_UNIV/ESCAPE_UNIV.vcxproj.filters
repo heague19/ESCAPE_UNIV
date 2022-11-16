@@ -42,6 +42,12 @@
     <ClCompile Include="Box.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AddContent.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CursorColor.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc">
@@ -77,6 +83,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Box.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AddContent.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PartPos.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CursorColor.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
