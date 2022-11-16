@@ -1,9 +1,10 @@
 #pragma once
-class AddContent
-{
-private:
+#include <iostream>
+#include <Windows.h>
+#include <string>
+#include "Console.hpp"
+#include "GameTool.hpp"
+using namespace std;
 
-public:
-	
-};
-
+void AddContentsString(Box &box, string contents);
+void PrintContentsString(Box box);

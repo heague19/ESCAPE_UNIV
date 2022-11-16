@@ -9,6 +9,7 @@ using namespace std;
 class ItemManager
 {
 private:
+	friend class Inventory;
 	//아이템 정보
 	vector<Item> itemData;
 	map<string, Item> itemDictionary;

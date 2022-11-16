@@ -9,6 +9,7 @@ Box::Box(int w, int h, int X, int Y)
     height = h;
     SInit_X = X;
     SInit_Y = Y;
+    content = " ";
 
     // Box Info 배열 생성
     Info = new int *[height+2];
@@ -22,12 +23,15 @@ Box::Box(int w, int h, int X, int Y)
     Info[0][x] = 1;
     }// 위, 아래 테두리 가로줄 배열 1 정의
 
-    for (int y = 0; y < height + 2; y++)
+    for (int y = 1; y < height + 1; y++)
     {
         for (int x = 0; x < width + 2; x++)
         {
             if (x == 0 || x == (width + 1))
                 Info[y][x] = 1;
+            else
+                Info[y][x] = 0;
+            
         }
     }// 양옆 테두리 세로줄 배열 1 정의
 }

@@ -85,13 +85,13 @@
     <ClInclude Include="Box.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="AddContent.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="PartPos.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="CursorColor.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AddContent.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
