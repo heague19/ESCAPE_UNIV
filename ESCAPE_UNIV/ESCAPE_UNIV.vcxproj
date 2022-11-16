@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AggresiveNPC.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -152,6 +153,7 @@
     <ResourceCompile Include="ESCAPE_UNIV.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AggresiveNPC.hpp" />
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="Inventory.hpp" />
