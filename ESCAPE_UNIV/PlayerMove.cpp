@@ -110,36 +110,40 @@ COORD PlayerMove::GetPos() {
 //x,y는 박스의 위치 검사하기 위한 좌표
 //vector 정신 나갈 것 같아 ~~
 //참고로 박스 안밀림 *발
-int PlayerMove::MoveBox(int x, int y, Trans m) {
+int PlayerMove::MoveBox(int y, int x, Trans m) {
+
     auto mapdata = Map.GetMap();
     COORD BOX_POS;
     BOX_POS.X = x; BOX_POS.Y = y;
 
     int width = mapdata[0].size();
     int height = mapdata.size();
-
-    if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0) {
+    /*
+    if (pox.X >= width || pox.X < 0 || pox.Y >= height || pox.Y < 0) {
         return 0;
-    }
+    }*/
     if (mapdata[x][y] == 100) { //박스 확인
         switch (m)
         {
         case M_DOWN:
-            BOX_POS.Y--; break;
-        case M_UP:
-            BOX_POS.Y++; break;
-        case M_LEFT: 
-            BOX_POS.X--; break;
-        case M_RIGHT: 
             BOX_POS.X++; break;
+        case M_UP:
+            BOX_POS.X--; break;
+        case M_LEFT: 
+            BOX_POS.Y--; break;
+        case M_RIGHT: 
+            BOX_POS.Y++; break;
         }
-        if (!Map.CheckMap(BOX_POS)) {  //박스가 이동 가능한지 검사
+        
+        if (mapdata[BOX_POS.X][BOX_POS.Y]!=0  || BOX_POS.X >= height-1 || BOX_POS.X < 1 || BOX_POS.Y >= width-1|| BOX_POS.Y < 1) {  //박스가 이동 가능한지 검사
             return 0;
         }
         mapdata[BOX_POS.X][BOX_POS.Y] = 100; //박스 위치 변경
         mapdata[x][y] = 0;
-        return 1;
+        Map.SetMap(mapdata);
         Map.DisplayMap();
+        //cout << "X="+BOX_POS.X <<"Y="+ BOX_POS.Y;
+        return 1;
     }
     else {
         return 0;
