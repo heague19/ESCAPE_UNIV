@@ -48,3 +48,8 @@ bool MapManager::CheckMap(COORD pos) {
 	if (mapData[mapid][pos.Y][pos.X] == 0)return true;
 	return false;
 }
+
+vector<vector<int>> MapManager::GetMap()
+{
+	return mapData[mapid];
+}
