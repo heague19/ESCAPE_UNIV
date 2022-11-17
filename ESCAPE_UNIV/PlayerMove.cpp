@@ -116,6 +116,13 @@ int PlayerMove::MoveBox(int x, int y, Trans m) {
     auto mapdata = Map.GetMap();
     COORD BOX_POS;
     BOX_POS.X = x; BOX_POS.Y = y;
+
+    int width = mapdata[0].size();
+    int height = mapdata.size();
+
+    if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0) {
+        return 0;
+    }
     if (mapdata[x][y] == 100) { //박스 확인
         switch (m)
         {

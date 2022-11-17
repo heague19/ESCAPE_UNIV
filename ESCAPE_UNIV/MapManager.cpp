@@ -49,7 +49,7 @@ bool MapManager::CheckMap(COORD pos) {
 	return false;
 }
 
-vector<vector<int>> MapManager::GetMap()
+vector<vector<int>> &MapManager::GetMap()
 {
 	return mapData[mapid];
 }
