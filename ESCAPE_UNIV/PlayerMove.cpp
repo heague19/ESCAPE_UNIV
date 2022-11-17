@@ -109,9 +109,7 @@ COORD PlayerMove::GetPos() {
 
 //x,y는 박스의 위치 검사하기 위한 좌표
 //vector 정신 나갈 것 같아 ~~
-//플레이어가 범위 밖으로 넘어가면 에러뜸 
-//근데 또 아래로 쭉 내려가면 에러 안뜨고 멈춤
-//참고로 박스도 안밀림 *발
+//참고로 박스 안밀림 *발
 int PlayerMove::MoveBox(int x, int y, Trans m) {
     auto mapdata = Map.GetMap();
     COORD BOX_POS;
