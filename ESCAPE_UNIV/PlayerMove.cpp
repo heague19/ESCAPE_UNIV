@@ -3,9 +3,7 @@
 
 PlayerMove::PlayerMove()
 {
-    term_pos_x = 10;
-    term_pos_y = 10;
-    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
+    pos.X = 10; pos.Y = 10;
     ShowPlayer();
 }
 void PlayerMove::Move() {
@@ -13,53 +11,53 @@ void PlayerMove::Move() {
 }
 
 void PlayerMove::down() {
-    if (!DetectCollision(term_pos_x, term_pos_y + 1)) {
+    if (!DetectCollision(pos.X, pos.Y+1)) {
         return;
     }
     DeletePlayer();
-    term_pos_y++;
-    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
+    pos.Y++;
+    console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 }
 void PlayerMove::up() {
-    if (!DetectCollision(term_pos_x, term_pos_y - 1)) {
+    if (!DetectCollision(pos.X, pos.Y-1)) {
         return;
     }
     DeletePlayer();
-    term_pos_y--;
-    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
+    pos.Y--;
+    console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 }
 void PlayerMove::left() {
-    if (!DetectCollision(term_pos_x - 2, term_pos_y)) {
+    if (!DetectCollision(pos.X-1, pos.Y)) {
         return;
     }
     DeletePlayer();
-    term_pos_x -= 2;
-    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
+    pos.X -= 1;
+    console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 };
 void PlayerMove::right() {
-    if (!DetectCollision(term_pos_x + 2, term_pos_y)) {
+    if (!DetectCollision(pos.X+1, pos.Y)) {
         return;
     }
     DeletePlayer();
-    term_pos_x += 2;
-    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
+    pos.X += 1;
+    console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 };
 void PlayerMove::ShowPlayer() {
     COORD curPos = console.GetCurrentCursorPos();
-    console.SetCurrentCursorPos(curPos.X, curPos.Y);
+    console.SetCurrentCursorPos(curPos.X*2, curPos.Y);
     cout << "¨Ü";
-    console.SetCurrentCursorPos(curPos.X, curPos.Y);
+    console.SetCurrentCursorPos(curPos.X*2, curPos.Y);
 };
 
 void PlayerMove::DeletePlayer() {
     COORD curPos = console.GetCurrentCursorPos();
-    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
+    console.SetCurrentCursorPos(pos.X*2, pos.Y);
     cout << "  ";
-    console.SetCurrentCursorPos(term_pos_x, term_pos_y);
+    console.SetCurrentCursorPos(pos.X*2, pos.Y);
 }
 
 void PlayerMove::getkey() {
@@ -78,16 +76,15 @@ void PlayerMove::getkey() {
 
 
 bool PlayerMove::DetectCollision(int x, int y) {
-    /*
-    int i, j;
-    int arrx = (x - GBOARD_ORIGIN_X) / 2;
-    int arry = (y - GBOARD_ORIGIN_Y);
-    for (i = 0; i < 4; i++) {
-        for (j = 0; j < 4; j++) {
-            if (gameBoardInfo[arry + j][arrx + i] == 1) {
-                return 0;
-            }
-        }
-    }*/
+    
+    int arrx = pos.X-MAP_ORIGIN_X/2;
+    int arry = pos.Y-MAP_ORIGIN_Y;
+    
     return 1;
+}
+COORD PlayerMove::GetPos() {
+    COORD pos_;
+    pos_.X = pos.X-MAP_ORIGIN_X/2;
+    pos_.Y = pos.Y-MAP_ORIGIN_Y;
+    return pos_;
 }

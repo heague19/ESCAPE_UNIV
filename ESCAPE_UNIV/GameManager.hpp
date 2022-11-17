@@ -4,8 +4,8 @@
 #include "Inventory.hpp"
 #include "ItemManager.hpp"
 #include "PlayerMove.hpp"
-
-
+#include "AggresiveNPC.hpp"
+#include "Timer.hpp"
 class GameManager {
 public:
 	static GameManager& Instance();
@@ -18,5 +18,6 @@ public:
 	ItemManager itemManager;
 	PlayerMove playermove;
 	MapManager mapManager;
-
+	AggresiveNPC aggresiveNPC;
+	Timer timer;
 };

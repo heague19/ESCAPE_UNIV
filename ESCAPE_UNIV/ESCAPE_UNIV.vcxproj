@@ -43,7 +43,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="AddContent.cpp" />
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="AggresiveNPC.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="CursorColor.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -150,15 +151,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="PlayerMove.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddContent.hpp" />
+    <ClInclude Include="AggresiveNPC.hpp" />
     <ClInclude Include="Box.hpp" />
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="CursorColor.hpp" />
+    <ClInclude Include="Cursor_Function.h" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="GameTool.hpp" />
     <ClInclude Include="Inventory.hpp" />
@@ -168,6 +172,7 @@
     <ClInclude Include="PartPos.hpp" />
     <ClInclude Include="PlayerMove.hpp" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Timer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
