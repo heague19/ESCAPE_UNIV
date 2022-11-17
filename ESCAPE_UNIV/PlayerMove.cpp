@@ -1,17 +1,24 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
 
-PlayerMove::PlayerMove()
+PlayerMove::PlayerMove(MapManager& mapManager) :Map(mapManager)
 {
-    pos.X = 10; pos.Y = 10;
+    pos.X = 11; pos.Y = 10; //ÄÜ¼Ö ÁÂÇ¥
+    pox.X = pos.X - MAP_ORIGIN_X / 2;
+    pox.Y = pos.Y - MAP_ORIGIN_Y;
+    console.SetCurrentCursorPos(50, 30);
+    
     ShowPlayer();
 }
 void PlayerMove::Move() {
+    std::cout << pox.Y << pox.X;
     getkey();
 }
 
 void PlayerMove::down() {
-    if (!DetectCollision(pos.X, pos.Y+1)) {
+    pox.Y++;
+    if (!Map.CheckMap(pox)) {
+        pox.Y--;
         return;
     }
     DeletePlayer();
@@ -20,7 +27,9 @@ void PlayerMove::down() {
     ShowPlayer();
 }
 void PlayerMove::up() {
-    if (!DetectCollision(pos.X, pos.Y-1)) {
+    pox.Y--;
+    if (!Map.CheckMap(pox)) {
+        pox.Y++;
         return;
     }
     DeletePlayer();
@@ -29,7 +38,9 @@ void PlayerMove::up() {
     ShowPlayer();
 }
 void PlayerMove::left() {
-    if (!DetectCollision(pos.X-1, pos.Y)) {
+    pox.X--;
+    if (!Map.CheckMap(pox)) {
+        pox.X++;
         return;
     }
     DeletePlayer();
@@ -38,7 +49,9 @@ void PlayerMove::left() {
     ShowPlayer();
 };
 void PlayerMove::right() {
-    if (!DetectCollision(pos.X+1, pos.Y)) {
+    pox.X++;
+    if (!Map.CheckMap(pox)) {
+        pox.X--;
         return;
     }
     DeletePlayer();
@@ -75,16 +88,14 @@ void PlayerMove::getkey() {
 }
 
 
-bool PlayerMove::DetectCollision(int x, int y) {
-    
-    int arrx = pos.X-MAP_ORIGIN_X/2;
-    int arry = pos.Y-MAP_ORIGIN_Y;
-    
-    return 1;
-}
-COORD PlayerMove::GetPos() {
+/*int PlayerMove::DetectCollision(int x, int y) {
     COORD pos_;
-    pos_.X = pos.X-MAP_ORIGIN_X/2;
-    pos_.Y = pos.Y-MAP_ORIGIN_Y;
-    return pos_;
+    pos_.X = x;
+    pos_.Y = y;
+    if (!Map.CheckMap(pos_))
+        return 1;
+    return 0;
+}*/
+COORD PlayerMove::GetPos() {
+    return pox;
 }

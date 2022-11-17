@@ -6,7 +6,9 @@ GameManager& GameManager::Instance() {
 	return instance;
 }
 GameManager::GameManager()
-	:aggresiveNPC(mapManager,playermove,timer) {
+	:aggresiveNPC(mapManager,playermove,timer)
+	,playermove(mapManager)
+{
 	mapManager.ChangeMap(0);
 }
 void GameManager::MainLoop() {
