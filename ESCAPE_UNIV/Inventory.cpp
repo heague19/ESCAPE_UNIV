@@ -26,7 +26,7 @@ void Inventory:: Constructor_Item_List()
     InitCursorColor();// 폰트 색상 초기화 함수
 
     Print_Item_List(Item_List,vector_s); // 벡터 함수 리스트 출력 함수
-
+    //vector_s에 필요한 Vector<string> 변수 넣으면 됨
     
 }
 
