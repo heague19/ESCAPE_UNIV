@@ -10,7 +10,7 @@ class Box
 private:
 	Console console;
 	friend void AddContentsString(Box &box, string content);
-	friend void PrintContentsString(Box box);
+	friend void PrintText(Box box);
 	friend class Inventory;
 
 	//Box DaTa

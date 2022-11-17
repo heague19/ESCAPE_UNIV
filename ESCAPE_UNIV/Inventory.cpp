@@ -35,8 +35,8 @@ void Inventory::Constructor_Explainer()
     Box Explainer(EXPLAINER_WIDTH, EXPLAINER_HEIGHT, EXPLAINER_ORIGIN_X, EXPLAINER_ORIGIN_Y);
     Explainer.ConstructorBox();
     AddContentsString(Explainer,
-        " W : 앞으로 이동, A : 왼쪽으로 이동, S : 뒤로 이동, D : 오른쪽으로 이동");
-    PrintContentsString(Explainer);
+        "W:앞으로 이동  A:왼쪽으로 이동  S:뒤로 이동  D:오른쪽으로 이동");
+    PrintText(Explainer);
 }
 
 void Inventory::Print_Item_List(Box &List,vector<string> Item)
