@@ -19,6 +19,7 @@ MapManager::MapManager() {
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 	};
+	
 	mapData.push_back(map1);
 }
 void MapManager::ChangeMap(int mapid) {

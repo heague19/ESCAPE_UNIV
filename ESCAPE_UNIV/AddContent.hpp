@@ -5,6 +5,7 @@
 #include "GameTool.hpp"
 using namespace std;
 
+
 void AddContentsString(Box &box, string contents);
 // 문자열 입력 입니다. 각 box 클래스 내에 content 내용을 담았고 거기에 필요한
 // 내용을 담는 함수입니다. 원하시는 box를 두시고 쓰시고 싶은 내용을 옆에 작성하시면
