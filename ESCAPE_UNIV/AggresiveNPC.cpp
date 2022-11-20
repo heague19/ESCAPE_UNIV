@@ -1,8 +1,8 @@
 #include "AggresiveNPC.hpp"
 AggresiveNPC::AggresiveNPC(MapManager& mapManager, PlayerMove& playerMove, Timer& timer)
 	:mapManager(mapManager),playerMove(playerMove),timer(timer) {
-	pos.X = 0;
-	pos.Y = 0;
+	pos.X = 1;
+	pos.Y = 1;
 	check.resize(N);
 	for (int i = 0; i < N; i++)check[i].resize(N);
 	from.resize(N);

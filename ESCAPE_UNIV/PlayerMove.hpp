@@ -14,6 +14,8 @@ private:
     COORD pos,pox;   //콘솔좌표, 배열 좌표
     Console console;
     MapManager& Map;
+    enum Trans { M_UP,M_DOWN,M_LEFT,M_RIGHT };
+    //vector<vector<int>>::iterator mapdata;
 public:
     PlayerMove(MapManager&);
     void down();
@@ -27,4 +29,6 @@ public:
     void Move();
     //플레이어 좌표상 위치 반환
     COORD GetPos();
+    int MoveBox(int,int,Trans); //박스 밀기
+    
 };
