@@ -142,6 +142,7 @@
     <ClCompile Include="AddContent.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="AggresiveNPC.cpp" />
+    <ClCompile Include="ChatDialog.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="CursorColor.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="AddContent.hpp" />
     <ClInclude Include="AggresiveNPC.hpp" />
     <ClInclude Include="Box.hpp" />
+    <ClInclude Include="ChatDialog.hpp" />
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="CursorColor.hpp" />
     <ClInclude Include="Cursor_Function.h" />

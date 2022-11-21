@@ -16,6 +16,8 @@ void GameManager::MainLoop() {
 	console.SetConsoleSize(150, 40);// cmd 창 크기 고정 함수 by 함수 (정환아 만들었으면 얘기해줘..) 주석을 써줘...
 	inventory.Constructor_All_Init_Inventory();// 아이템 창 구현
 	mapManager.DisplayMap();
+	chatDialog.Init();
+	chatDialog.PrintMessage("Hello\nWorld!\n!!!!!");
 	while (true) {
 		playermove.Move();
 		timer.Update();
