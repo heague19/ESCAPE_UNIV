@@ -4,7 +4,7 @@ ChatDialog::ChatDialog() {
 
 }
 void ChatDialog::Init() {
-	Box box(DIALOG_WIDTH, DIALOG_HEIGHT, DIALOG_ORIGIN_X, DIALOG_ORIGIN_Y);
+	BoxUI box(DIALOG_WIDTH, DIALOG_HEIGHT, DIALOG_ORIGIN_X, DIALOG_ORIGIN_Y);
 	box.ConstructorBox();
 }
 void ChatDialog::PrintMessage(string msg) {
