@@ -6,8 +6,7 @@ PlayerMove::PlayerMove(MapManager& mapManager) :Map(mapManager)
     pos.X = 10; pos.Y = 10; //콘솔 좌표
     pox.X = pos.X - MAP_ORIGIN_X / 2;
     pox.Y = pos.Y - MAP_ORIGIN_Y;
-    console.SetCurrentCursorPos(50, 30);
-    
+    console.SetCurrentCursorPos(pox.X, pox.Y);
     ShowPlayer();
 }
 void PlayerMove::Move() {
@@ -89,6 +88,9 @@ void PlayerMove::getkey() {
             case 's': down(); break;
             case 'a': left(); break;
             case 'd': right(); break;
+            case 'p': Map.ReBox(); Map.remap(); Map.DisplayMap(); break;
+            //박스 지우고 맵 다시 불러오고 다시 그림
+            // 이렇게 안하면 깜빡거리더라,,
             }
         }
     }
@@ -107,9 +109,6 @@ COORD PlayerMove::GetPos() {
     return pox;
 }
 
-//x,y는 박스의 위치 검사하기 위한 좌표
-//vector 정신 나갈 것 같아 ~~
-//참고로 박스 안밀림 *발
 int PlayerMove::MoveBox(int y, int x, Trans m) {
 
     auto mapdata = Map.GetMap();
@@ -135,7 +134,7 @@ int PlayerMove::MoveBox(int y, int x, Trans m) {
             BOX_POS.Y++; break;
         }
         
-        if (mapdata[BOX_POS.X][BOX_POS.Y]!=0  || BOX_POS.X >= height-1 || BOX_POS.X < 1 || BOX_POS.Y >= width-1|| BOX_POS.Y < 1) {  //박스가 이동 가능한지 검사
+        if (mapdata[BOX_POS.X][BOX_POS.Y]!=0  || BOX_POS.X >= height-1 || BOX_POS.X < 1 || BOX_POS.Y >= width-1|| BOX_POS.Y < 1 /* || (BOX_POS.X != npc.NPCPathFind().X && BOX_POS.Y != npc.NPCPathFind().Y)*/) {  //박스가 이동 가능한지 검사
             return 0;
         }
         mapdata[BOX_POS.X][BOX_POS.Y] = 100; //박스 위치 변경
