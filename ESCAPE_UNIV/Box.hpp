@@ -7,12 +7,11 @@ using namespace std;
 
 class Box
 {
-private:
+public:
 	Console console;
 	friend void AddContentsString(Box &box, string content);
 	friend void PrintText(Box box);
-	friend class Inventory;
-
+	
 	//Box DaTa
 	int **Info;
 	int width, height;
@@ -21,7 +20,7 @@ private:
 
 public:
 	friend class AddContent;
-	Box(int ,int ,int, int);
+	Box(int width ,int height ,int start_X, int start_Y);
 	void ConstructorBox();
 	
 };

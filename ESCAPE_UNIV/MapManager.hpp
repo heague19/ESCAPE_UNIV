@@ -1,11 +1,13 @@
 #pragma once
 #include "GameTool.hpp"
 #include <vector>
+#include "PartPos.hpp"
 class MapManager {
 	Console console;
 	int width, height;
 	int mapid;
 	std::vector<std::vector<std::vector<int>>> mapData; // 모든 맵의 정모를 담아 놓는 3차원 vector
+	
 public:
 	MapManager();
 	void DisplayMap();

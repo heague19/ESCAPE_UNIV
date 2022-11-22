@@ -20,6 +20,8 @@ MapManager::MapManager() {
 		{99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99}
 	};
 	
+	Box map2(20, 10, MAP_ORIGIN_X, MAP_ORIGIN_Y);
+	
 	mapData.push_back(map1);
 }
 void MapManager::ChangeMap(int mapid) {
