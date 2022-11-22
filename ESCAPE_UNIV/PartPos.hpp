@@ -23,3 +23,9 @@
 //맵 파트
 #define MAP_ORIGIN_X 4
 #define MAP_ORIGIN_Y 2
+
+//대화창 파트
+#define DIALOG_ORIGIN_X 2
+#define DIALOG_ORIGIN_Y 25
+#define DIALOG_WIDTH 46
+#define DIALOG_HEIGHT 12

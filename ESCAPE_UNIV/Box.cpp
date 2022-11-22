@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Box::Box(int w, int h, int X, int Y) 
+BoxUI::BoxUI(int w, int h, int X, int Y) 
 {
     width = w;
     height = h;
@@ -36,7 +36,7 @@ Box::Box(int w, int h, int X, int Y)
     }// 양옆 테두리 세로줄 배열 1 정의
 }
 
-void Box::ConstructorBox()
+void BoxUI::ConstructorBox()
 {
     console.SetCurrentCursorPos(SInit_X, SInit_Y);
     

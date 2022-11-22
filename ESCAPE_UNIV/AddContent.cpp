@@ -1,11 +1,11 @@
 #include "AddContent.hpp"
 
-void AddContentsString(Box &box, string contents)// 단어 입력 함수
+void AddContentsString(BoxUI &box, string contents)// 단어 입력 함수
 {
 	box.content = contents;
 }
 
-void PrintText(Box box) // 단어 출력 함수 
+void PrintText(BoxUI box) // 단어 출력 함수 
 {
 	Console console;
 	int cnt = 0;

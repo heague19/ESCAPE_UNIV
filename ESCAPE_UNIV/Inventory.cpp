@@ -14,14 +14,14 @@ void Inventory::Constructor_All_Init_Inventory()
 
 void Inventory:: Constructor_Inventory_Boundary()
 {
-    Box Main_Inventory(INVENTORY_WIDTH, INVENTORY_HEIGTH, INVENTORY_ORIGIN_X, INVENTORY_ORIGIN_Y);
+    BoxUI Main_Inventory(INVENTORY_WIDTH, INVENTORY_HEIGTH, INVENTORY_ORIGIN_X, INVENTORY_ORIGIN_Y);
     Main_Inventory.ConstructorBox();
 }
 
 void Inventory:: Constructor_Item_List()
 {
     SelectCursorColor(2, 2, 2);// 폰트 색상 변경함수 
-    Box Item_List(ITEM_LIST_WIDTH,ITEM_LIST_HEIGHT,ITEM_LIST_ORIGIN_X,ITEM_LIST_ORIGIN_Y); 
+    BoxUI Item_List(ITEM_LIST_WIDTH,ITEM_LIST_HEIGHT,ITEM_LIST_ORIGIN_X,ITEM_LIST_ORIGIN_Y); 
     Item_List.ConstructorBox();
     InitCursorColor();// 폰트 색상 초기화 함수
 
@@ -40,7 +40,7 @@ void Inventory::Constructor_Explainer()
     */
 }
 
-void Inventory::Print_Item_List(Box &List,vector<string> Item)
+void Inventory::Print_Item_List(BoxUI &List,vector<string> Item)
 {
     Console console;
     int x=1, y=1;

@@ -5,13 +5,14 @@
 #include <string>
 using namespace std;
 
-class Box
+class BoxUI
 {
 public:
 	Console console;
-	friend void AddContentsString(Box &box, string content);
-	friend void PrintText(Box box);
-	
+	friend void AddContentsString(BoxUI &box, string content);
+	friend void PrintText(BoxUI box);
+	friend class Inventory;
+
 	//Box DaTa
 	int **Info;
 	int width, height;
@@ -20,7 +21,7 @@ public:
 
 public:
 	friend class AddContent;
-	Box(int width ,int height ,int start_X, int start_Y);
+	BoxUI(int width ,int height ,int start_X, int start_Y);
 	void ConstructorBox();
 	
 };

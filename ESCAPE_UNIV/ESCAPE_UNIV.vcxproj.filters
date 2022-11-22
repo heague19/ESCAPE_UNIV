@@ -66,6 +66,9 @@
     <ClCompile Include="Timer.cpp">
       <Filter>소스 파일\NPC</Filter>
     </ClCompile>
+    <ClCompile Include="ChatDialog.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc">
@@ -128,6 +131,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Timer.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatDialog.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
