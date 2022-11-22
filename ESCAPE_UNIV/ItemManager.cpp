@@ -41,7 +41,8 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(10, "2ÃşÂÊÁö", false));
 	itemData.push_back(Item(11, "2Ãş¿­¼è", true));
 	itemData.push_back(Item(12, "·£ÅÏ", false, {7,9}));
-	
+	itemData.push_back(Item(13, "6Ãş¿­¼è", true));
+
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];
 		itemDictionary.insert({item.name, item});

@@ -23,6 +23,5 @@ void GameManager::MainLoop() {
 		timer.Update();
 		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
 		aggresiveNPC.NPCMove();
-		
 	}// 게임 구성 실행 코드 현
 }
