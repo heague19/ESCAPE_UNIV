@@ -42,7 +42,7 @@
     <ClCompile Include="AddContent.cpp">
       <Filter>소스 파일\GameTool</Filter>
     </ClCompile>
-    <ClCompile Include="Box.cpp">
+    <ClCompile Include="BoxUI.cpp">
       <Filter>소스 파일\GameTool</Filter>
     </ClCompile>
     <ClCompile Include="Console.cpp">
@@ -124,7 +124,7 @@
     <ClInclude Include="AggresiveNPC.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Box.hpp">
+    <ClInclude Include="BoxUI.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Cursor_Function.h">
