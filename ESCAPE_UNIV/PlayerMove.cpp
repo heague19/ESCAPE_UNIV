@@ -21,6 +21,10 @@ void PlayerMove::down() {
             return;
         }
     }
+    else if (Map.CheckMap(pox) > 100) {
+        itemmanager.GetItem(Map.CheckMap(pox) - 100);
+        Map.ClearPos(pox);
+    }
     DeletePlayer();
     pos.Y++;
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -33,6 +37,10 @@ void PlayerMove::up() {
             pox.Y++;
             return;
         }
+    }
+    else if (Map.CheckMap(pox) > 100) {
+        itemmanager.GetItem(Map.CheckMap(pox) - 100);
+        Map.ClearPos(pox);
     }
     DeletePlayer();
     pos.Y--;
@@ -47,6 +55,10 @@ void PlayerMove::left() {
             return;
         }
     }
+    else if (Map.CheckMap(pox) > 100) {
+        itemmanager.GetItem(Map.CheckMap(pox) - 100);
+        Map.ClearPos(pox);
+    }
     DeletePlayer();
     pos.X -= 1;
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -59,6 +71,10 @@ void PlayerMove::right() {
             pox.X--;
             return;
         }
+    }
+    else if (Map.CheckMap(pox) > 100) {
+        itemmanager.GetItem(Map.CheckMap(pox) - 100);
+        Map.ClearPos(pox);
     }
     DeletePlayer();
     pos.X += 1;
