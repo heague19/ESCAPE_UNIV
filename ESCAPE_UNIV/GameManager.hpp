@@ -21,5 +21,4 @@ public:
 	MapManager mapManager;
 	AggresiveNPC aggresiveNPC;
 	Timer timer;
-	ChatDialog chatDialog;
 };
