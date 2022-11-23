@@ -1,5 +1,5 @@
 #include "ItemManager.hpp"
-ItemManager::ItemManager() {
+ItemManager::ItemManager(Inventory& inventory):inventory(inventory) {
 	InitItemData();
 }
 Item ItemManager::GetItemData(int id) {
@@ -41,7 +41,8 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(10, "2ÃşÂÊÁö", false));
 	itemData.push_back(Item(11, "2Ãş¿­¼è", true));
 	itemData.push_back(Item(12, "·£ÅÏ", false, {7,9}));
-	itemData.push_back(Item(13, "6Ãş¿­¼è", true));
+	itemData.push_back(Item(13, "6Ãş¿­¼è", true, 
+		[]() {ChatDialog::PrintMessage("6Ãş¿¡¼­ Ã£Àº ¿­¼èÀÌ´Ù."); }));
 
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];
@@ -64,12 +65,17 @@ bool ItemManager::CombineItem(int id1, int id2) {
 	}
 	return false;
 }
-bool ItemManager::UseItem(int id) {
-	if (!FindItem(id)||id>=itemData.size())return false;
-	itemData[id].func();
+bool ItemManager::UseItem(int num) {
+	if (items.size()<num)return false;
+	items[num-1].func();
 	return true;
 }
 void ItemManager::GetItem(int id) {
 	if (FindItem(id))return;
 	items.push_back(itemData[id]);
+
+	BoxUI Item_List(ITEM_LIST_WIDTH, ITEM_LIST_HEIGHT, ITEM_LIST_ORIGIN_X+2, ITEM_LIST_ORIGIN_Y);
+	vector<string> datas;
+	for (int i = 0; i < items.size(); i++)datas.push_back(items[i].name);
+	inventory.Print_Item_List(Item_List, datas);
 }

@@ -4,6 +4,9 @@
 #include<string>
 #include<iostream>
 #include "Item.hpp"
+#include "Inventory.hpp"
+#include "Box.hpp"
+#include "ChatDialog.hpp"
 using namespace std;
 //item 관리용
 class ItemManager
@@ -14,10 +17,12 @@ private:
 	map<string, Item> itemDictionary;
 	//합쳐진 아이템 리스트
 	map<int, pair<int, int>> combinedList;
+	Inventory& inventory;
+	
 public:
 	//현재 지니고 있는 아이템
 	vector<Item> items;
-	ItemManager();
+	ItemManager(Inventory& inventory);
 	//아이템 정보 가져오기(데이터에서)
 	Item GetItemData(int id);
 	Item GetItemData(string name);
@@ -30,6 +35,6 @@ public:
 	void InitItemData();
 
 	bool CombineItem(int id1,int id2);
-	bool UseItem(int id);
+	bool UseItem(int num);
 	void GetItem(int id);
 };

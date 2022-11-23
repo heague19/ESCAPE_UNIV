@@ -10,6 +10,6 @@ using namespace std;
 class ChatDialog {
 public:
 	ChatDialog();
-	void Init();
-	void PrintMessage(string msg);
+	static void Init();
+	static void PrintMessage(string msg);
 };

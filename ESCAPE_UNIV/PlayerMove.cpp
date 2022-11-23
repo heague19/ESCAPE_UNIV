@@ -1,7 +1,8 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
 
-PlayerMove::PlayerMove(MapManager& mapManager) :Map(mapManager)
+PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager) 
+    :Map(mapManager),itemmanager(itemManager)
 {
     pos.X = 10; pos.Y = 10; //콘솔 좌표
     pox.X = pos.X - MAP_ORIGIN_X / 2;
@@ -99,6 +100,10 @@ void PlayerMove::getkey() {
     for (int i = 0; i < 20; i++) {
         if (_kbhit() != 0) {
             auto key = _getch();
+            //아이템 사용 부분
+            //다른 곳에서 입력 받으면 씹힐 가능성 있어서 여기 만듬
+            //나중에 inputManager 만들어서 입력 거기서만 받는게 좋을듯
+            if (key >= '1' && key <= '9')itemmanager.UseItem(key - '0');
             switch (key) {
             case 'w': up(); break;
             case 's': down(); break;
