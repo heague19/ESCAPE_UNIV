@@ -1,8 +1,9 @@
 #include "MapManager.hpp"
+#include "Map_5_floor.h"
 using namespace std;
 MapManager::MapManager() {
 	// 일단 임시방편으로 여기에 맵 만들어 놓음
-	vector<vector<int>> map1 = {
+	vector<vector<int>> map = {
 		{99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99},
 		{99, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 99, 0, 0, 0, 0, 0, 99},
 		{99, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 113, 0, 99, 0, 99, 99, 99, 0, 99},
@@ -16,13 +17,14 @@ MapManager::MapManager() {
 		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 100, 99, 0, 99},
 		{99, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 99, 0, 99},
 		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 99, 99, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99},
+		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
 		{99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99}
 	};
 	
 	BoxUI map2(20, 10, MAP_ORIGIN_X, MAP_ORIGIN_Y);
 	
-	mapData.push_back(map1);
+	//mapData.push_back(map);
+	mapData.push_back(Box_QuIz_map);
 	mapcpy = mapData[mapid];
 }
 void MapManager::ChangeMap(int mapid) {
@@ -30,20 +32,16 @@ void MapManager::ChangeMap(int mapid) {
 	this->width = mapData[mapid][0].size(); this->height = mapData[mapid].size();
 }
 void MapManager::DisplayMap() {
-	console.SetCurrentCursorPos(4, 2);
+	console.SetCurrentCursorPos(4, 2); // 맵 시작 지점
 	COORD curPos = console.GetCurrentCursorPos();
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
 			console.SetCurrentCursorPos(curPos.X + x * 2, curPos.Y + y);
 			switch (mapcpy[y][x]) {
-			case 99:
-				printf("■");
-				break;
-			case 100: // 미는 박스
-				printf("▨");
-				break;
-			default:
-				break;
+			case 99:	printf("■");	break;
+			case 100:	printf("▨");	break; // 미는 박스
+			case 1:		printf("│");	break; // 출구
+			default:					break;
 			}
 			if (mapcpy[y][x] > 100) printf("ⓘ"); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
 		}

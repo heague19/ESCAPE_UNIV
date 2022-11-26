@@ -2,7 +2,10 @@
 #include "Inventory.hpp"
 
 using namespace std;
+BoxUI::BoxUI()
+{
 
+}
 BoxUI::BoxUI(int w, int h, int X, int Y) 
 {
     width = w;

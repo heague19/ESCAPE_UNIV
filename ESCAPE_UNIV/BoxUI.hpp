@@ -18,9 +18,11 @@ public:
 	int width, height;
 	int SInit_X, SInit_Y;
 	string content;
+	vector<vector<int>>** Map_Info;
 
 public:
 	friend class AddContent;
+	BoxUI();
 	BoxUI(int width ,int height ,int start_X, int start_Y);
 	void ConstructorBox();
 	

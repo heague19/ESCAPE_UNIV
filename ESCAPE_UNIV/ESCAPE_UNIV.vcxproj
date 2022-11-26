@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AddContent.cpp" />
     <ClCompile Include="BoxUI.cpp" />
     <ClCompile Include="AggresiveNPC.cpp" />
     <ClCompile Include="ChatDialog.cpp" />
@@ -152,13 +151,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="PlayerMove.cpp" />
+    <ClCompile Include="PrintContent.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AddContent.hpp" />
     <ClInclude Include="AggresiveNPC.hpp" />
     <ClInclude Include="BoxUI.hpp" />
     <ClInclude Include="ChatDialog.hpp" />
@@ -173,8 +172,11 @@
     <ClInclude Include="MapManager.hpp" />
     <ClInclude Include="PartPos.hpp" />
     <ClInclude Include="PlayerMove.hpp" />
+    <ClInclude Include="PrintContent.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Timer.hpp" />
+    <ClInclude Include="Map_5_floor.h" />
+    <ClInclude Include="Map_4_floor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,7 +5,7 @@
 #include<iostream>
 #include "Item.hpp"
 #include "Inventory.hpp"
-#include "Box.hpp"
+#include "BoxUI.hpp"
 #include "ChatDialog.hpp"
 using namespace std;
 //item °ü¸®¿ë

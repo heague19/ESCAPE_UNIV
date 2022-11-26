@@ -2,6 +2,7 @@
 #include "GameTool.hpp"
 #include <vector>
 #include "PartPos.hpp"
+
 class MapManager {
 	Console console;
 	int width, height;

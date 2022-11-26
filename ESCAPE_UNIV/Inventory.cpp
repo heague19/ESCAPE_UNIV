@@ -7,9 +7,6 @@ void Inventory::Constructor_All_Init_Inventory()
     Constructor_Inventory_Boundary();
     Constructor_Item_List();
     Constructor_Explainer();
-
-    //Constructor_Player_State_HP_Bar();
-    //Constructor_Player_State_Stamina_Bar();
 }
 
 void Inventory:: Constructor_Inventory_Boundary()
@@ -31,13 +28,10 @@ void Inventory:: Constructor_Item_List()
 }
 
 void Inventory::Constructor_Explainer()
-{/*
-    Box Explainer(EXPLAINER_WIDTH, EXPLAINER_HEIGHT, EXPLAINER_ORIGIN_X, EXPLAINER_ORIGIN_Y);
-    Explainer.ConstructorBox();
-    AddContentsString(Explainer,
-        "W:앞으로 이동  A:왼쪽으로 이동  S:뒤로 이동  D:오른쪽으로 이동");
-    PrintText(Explainer);
-    */
+{
+    BoxUI ExplainerBox(EXPLAINER_WIDTH,EXPLAINER_HEIGHT,EXPLAINER_ORIGIN_X,EXPLAINER_ORIGIN_Y);
+    ExplainerBox.ConstructorBox();
+    Print("W : ↑ A : ← S : ↓ D : →", ExplainerBox);
 }
 
 void Inventory::Print_Item_List(BoxUI &List,vector<string> Item)

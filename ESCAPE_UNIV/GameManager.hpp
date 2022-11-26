@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Console.hpp"
 #include "MapManager.hpp"
 #include "Inventory.hpp"
