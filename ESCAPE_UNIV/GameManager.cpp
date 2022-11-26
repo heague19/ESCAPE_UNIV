@@ -11,6 +11,7 @@ GameManager::GameManager()
 {
 	mapManager.ChangeMap(0);
 }
+
 void GameManager::MainLoop() {
 	console.RemoveCursor();
 	

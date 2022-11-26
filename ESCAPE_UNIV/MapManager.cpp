@@ -28,10 +28,9 @@ MapManager::MapManager() {
 		{99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99 ,99, 99, 99, 99, 99 ,99}
 	};
 	
-	BoxUI map2(20, 10, MAP_ORIGIN_X, MAP_ORIGIN_Y);
-	
-	//mapData.push_back(map);
-	mapData.push_back(Box_QuIz_map);
+	//mapData.push_back(map1);
+	//mapData.push_back(Map5);
+	mapData.push_back(Box_Quiz_Map5_1);
 	mapcpy = mapData[mapid];
 }
 void MapManager::ChangeMap(int mapid) {

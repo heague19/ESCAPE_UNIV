@@ -6,13 +6,23 @@ BoxUI::BoxUI()
 {
 
 }
+
+void BoxUI:: VectorBoxUI(int width, int height, int start_X, int start_Y)
+{
+    this->width = width;
+    this->height = height;
+    this->SInit_X = start_X;
+    this->SInit_Y = start_Y;
+    //Map_Info = new int* [height + 2];
+    
+    
+}
 BoxUI::BoxUI(int w, int h, int X, int Y) 
 {
     width = w;
     height = h;
     SInit_X = X;
     SInit_Y = Y;
-    content = " ";
 
     // Box Info 배열 생성
     Info = new int *[height+2];
@@ -66,3 +76,18 @@ void BoxUI::ConstructorBox()
     console.SetCurrentCursorPos(0, 0);
 }
 
+void BoxUI::Print(string msg)// 해당 지정 박스에 내용을 넣을 수 있게 수정하였습니다. 
+{
+    Console console;
+    string msgBuffer;
+    istringstream iss(msg);
+    int c = 0;
+    for (int i = 0; i < height; i++) {
+        console.SetCurrentCursorPos(SInit_X + 2, SInit_Y + i + 1);
+        for (int j = 0; j < width * 2; j++)cout << " ";
+        if (getline(iss, msgBuffer, '\n')) {
+            console.SetCurrentCursorPos(SInit_X + 2, SInit_Y + i + 1);
+            cout << msgBuffer;
+        }
+    }
+}

@@ -31,7 +31,7 @@ void Inventory::Constructor_Explainer()
 {
     BoxUI ExplainerBox(EXPLAINER_WIDTH,EXPLAINER_HEIGHT,EXPLAINER_ORIGIN_X,EXPLAINER_ORIGIN_Y);
     ExplainerBox.ConstructorBox();
-    Print("W : ก่ A : ก็ S : ก้ D : กๆ", ExplainerBox);
+    ExplainerBox.Print("W : ก่ A : ก็ S : ก้ D : กๆ");
 }
 
 void Inventory::Print_Item_List(BoxUI &List,vector<string> Item)
