@@ -18,7 +18,7 @@ private:
 	//합쳐진 아이템 리스트
 	map<int, pair<int, int>> combinedList;
 	Inventory& inventory;
-	
+
 public:
 	//현재 지니고 있는 아이템
 	vector<Item> items;

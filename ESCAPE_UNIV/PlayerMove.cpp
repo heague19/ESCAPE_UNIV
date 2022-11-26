@@ -14,6 +14,14 @@ void PlayerMove::Move() {
     getkey();
 }
 
+void PlayerMove::ItemGetChecker() {
+    if (Map.CheckMap(pox) > 100) {
+        itemmanager.GetItem(Map.CheckMap(pox) - 100);
+        Map.ClearPos(pox);
+        itemmanager.UseItem(itemmanager.items.size());
+    }
+}
+
 void PlayerMove::down() {
     pox.Y++;
     if (!Map.CheckMap(pox)) {
@@ -22,10 +30,7 @@ void PlayerMove::down() {
             return;
         }
     }
-    else if (Map.CheckMap(pox) > 100) {
-        itemmanager.GetItem(Map.CheckMap(pox) - 100);
-        Map.ClearPos(pox);
-    }
+    ItemGetChecker();
     DeletePlayer();
     pos.Y++;
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -39,10 +44,7 @@ void PlayerMove::up() {
             return;
         }
     }
-    else if (Map.CheckMap(pox) > 100) {
-        itemmanager.GetItem(Map.CheckMap(pox) - 100);
-        Map.ClearPos(pox);
-    }
+    ItemGetChecker();
     DeletePlayer();
     pos.Y--;
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -56,10 +58,7 @@ void PlayerMove::left() {
             return;
         }
     }
-    else if (Map.CheckMap(pox) > 100) {
-        itemmanager.GetItem(Map.CheckMap(pox) - 100);
-        Map.ClearPos(pox);
-    }
+    ItemGetChecker();
     DeletePlayer();
     pos.X -= 1;
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -73,10 +72,7 @@ void PlayerMove::right() {
             return;
         }
     }
-    else if (Map.CheckMap(pox) > 100) {
-        itemmanager.GetItem(Map.CheckMap(pox) - 100);
-        Map.ClearPos(pox);
-    }
+    ItemGetChecker();
     DeletePlayer();
     pos.X += 1;
     console.SetCurrentCursorPos(pos.X, pos.Y);

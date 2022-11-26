@@ -49,17 +49,17 @@ void BoxUI::ConstructorBox()
         {// 해당 배열에 맞게 각 포인트 별로 문자 출력 
             console.SetCurrentCursorPos(SInit_X + (x * 2), SInit_Y + y);
             if (y == 0 && x == 0)
-                cout << "┌";
+                cout << "┌ ";
             else if (y == 0 && x == width + 1)
-                cout << "┐";
+                cout << "┐ ";
             else if (y == height + 1 && x == 0)
-                cout << "└";
+                cout << "└ ";
             else if (y == height + 1 && x == width + 1)
-                cout << "┘";
+                cout << "┘ ";
             else if (Info[y][x] == 1 && !(y == height + 1 || y == 0))
-                cout << "│";
+                cout << "│ ";
             else if (Info[y][x] == 1 && (y == height + 1 || y == 0))
-                cout << "─";
+                cout << "─ ";
         }
     }
 
