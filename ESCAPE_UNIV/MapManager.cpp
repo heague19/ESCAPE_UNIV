@@ -30,7 +30,10 @@ MapManager::MapManager() {
 	
 	//mapData.push_back(map1);
 	//mapData.push_back(Map5);
-	mapData.push_back(Box_Quiz_Map5_1);
+	//mapData.push_back(Box_Quiz_Map5_1);
+	//mapData.push_back(Map5_2_Upper);
+	//mapData.push_back(Map5_2_Bottom);
+	mapData.push_back(Map5_4);
 	mapcpy = mapData[mapid];
 }
 void MapManager::ChangeMap(int mapid) {
@@ -38,7 +41,7 @@ void MapManager::ChangeMap(int mapid) {
 	this->width = mapData[mapid][0].size(); this->height = mapData[mapid].size();
 }
 void MapManager::DisplayMap() {
-	console.SetCurrentCursorPos(4, 2); // 맵 시작 지점
+	console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y); // 맵 시작 지점
 	COORD curPos = console.GetCurrentCursorPos();
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
