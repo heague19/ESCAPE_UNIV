@@ -14,31 +14,58 @@ void PlayerMove::Move() {
     getkey();
 }
 
-void PlayerMove::ItemGetChecker() {
-    if ((Map.CheckMap(pox) - 1) / 100 == 1) {
-        itemmanager.GetItem(Map.CheckMap(pox) - 100);
+int PlayerMove::ItemGetChecker() {
+    int objectid = Map.GetMapAt(pox);
+    if ((objectid - 1) / 100 == 1) {
+        itemmanager.GetItem(objectid - 100);
         Map.ClearPos(pox);
         //Map.ChangeMap(1);
+        return 1;
+    }
+    else if ((objectid - 1) / 100 >= 2) {
+        int id = objectid - 200;
+        id = id < 100 ? id : id - 100;
+        switch (objectid) {
+        case 313:
+            Map.ChangeMap(1);
+            pox.X--;
+            pos.X--;
+            break;
+        case 351:
+            Map.ChangeMap(0);
+            pox.X--;
+            pos.X--;
+            break;
+        default:
+            if (!itemmanager.FindItem(id)) return 0;
+        }
+        return 1;
+        
+        //item.DeleteItem(id);
     }
 }
 
 void PlayerMove::down() {
+    bool reshowmap = false;
+    if (Map.GetMapAt(pox) > 200) reshowmap = true;
     pox.Y++;
-    if (!Map.CheckMap(pox)) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
         if (!MoveBox(pox.X, pox.Y, M_DOWN)) {
             pox.Y--;
             return;
         }
     }
-    ItemGetChecker();
     DeletePlayer();
     pos.Y++;
+    if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 }
 void PlayerMove::up() {
+    bool reshowmap = false;
+    if (Map.GetMapAt(pox) > 200) reshowmap = true;
     pox.Y--;
-    if (!Map.CheckMap(pox)) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
         if (!MoveBox(pox.X, pox.Y, M_UP)) {
             pox.Y++;
             return;
@@ -47,12 +74,15 @@ void PlayerMove::up() {
     ItemGetChecker();
     DeletePlayer();
     pos.Y--;
+    if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 }
 void PlayerMove::left() {
+    bool reshowmap = false;
+    if (Map.GetMapAt(pox) > 200) reshowmap = true;
     pox.X--;
-    if (!Map.CheckMap(pox)) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
         if (!MoveBox(pox.X, pox.Y, M_LEFT)) {
             pox.X++;
             return;
@@ -61,12 +91,15 @@ void PlayerMove::left() {
     ItemGetChecker();
     DeletePlayer();
     pos.X -= 1;
+    if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 };
 void PlayerMove::right() {
+    bool reshowmap = false;
+    if (Map.GetMapAt(pox) > 200) reshowmap = true;
     pox.X++;
-    if (!Map.CheckMap(pox)) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
         if (!MoveBox(pox.X, pox.Y, M_RIGHT)) {
             pox.X--;
             return;
@@ -75,6 +108,7 @@ void PlayerMove::right() {
     ItemGetChecker();
     DeletePlayer();
     pos.X += 1;
+    if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 };

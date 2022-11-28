@@ -18,6 +18,7 @@ void MapManager::ChangeMap(int mapid) {
 		}
 	}
 	console.SetCurrentCursorPos(curPos.X, curPos.Y);
+	mapData[this->mapid] = mapcpy;
 	this->mapid = mapid;
 	this->width = mapData[mapid][0].size(); this->height = mapData[mapid].size();
 	remap(); DisplayMap();
@@ -59,21 +60,14 @@ void MapManager::ReBox() {
 	console.SetCurrentCursorPos(curPos.X, curPos.Y);
 }
 
+int MapManager::GetMapAt(COORD pos) {
+	if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0)return false;
+	return mapcpy[pos.Y][pos.X];
+}
+
 int MapManager::CheckMap(COORD pos) {
 	if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0)return false;
 	if (mapcpy[pos.Y][pos.X] == 0)return 1;
-	if (mapcpy[pos.Y][pos.X] > 200) {
-		int id = mapcpy[pos.Y][pos.X] - 200;
-		id = id < 100 ? id : id - 100;
-		if (!item.FindItem(id)) {
-			return 0;
-		}
-		if (mapcpy[pos.Y][pos.X] == 313) {
-			ChangeMap(1);
-		}
-		//item.DeleteItem(id);
-		return 1;
-	}
 	if ((mapcpy[pos.Y][pos.X] - 1) / 100 == 1)return mapcpy[pos.Y][pos.X];
 	return 0;
 }
