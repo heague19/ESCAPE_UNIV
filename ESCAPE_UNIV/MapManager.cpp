@@ -2,7 +2,7 @@
 #include "Map_5_floor.h"
 #include "Map_6_floor.h"
 using namespace std;
-MapManager::MapManager() {
+MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map6);
 	mapData.push_back(Map5);
 	mapData.push_back(Box_Quiz_Map5_1);
@@ -62,6 +62,18 @@ void MapManager::ReBox() {
 int MapManager::CheckMap(COORD pos) {
 	if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0)return false;
 	if (mapcpy[pos.Y][pos.X] == 0)return 1;
+	if (mapcpy[pos.Y][pos.X] > 200) {
+		int id = mapcpy[pos.Y][pos.X] - 200;
+		id = id < 100 ? id : id - 100;
+		if (!item.FindItem(id)) {
+			return 0;
+		}
+		if (mapcpy[pos.Y][pos.X] == 313) {
+			ChangeMap(1);
+		}
+		//item.DeleteItem(id);
+		return 1;
+	}
 	if ((mapcpy[pos.Y][pos.X] - 1) / 100 == 1)return mapcpy[pos.Y][pos.X];
 	return 0;
 }

@@ -18,7 +18,7 @@ void PlayerMove::ItemGetChecker() {
     if ((Map.CheckMap(pox) - 1) / 100 == 1) {
         itemmanager.GetItem(Map.CheckMap(pox) - 100);
         Map.ClearPos(pox);
-        Map.ChangeMap(1);
+        //Map.ChangeMap(1);
     }
 }
 
@@ -81,7 +81,7 @@ void PlayerMove::right() {
 void PlayerMove::ShowPlayer() {
     COORD curPos = console.GetCurrentCursorPos();
     console.SetCurrentCursorPos(curPos.X*2, curPos.Y);
-    cout << "¨Ü";
+    printf("¨Ü");
     console.SetCurrentCursorPos(curPos.X*2, curPos.Y);
 };
 

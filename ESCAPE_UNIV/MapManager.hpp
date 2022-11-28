@@ -2,15 +2,17 @@
 #include "GameTool.hpp"
 #include <vector>
 #include "PartPos.hpp"
+#include "ItemManager.hpp"
 
 class MapManager {
 	Console console;
+	ItemManager &item;
 	int width, height;
 	int mapid;
 	std::vector<std::vector<std::vector<int>>> mapData; // 모든 맵의 정모를 담아 놓는 3차원 vector
 	vector<vector<int>> mapcpy;
 public:
-	MapManager();
+	MapManager(ItemManager &item);
 	void DisplayMap();
 	void ReBox();
 	void ChangeMap(int mid); // 현재 맵 아이디 바꾸는 함수
