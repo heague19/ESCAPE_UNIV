@@ -12,6 +12,7 @@ PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
 }
 void PlayerMove::Move() {
     getkey();
+    
 }
 
 int PlayerMove::ItemGetChecker() {
@@ -19,7 +20,7 @@ int PlayerMove::ItemGetChecker() {
     if ((objectid - 1) / 100 == 1) {
         itemmanager.GetItem(objectid - 100);
         Map.ClearPos(pox);
-        //Map.ChangeMap(1);
+        ChatDialog::PrintMessage(itemmanager.GetItemData(objectid - 100).name + "을(를) 얻었다.");
         return 1;
     }
     else if ((objectid - 1) / 100 >= 2) {
@@ -37,8 +38,12 @@ int PlayerMove::ItemGetChecker() {
             pos.X--;
             break;
         default:
-            if (!itemmanager.FindItem(id)) return 0;
+            if (!itemmanager.FindItem(id)) {
+                ChatDialog::PrintMessage("문이 굳게 닫혀있다.");
+                return 0;
+            }
         }
+        ChatDialog::PrintMessage("문이 열렸다.");
         return 1;
         
         //item.DeleteItem(id);
@@ -130,6 +135,7 @@ void PlayerMove::getkey() {
     for (int i = 0; i < 20; i++) {
         if (_kbhit() != 0) {
             auto key = _getch();
+            ChatDialog::PrintMessage("");
             //아이템 사용 부분
             //다른 곳에서 입력 받으면 씹힐 가능성 있어서 여기 만듬
             //나중에 inputManager 만들어서 입력 거기서만 받는게 좋을듯
