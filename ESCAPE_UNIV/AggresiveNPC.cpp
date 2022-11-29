@@ -7,6 +7,7 @@ AggresiveNPC::AggresiveNPC(MapManager& mapManager, PlayerMove& playerMove, Timer
 	for (int i = 0; i < N; i++)check[i].resize(N);
 	from.resize(N);
 	for (int i = 0; i < N; i++)from[i].resize(N);
+	playerMove.NPCPos = pos;
 }
 void AggresiveNPC::ShowNPC() {
 	console.SetCurrentCursorPos(pos.X*2+MAP_ORIGIN_X, pos.Y + MAP_ORIGIN_Y);
@@ -29,6 +30,7 @@ void AggresiveNPC::NPCMove(){
 	if(!NPCDetectCollision(nextPos))return;
 	DeleteNPC();
 	pos = nextPos;
+	playerMove.NPCPos = pos;
 	ShowNPC();
 }
 COORD AggresiveNPC::NPCPathFind() {

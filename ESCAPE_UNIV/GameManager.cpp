@@ -24,6 +24,7 @@ void GameManager::MainLoop() {
 	ChatDialog::PrintMessage("Ahahahah");
 	
 	while (true) {
+		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		playermove.Move();
 		timer.Update();
 		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
