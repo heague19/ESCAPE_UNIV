@@ -36,8 +36,11 @@ int PlayerMove::ItemGetChecker() {
             pox.X--;
             pos.X--;
             break;
+        //case 351:
+            
         default:
-            if (!itemmanager.FindItem(id)) return 0;
+            if (!itemmanager.FindItem(id)) { ChatDialog::PrintMessage("열쇠가 필요합니다."); return 0; }
+            
         }
         return 1;
         
