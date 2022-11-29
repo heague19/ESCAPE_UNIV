@@ -173,6 +173,7 @@
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="ItemManager.hpp" />
     <ClInclude Include="MapManager.hpp" />
+    <ClInclude Include="Map_6_floor.h" />
     <ClInclude Include="PartPos.hpp" />
     <ClInclude Include="PlayerMove.hpp" />
     <ClInclude Include="PrintContent.h" />

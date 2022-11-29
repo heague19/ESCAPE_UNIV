@@ -1,44 +1,26 @@
 #include "MapManager.hpp"
 #include "Map_5_floor.h"
+#include "Map_6_floor.h"
 using namespace std;
 MapManager::MapManager() {
-	// 일단 임시방편으로 여기에 맵 만들어 놓음
-	vector<vector<int>> map1 = {
-		{99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 99, 0, 0, 0, 0, 0, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 113, 0, 99, 0, 99, 99, 99, 0, 99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 0, 99, 0, 99, 0, 99, 0, 99, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 0, 99, 0, 99, 100, 99, 0, 99, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 0, 99, 0, 99, 0, 99, 0, 99, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 99},
-		{99, 0, 99, 0, 100, 0, 0, 0, 0, 99, 99, 100, 99, 99, 0, 99, 100, 99, 0, 99, 0, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 99, 0, 99, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 100, 99, 0, 99, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 99, 0, 99, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 100, 99, 0, 99, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99},
-		{99, 0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 99, 0, 99, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 99, 99, 0, 99, 0, 99, 99, 99, 99, 99, 0, 0, 0, 0, 100, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 0, 0, 0, 99, 99, 99, 99, 99, 0, 99},
-		{99, 99, -1, -1, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 0, 0, 0, 0, 0, 99, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 99, 100, 99, 99, 99, 0, 99, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 100, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 0, 0, 99, 0, 99, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 100, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 99, 0, 99, 0, 99, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 100, 0, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 99, 0, 99, 0, 99, 0, 99, 0, 99},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 100, 100, 100, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 99, 0, 99, 0, 99, 0, -2},
-		{99, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 100, 100, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0, 0, 0, 100, 0, -2},
-		{99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99 ,99, 99, 99, 99, 99 ,99}
-	};
-	
-	//mapData.push_back(map1);
-	//mapData.push_back(Map5);
-	//mapData.push_back(Box_Quiz_Map5_1);
-	//mapData.push_back(Map5_2_Upper);
-	//mapData.push_back(Map5_2_Bottom);
-	mapData.push_back(Map5_4);
+	mapData.push_back(Map6);
+	mapData.push_back(Map5);
+	mapData.push_back(Box_Quiz_Map5_1);
 	mapcpy = mapData[mapid];
 }
 void MapManager::ChangeMap(int mapid) {
+	console.SetCurrentCursorPos(4, 2);
+	COORD curPos = console.GetCurrentCursorPos();
+	for (int y = 0; y < height; y++) {
+		for (int x = 0; x < width; x++) {
+			console.SetCurrentCursorPos(curPos.X + x * 2, curPos.Y + y);
+			printf("  ");
+		}
+	}
+	console.SetCurrentCursorPos(curPos.X, curPos.Y);
 	this->mapid = mapid;
 	this->width = mapData[mapid][0].size(); this->height = mapData[mapid].size();
+	remap(); DisplayMap();
 }
 void MapManager::DisplayMap() {
 	console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y); // 맵 시작 지점
@@ -53,16 +35,12 @@ void MapManager::DisplayMap() {
 			case 100: // 미는 박스
 				printf("▨ ");
 				break;
-			case -1:
-				printf("─ ");
-				break;
-			case -2:
-				printf("│ ");
-				break;
 			default:
 				break;
 			}
-			if (mapcpy[y][x] > 100) printf("ⓘ "); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
+			if ((mapcpy[y][x] - 1) / 100 == 1) printf("ⓘ "); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
+			if ((mapcpy[y][x] - 1) / 100 == 2) printf("─ ");
+			if ((mapcpy[y][x] - 1) / 100 == 3) printf("│ ");
 		}
 	}
 	console.SetCurrentCursorPos(curPos.X, curPos.Y);
@@ -80,10 +58,11 @@ void MapManager::ReBox() {
 	}
 	console.SetCurrentCursorPos(curPos.X, curPos.Y);
 }
+
 int MapManager::CheckMap(COORD pos) {
 	if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0)return false;
 	if (mapcpy[pos.Y][pos.X] == 0)return 1;
-	if (mapcpy[pos.Y][pos.X] > 100)return mapcpy[pos.Y][pos.X];
+	if ((mapcpy[pos.Y][pos.X] - 1) / 100 == 1)return mapcpy[pos.Y][pos.X];
 	return 0;
 }
 

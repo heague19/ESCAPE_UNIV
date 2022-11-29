@@ -15,10 +15,10 @@ void PlayerMove::Move() {
 }
 
 void PlayerMove::ItemGetChecker() {
-    if (Map.CheckMap(pox) > 100) {
+    if ((Map.CheckMap(pox) - 1) / 100 == 1) {
         itemmanager.GetItem(Map.CheckMap(pox) - 100);
         Map.ClearPos(pox);
-        itemmanager.UseItem(itemmanager.items.size());
+        Map.ChangeMap(1);
     }
 }
 
