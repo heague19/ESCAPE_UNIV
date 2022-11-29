@@ -43,6 +43,9 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(12, "·£ÅÏ", false, {7,9}));
 	itemData.push_back(Item(13, "6Ãþ¿­¼è", true, 
 		[]() {ChatDialog::PrintMessage("6Ãþ¿¡¼­ Ã£Àº ¿­¼èÀÌ´Ù."); }));
+	itemData.push_back(Item(14, "³ì½¼¿­¼è", true,
+		[]() {ChatDialog::PrintMessage("5Ãþ¿¡¼­ Ã£Àº ³ì½¼ ¿­¼èÀÌ´Ù."); }));
+	itemData.push_back(Item(15, "¼¼Á¦", false));
 
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];
