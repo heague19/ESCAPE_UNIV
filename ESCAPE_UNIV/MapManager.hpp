@@ -8,10 +8,10 @@ class MapManager {
 	Console console;
 	ItemManager &item;
 	int width, height;
-	int mapid;
 	std::vector<std::vector<std::vector<int>>> mapData; // 모든 맵의 정모를 담아 놓는 3차원 vector
 	vector<vector<int>> mapcpy;
 public:
+	int mapid;
 	MapManager(ItemManager &item);
 	void DisplayMap();
 	void ReBox();

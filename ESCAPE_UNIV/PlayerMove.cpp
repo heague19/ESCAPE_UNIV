@@ -37,6 +37,20 @@ int PlayerMove::ItemGetChecker() {
             pox.X--;
             pos.X--;
             break;
+        case 241:
+            Map.ChangeMap(7);
+            pox.X = 15;
+            pox.Y = 11;
+            pos.X = pox.X + 2;
+            pos.Y = pox.Y + 3;
+            break;
+        case 240:
+            Map.ChangeMap(6);
+            pox.X = 24;
+            pox.Y = 6;
+            pos.X = 26;
+            pos.Y = 7;
+            break;
         default:
             if (!itemmanager.FindItem(id)) {
                 ChatDialog::PrintMessage("πÆ¿Ã ±ª∞‘ ¥›«Ù¿÷¥Ÿ.");
