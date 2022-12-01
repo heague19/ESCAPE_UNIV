@@ -19,7 +19,8 @@ void GameManager::MainLoop() {
 	inventory.Constructor_All_Init_Inventory();// 아이템 창 구현
 	
 	mapManager.DisplayMap();
-	
+	//적 npc 활성화/비활성화 함수
+	//aggresiveNPC.SetActive(true);
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
 	

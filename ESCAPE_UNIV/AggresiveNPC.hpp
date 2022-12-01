@@ -19,7 +19,7 @@ private:
 	double moveRate = 0.5;
 	double moveTimer = 0.0;
 	Timer& timer;
-
+	bool active=false;
 	//경로 탐색용
 	queue<COORD> bfs;
 	vector<vector<int>> check;
@@ -39,5 +39,8 @@ public:
 	COORD NPCPathFind();
 	//충돌판정
 	bool NPCDetectCollision(COORD nextPos);
+
+	bool IsActive();
+	void SetActive(bool active);
 };
 
