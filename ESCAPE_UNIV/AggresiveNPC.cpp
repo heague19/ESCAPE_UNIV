@@ -10,6 +10,7 @@ AggresiveNPC::AggresiveNPC(MapManager& mapManager, PlayerMove& playerMove, Timer
 	playerMove.NPCPos = pos;
 }
 void AggresiveNPC::ShowNPC() {
+	if (!active)return;
 	console.SetCurrentCursorPos(pos.X*2+MAP_ORIGIN_X, pos.Y + MAP_ORIGIN_Y);
 	cout << "ⓔ";
 }
@@ -22,7 +23,7 @@ void AggresiveNPC::NPCMove(){
 	//cout << playerMove.GetPos().X << " " << playerMove.GetPos().Y << "  ";
 	//console.SetCurrentCursorPos(0, 1);
 	//cout << pos.X << " " << pos.Y << "  ";
-
+	if (!active)return;
 	moveTimer += timer.GetDeltaTime();
 	if (moveTimer < moveRate)return;
 	moveTimer = 0.0;
@@ -75,4 +76,19 @@ COORD AggresiveNPC::NPCPathFind() {
 }
 bool AggresiveNPC::NPCDetectCollision(COORD nextPos) {
 	return true;
+}
+bool AggresiveNPC::IsActive() {
+	return active;
+}
+void AggresiveNPC::SetActive(bool active) {
+	//활성화할 경우
+	if (active) {
+		this->active = active;
+		ShowNPC();
+	}
+	//비활성화할 경우
+	else if(this->active) {
+		this->active = active;
+		DeleteNPC();
+	}
 }

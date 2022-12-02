@@ -13,12 +13,14 @@ Item ItemManager::GetItemData(string name) {
 	return Item();
 }
 bool ItemManager::FindItem(int id) {
+	if (id >= itemData.size()) return false; // id 범위 벗어나는지 체크. 안하면 오류.
 	auto item = lower_bound(items.begin(), items.end(), itemData[id], [](const Item& a, const Item& b) {return a.id < b.id; });
 	if (item == items.end())return false;
 	if (item->id == id)return true;
 	return false;
 }
 bool ItemManager::DeleteItem(int id) {
+	if (id >= itemData.size()) return false;
 	auto item = lower_bound(items.begin(), items.end(), itemData[id], [](const Item& a, const Item& b) {return a.id < b.id; });
 	if (item == items.end())return false;
 	if (item->id == id) {
@@ -46,6 +48,7 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(14, "녹슨열쇠", true,
 		[]() {ChatDialog::PrintMessage("5층에서 찾은 녹슨 열쇠이다."); }));
 	itemData.push_back(Item(15, "세제", false));
+	itemData.push_back(Item(14, "쪽지1", false, []() {ChatDialog::PrintMessage("테스틑 쪽지 내용"); }));
 
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];

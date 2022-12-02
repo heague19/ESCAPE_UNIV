@@ -1,8 +1,24 @@
 #include "MapManager.hpp"
+#include "Map_4_floor.h"
 #include "Map_5_floor.h"
 #include "Map_6_floor.h"
 using namespace std;
 MapManager::MapManager(ItemManager &item):item(item) {
+	mapData.push_back(Map6); // 0
+	mapData.push_back(Map5); // 1
+	// 5층 방 4개 (2 ~ 5)
+	mapData.push_back(Box_Quiz_Map5_1); // 2
+	mapData.push_back(vector<vector<int>>()); // 3 (임시)
+	mapData.push_back(vector<vector<int>>()); // 4 (임시)
+	mapData.push_back(vector<vector<int>>()); // 5 (임시)
+	mapData.push_back(Map4); // 6
+	// 4층 방 5개 (7 ~ 11)
+	mapData.push_back(Map4_Room1); // 7
+	mapData.push_back(vector<vector<int>>()); // 8 (임시)
+	mapData.push_back(vector<vector<int>>()); // 9 (임시)
+	mapData.push_back(vector<vector<int>>()); // 10 (임시)
+	mapData.push_back(vector<vector<int>>()); // 11 (임시)
+	mapid = 6;
 	mapData.push_back(Map6);
 	mapData.push_back(Map5);
 	mapData.push_back(Box_Quiz_Map5_1);
