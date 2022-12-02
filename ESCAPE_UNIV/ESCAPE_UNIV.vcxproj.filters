@@ -81,9 +81,6 @@
     <ClCompile Include="AggresiveNPC.cpp">
       <Filter>소스 파일\NPC</Filter>
     </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>소스 파일\NPC</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerMove.cpp">
       <Filter>소스 파일\Player</Filter>
     </ClCompile>
@@ -95,6 +92,12 @@
     </ClCompile>
     <ClCompile Include="PrintContent.cpp">
       <Filter>소스 파일\GameTool</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,9 +154,6 @@
     <ClInclude Include="AggresiveNPC.hpp">
       <Filter>헤더 파일\NPC</Filter>
     </ClInclude>
-    <ClInclude Include="Timer.hpp">
-      <Filter>헤더 파일\NPC</Filter>
-    </ClInclude>
     <ClInclude Include="Map_5_floor.h">
       <Filter>소스 파일\MapManger\Map</Filter>
     </ClInclude>
@@ -171,6 +171,12 @@
     </ClInclude>
     <ClInclude Include="Map_6_floor.h">
       <Filter>소스 파일\MapManger\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

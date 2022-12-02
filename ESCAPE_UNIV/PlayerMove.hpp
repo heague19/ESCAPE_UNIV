@@ -6,7 +6,6 @@
 #include "MapManager.hpp"
 #include "PartPos.hpp"
 #include "ItemManager.hpp"
-
 using namespace std;
 
 class PlayerMove {
@@ -18,7 +17,11 @@ private:
     ItemManager& itemmanager;
     enum Trans { M_UP,M_DOWN,M_LEFT,M_RIGHT };
     //vector<vector<int>>::iterator mapdata;
+
 public:
+    //이동 주기와 이동주기 체크용 타이머
+    const double moveRate = 0.2;
+    double moveTimer = 0.0;
     COORD NPCPos;
     PlayerMove(MapManager&,ItemManager&);
     void down();
@@ -27,9 +30,9 @@ public:
     void right();
     void ShowPlayer();
     void DeletePlayer();
-    int DetectCollision(int, int);
-    void getkey();
-    void Move();
+    //int DetectCollision(int, int);
+    //void getkey();
+    //void Move();
     //플레이어 좌표상 위치 반환
     COORD GetPos();
     int ItemGetChecker();

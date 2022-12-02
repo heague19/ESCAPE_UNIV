@@ -1,7 +1,7 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
 
-PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager) 
+PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
     :Map(mapManager),itemmanager(itemManager)
 {
     pos.X = 10; pos.Y = 10; //콘솔 좌표
@@ -9,10 +9,6 @@ PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
     pox.Y = pos.Y - MAP_ORIGIN_Y;
     console.SetCurrentCursorPos(pox.X, pox.Y);
     ShowPlayer();
-}
-void PlayerMove::Move() {
-    getkey();
-    
 }
 
 int PlayerMove::ItemGetChecker() {
@@ -144,7 +140,8 @@ void PlayerMove::DeletePlayer() {
     cout << "  ";
     console.SetCurrentCursorPos(pos.X*2, pos.Y);
 }
-
+/*
+* inputManager로 기능 이전
 void PlayerMove::getkey() {
     for (int i = 0; i < 20; i++) {
         if (_kbhit() != 0) {
@@ -166,7 +163,7 @@ void PlayerMove::getkey() {
         }
     }
 }
-
+*/
 
 /*int PlayerMove::DetectCollision(int x, int y) {
     COORD pos_;
