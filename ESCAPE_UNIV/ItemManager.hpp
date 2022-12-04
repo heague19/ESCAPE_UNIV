@@ -34,7 +34,10 @@ public:
 	//아이템 데이터 초기 설정
 	void InitItemData();
 
+	//아이템 조합
 	bool CombineItem(int id1,int id2);
+	//아이템 사용
 	bool UseItem(int num);
+	//아이템 획득
 	void GetItem(int id);
 };

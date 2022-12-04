@@ -32,7 +32,7 @@ bool ItemManager::DeleteItem(int id) {
 void ItemManager::InitItemData() {
 	itemData.push_back(Item(0, "논문", true));
 	itemData.push_back(Item(1, "5층열쇠", true));
-	itemData.push_back(Item(2, "4층쪽지", false, []() {std::cout << "테스트 텍스트"; }));
+	itemData.push_back(Item(2, "4층쪽지", false, []() {ChatDialog::PrintMessage("테스트 텍스트"); }));
 	itemData.push_back(Item(3, "랜턴케이스", false));
 	itemData.push_back(Item(4, "4층열쇠", true));
 	itemData.push_back(Item(5, "망치", false));

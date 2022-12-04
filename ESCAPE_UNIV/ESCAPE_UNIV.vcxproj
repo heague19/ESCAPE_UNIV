@@ -148,6 +148,7 @@
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="CursorColor.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="INTRO.cpp" />
     <ClCompile Include="Inventory.cpp" />
@@ -172,7 +173,6 @@
     <ClInclude Include="Cursor_Function.h" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="GameTool.hpp" />
-    <ClInclude Include="INTRO.h" />
     <ClInclude Include="Inventory.hpp" />
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="ItemManager.hpp" />

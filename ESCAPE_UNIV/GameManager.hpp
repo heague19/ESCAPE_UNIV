@@ -1,4 +1,3 @@
-
 #include "Console.hpp"
 #include "MapManager.hpp"
 #include "Inventory.hpp"
@@ -7,6 +6,7 @@
 #include "AggresiveNPC.hpp"
 #include "Timer.hpp"
 #include "ChatDialog.hpp"
+#include "InputManager.hpp"
 #include "GameOver.h"
 #include "INTRO.h"
 class GameManager {
@@ -23,4 +23,5 @@ public:
 	MapManager mapManager;
 	AggresiveNPC aggresiveNPC;
 	Timer timer;
+	InputManager inputManager;
 };

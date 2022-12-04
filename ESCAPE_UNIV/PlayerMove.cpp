@@ -1,7 +1,7 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
 
-PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager) 
+PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
     :Map(mapManager),itemmanager(itemManager)
 {
     pos.X = 10; pos.Y = 10; //콘솔 좌표
@@ -10,12 +10,8 @@ PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
     console.SetCurrentCursorPos(pox.X, pox.Y);
     ShowPlayer();
 }
-void PlayerMove::Move() {
-    getkey();
-    
-}
 
-int PlayerMove::ItemGetChecker() {
+int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 방향
     int objectid = Map.GetMapAt(pox);
     if ((objectid - 1) / 100 == 1) {
         itemmanager.GetItem(objectid - 100);
@@ -26,32 +22,13 @@ int PlayerMove::ItemGetChecker() {
     else if ((objectid - 1) / 100 >= 2) {
         int id = objectid - 200;
         id = id < 100 ? id : id - 100;
-        switch (objectid) {
-        case 313:
-            Map.ChangeMap(1);
-            pox.X--;
-            pos.X--;
-            break;
-        case 351:
-            Map.ChangeMap(0);
-            pox.X--;
-            pos.X--;
-            break;
-        case 241:
-            Map.ChangeMap(7);
-            pox.X = 15;
-            pox.Y = 11;
-            pos.X = pox.X + 2;
-            pos.Y = pox.Y + 3;
-            break;
-        case 240:
-            Map.ChangeMap(6);
-            pox.X = 24;
-            pox.Y = 6;
-            pos.X = 26;
-            pos.Y = 7;
-            break;
-        default:
+        int beforemapId = Map.mapid;
+        int mapId = Map.GetMapIdByRoomNumber(objectid % 100); // 다음 맵 아이디
+        if (mapId >= 0) {
+            Map.ChangeMap(mapId);
+            pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
+        }
+        else {
             if (!itemmanager.FindItem(id)) {
                 ChatDialog::PrintMessage("문이 굳게 닫혀있다.");
                 return 0;
@@ -67,14 +44,15 @@ int PlayerMove::ItemGetChecker() {
 void PlayerMove::down() {
     bool reshowmap = false;
     if (Map.GetMapAt(pox) > 200) reshowmap = true;
+    DeletePlayer();
     pox.Y++;
-    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker(1, 0)) {
         if (!MoveBox(pox.X, pox.Y, M_DOWN)) {
             pox.Y--;
+            ShowPlayer();
             return;
         }
     }
-    DeletePlayer();
     pos.Y++;
     if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -83,15 +61,15 @@ void PlayerMove::down() {
 void PlayerMove::up() {
     bool reshowmap = false;
     if (Map.GetMapAt(pox) > 200) reshowmap = true;
+    DeletePlayer();
     pox.Y--;
-    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker(-1, 0)) {
         if (!MoveBox(pox.X, pox.Y, M_UP)) {
             pox.Y++;
+            ShowPlayer();
             return;
         }
     }
-    ItemGetChecker();
-    DeletePlayer();
     pos.Y--;
     if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -100,15 +78,15 @@ void PlayerMove::up() {
 void PlayerMove::left() {
     bool reshowmap = false;
     if (Map.GetMapAt(pox) > 200) reshowmap = true;
+    DeletePlayer();
     pox.X--;
-    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker(0, -1)) {
         if (!MoveBox(pox.X, pox.Y, M_LEFT)) {
             pox.X++;
+            ShowPlayer();
             return;
         }
     }
-    ItemGetChecker();
-    DeletePlayer();
     pos.X -= 1;
     if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
@@ -117,34 +95,36 @@ void PlayerMove::left() {
 void PlayerMove::right() {
     bool reshowmap = false;
     if (Map.GetMapAt(pox) > 200) reshowmap = true;
+    DeletePlayer();
     pox.X++;
-    if (Map.GetMapAt(pox) && !ItemGetChecker()) {
+    if (Map.GetMapAt(pox) && !ItemGetChecker(0, 1)) {
         if (!MoveBox(pox.X, pox.Y, M_RIGHT)) {
             pox.X--;
+            ShowPlayer();
             return;
         }
     }
-    ItemGetChecker();
-    DeletePlayer();
     pos.X += 1;
     if (reshowmap) Map.DisplayMap();
     console.SetCurrentCursorPos(pos.X, pos.Y);
     ShowPlayer();
 };
 void PlayerMove::ShowPlayer() {
+    //ChatDialog::PrintMessage(to_string(pox.X) + ", " + to_string(pox.Y));
     COORD curPos = console.GetCurrentCursorPos();
-    console.SetCurrentCursorPos(curPos.X*2, curPos.Y);
+    console.SetCurrentCursorPos(pox.X * 2 + MAP_ORIGIN_X, pox.Y + MAP_ORIGIN_Y);
     printf("ⓟ");
-    console.SetCurrentCursorPos(curPos.X*2, curPos.Y);
+    console.SetCurrentCursorPos(pox.X * 2 + MAP_ORIGIN_X, pox.Y + MAP_ORIGIN_Y);
 };
 
 void PlayerMove::DeletePlayer() {
     COORD curPos = console.GetCurrentCursorPos();
-    console.SetCurrentCursorPos(pos.X*2, pos.Y);
+    console.SetCurrentCursorPos(pox.X * 2 + MAP_ORIGIN_X, pox.Y + MAP_ORIGIN_Y);
     cout << "  ";
-    console.SetCurrentCursorPos(pos.X*2, pos.Y);
+    console.SetCurrentCursorPos(pox.X * 2 + MAP_ORIGIN_X, pox.Y + MAP_ORIGIN_Y);
 }
-
+/*
+* inputManager로 기능 이전
 void PlayerMove::getkey() {
     for (int i = 0; i < 20; i++) {
         if (_kbhit() != 0) {
@@ -166,7 +146,7 @@ void PlayerMove::getkey() {
         }
     }
 }
-
+*/
 
 /*int PlayerMove::DetectCollision(int x, int y) {
     COORD pos_;
