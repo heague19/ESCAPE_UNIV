@@ -8,7 +8,7 @@ GameManager& GameManager::Instance() {
 GameManager::GameManager()
 	:aggresiveNPC(mapManager,playermove,timer)
 	, itemManager(inventory),playermove(mapManager,itemManager),mapManager(itemManager)
-	,inputManager(playermove,timer,mapManager,itemManager)
+	,inputManager(playermove,timer,mapManager,itemManager,inventory)
 {
 	mapManager.ChangeMap(mapManager.mapid);
 }
@@ -25,6 +25,9 @@ void GameManager::MainLoop() {
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
 	//itemManager.GetItem(2);
+	itemManager.GetItem(3);
+	itemManager.GetItem(6);
+	itemManager.GetItem(7);
 	//INTROPrint();
 
 	
