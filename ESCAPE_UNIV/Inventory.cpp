@@ -17,7 +17,7 @@ void Inventory:: Constructor_Inventory_Boundary()
 
 void Inventory:: Constructor_Item_List()
 {
-    SelectCursorColor(2, 2, 2);// 폰트 색상 변경함수 
+    SelectCursorColor(DARK_GREEN);// 폰트 색상 변경함수 
     BoxUI Item_List(ITEM_LIST_WIDTH,ITEM_LIST_HEIGHT,ITEM_LIST_ORIGIN_X,ITEM_LIST_ORIGIN_Y); 
     Item_List.ConstructorBox();
     InitCursorColor();// 폰트 색상 초기화 함수
@@ -32,6 +32,12 @@ void Inventory::Constructor_Explainer()
     BoxUI ExplainerBox(EXPLAINER_WIDTH,EXPLAINER_HEIGHT,EXPLAINER_ORIGIN_X,EXPLAINER_ORIGIN_Y);
     ExplainerBox.ConstructorBox();
     ExplainerBox.Print("W : ↑ A : ← S : ↓ D : →");
+
+    SelectCursorColor(DARK_BLUE);
+    BoxUI EXIT(EXIT_WIDTH/2, EXIT_HEIGHT/2, EXIT_ORIGIN_X, EXIT_ORIGIN_Y+2);
+    EXIT.ConstructorBox();
+    EXIT.Print("EXIT");
+    InitCursorColor();
 }
 
 void Inventory::Print_Item_List(BoxUI &List,vector<string> Item)

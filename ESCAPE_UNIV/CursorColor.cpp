@@ -1,7 +1,7 @@
 #include "CursorColor.hpp"
-void SelectCursorColor(int R, int G, int B)
+void SelectCursorColor(int Color)
 {
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), RGB(R,G,B));// CursorColor 변경 함수입니다. 그냥 원하시는 색상표 확인하신 후 사용하시면 됩니다.
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),Color );// CursorColor 변경 함수입니다. 그냥 원하시는 색상표 확인하신 후 사용하시면 됩니다.
 
 }
 void InitCursorColor()

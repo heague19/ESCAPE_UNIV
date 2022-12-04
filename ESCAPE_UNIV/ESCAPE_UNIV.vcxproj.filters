@@ -96,6 +96,15 @@
     <ClCompile Include="PrintContent.cpp">
       <Filter>소스 파일\GameTool</Filter>
     </ClCompile>
+    <ClCompile Include="Quize_Tool.cpp">
+      <Filter>소스 파일\MapManger\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="INTRO.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc">
@@ -171,6 +180,15 @@
     </ClInclude>
     <ClInclude Include="Map_6_floor.h">
       <Filter>소스 파일\MapManger\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Quize_Tool.hpp">
+      <Filter>소스 파일\MapManger\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="INTRO.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

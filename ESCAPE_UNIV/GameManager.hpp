@@ -7,6 +7,8 @@
 #include "AggresiveNPC.hpp"
 #include "Timer.hpp"
 #include "ChatDialog.hpp"
+#include "GameOver.h"
+#include "INTRO.h"
 class GameManager {
 public:
 	static GameManager& Instance();

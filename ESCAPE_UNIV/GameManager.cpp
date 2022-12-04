@@ -23,12 +23,27 @@ void GameManager::MainLoop() {
 	//aggresiveNPC.SetActive(true);
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
-	
+	INTROPrint();
+
 	while (true) {
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		playermove.Move();
 		timer.Update();
 		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
 		aggresiveNPC.NPCMove();
+		/*
+		if (Detect == 0) // 이렇게 하면 어떨까 생각해서 만들어 보았습니다. 
+		{ //넘버링으로 하면 되지 않을까라는 생각, 정확하게는 INPUT Manger를 만들고 다시 생각해야 될것 같 기도 합니다. 
+			GAMEOVERPrint();
+			if (restart == 0)
+				continue;
+			else if (ending == 1)
+				break;
+			else if (re_main_menu == 2)
+				re_main_menu = 1;
+			break;
+		}
+		*/
 	}// 게임 구성 실행 코드 현
+	
 }

@@ -17,6 +17,7 @@ private:
     MapManager& Map;
     ItemManager& itemmanager;
     enum Trans { M_UP,M_DOWN,M_LEFT,M_RIGHT };
+    int state = 0;// 플레이어 충돌 상태 변수 by 이해규 
     //vector<vector<int>>::iterator mapdata;
 public:
     COORD NPCPos;

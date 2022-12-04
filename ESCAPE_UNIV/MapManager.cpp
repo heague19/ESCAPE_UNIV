@@ -19,6 +19,8 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(vector<vector<int>>()); // 10 (임시)
 	mapData.push_back(vector<vector<int>>()); // 11 (임시)
 	mapid = 6;
+
+
 	mapData.push_back(Map6);
 	mapData.push_back(Map5);
 	mapData.push_back(Box_Quiz_Map5_1);
@@ -105,6 +107,7 @@ void MapManager::SetMap(vector<vector<int>> p) {
 	p.swap(mapcpy);
 	p.clear();
 }
+
 void MapManager::remap() {
 	mapcpy = mapData[mapid];
 }
