@@ -22,6 +22,8 @@ void InputManager::Input() {
             playerMove.right();
             playerMove.moveTimer = 0;
         }
+        if (playerMove.GetPos().X == playerMove.NPCPos.X && playerMove.GetPos().Y == playerMove.NPCPos.Y)
+            GameOver::GAMEOVERPrint();
     }
 
     for (int i = 0x31; i <= 0x39; i++)

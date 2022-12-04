@@ -2,6 +2,7 @@
 #include<windows.h>
 #include "PlayerMove.hpp"
 #include "Timer.hpp"
+#include "GameOver.h"
 using namespace std;
 /*
 가상 키 코드

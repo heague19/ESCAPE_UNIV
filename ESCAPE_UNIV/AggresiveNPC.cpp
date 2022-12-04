@@ -28,7 +28,10 @@ void AggresiveNPC::NPCMove(){
 	if (moveTimer < moveRate)return;
 	moveTimer = 0.0;
 	COORD nextPos = NPCPathFind();
-	if(!NPCDetectCollision(nextPos))return;
+	if (!NPCDetectCollision(nextPos)) {
+		GameOver::GAMEOVERPrint();
+		return;
+	}
 	DeleteNPC();
 	pos = nextPos;
 	playerMove.NPCPos = pos;
@@ -75,6 +78,7 @@ COORD AggresiveNPC::NPCPathFind() {
 	return pos;
 }
 bool AggresiveNPC::NPCDetectCollision(COORD nextPos) {
+	if (nextPos.X == playerMove.GetPos().X && nextPos.Y == playerMove.GetPos().Y)return false;
 	return true;
 }
 bool AggresiveNPC::IsActive() {

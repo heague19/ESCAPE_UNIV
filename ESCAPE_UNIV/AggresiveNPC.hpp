@@ -7,6 +7,7 @@
 #include "PlayerMove.hpp"
 #include "Timer.hpp"
 #include "PartPos.hpp"
+#include "GameOver.h"
 using namespace std;
 #define N 50
 class AggresiveNPC

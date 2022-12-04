@@ -181,5 +181,14 @@
     <ClInclude Include="Map_6_floor.h">
       <Filter>소스 파일\MapManger\Map</Filter>
     </ClInclude>
+    <ClInclude Include="Quize_Tool.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
