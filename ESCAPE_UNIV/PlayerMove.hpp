@@ -35,7 +35,7 @@ public:
     //void Move();
     //플레이어 좌표상 위치 반환
     COORD GetPos();
-    int ItemGetChecker();
+    int ItemGetChecker(int, int);
     int MoveBox(int,int,Trans); //박스 밀기
 
 };
