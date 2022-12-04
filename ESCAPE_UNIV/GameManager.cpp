@@ -25,7 +25,7 @@ void GameManager::MainLoop() {
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
 	//itemManager.GetItem(2);
-	INTROPrint();
+	//INTROPrint();
 
 	while (true) {
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
