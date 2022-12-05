@@ -4,7 +4,7 @@
 PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
     :Map(mapManager),itemmanager(itemManager)
 {
-    pos.X = 10; pos.Y = 10; //ÄÜ¼Ö ÁÂÇ¥
+    pos.X = 26; pos.Y = 10; //ÄÜ¼Ö ÁÂÇ¥
     pox.X = pos.X - MAP_ORIGIN_X / 2;
     pox.Y = pos.Y - MAP_ORIGIN_Y;
     console.SetCurrentCursorPos(pox.X, pox.Y);
