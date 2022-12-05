@@ -57,6 +57,8 @@ void InputManager::Input() {
         BoxUI Item_List(ITEM_LIST_WIDTH, ITEM_LIST_HEIGHT, ITEM_LIST_ORIGIN_X + 2, ITEM_LIST_ORIGIN_Y);
         vector<string> datas;
         for (int i = 0; i < itemSize; i++)datas.push_back(itemManager.items[i].name);
+
+
         while (!flag_i)
         {
             //인벤토리 접근 종료

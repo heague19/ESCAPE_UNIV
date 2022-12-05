@@ -21,7 +21,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(vector<vector<int>>()); // 11 (юс╫ц)
 	mapid = 0;
 	mapid = 6;
-
+	mapcpy = mapData[mapid];
 	/*
 	mapData.push_back(Map6);
 	mapData.push_back(Map5);
