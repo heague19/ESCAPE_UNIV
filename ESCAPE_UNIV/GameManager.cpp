@@ -6,9 +6,7 @@ GameManager& GameManager::Instance() {
 	return instance;
 }
 GameManager::GameManager()
-	:aggresiveNPC(mapManager,playermove,timer)
-	, itemManager(inventory),playermove(mapManager,itemManager),mapManager(itemManager)
-	,inputManager(playermove,timer,mapManager,itemManager)
+	:aggresiveNPC(mapManager, playermove, timer), itemManager(inventory), playermove(mapManager, itemManager), mapManager(itemManager), inputManager(playermove, timer, mapManager, itemManager,inventory)
 {
 	mapManager.ChangeMap(mapManager.mapid);
 }

@@ -22,7 +22,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapid = 0;
 	mapid = 6;
 
-
+	/*
 	mapData.push_back(Map6);
 	mapData.push_back(Map5);
 	mapData.push_back(Box_Quiz_Map5_1);
@@ -30,6 +30,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map5_2_Bottom);
 	mapData.push_back(Map5_4);
 	mapcpy = mapData[mapid];
+	*/
 }
 int MapManager::GetMapIdByRoomNumber(int roomNumber) { // 열쇠가 필요한 문이면 -1 반환
 	int loc = -1;

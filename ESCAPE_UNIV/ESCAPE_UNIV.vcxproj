@@ -173,6 +173,7 @@
     <ClInclude Include="Cursor_Function.h" />
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="GameTool.hpp" />
+    <ClInclude Include="InputManager.hpp" />
     <ClInclude Include="Inventory.hpp" />
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="ItemManager.hpp" />

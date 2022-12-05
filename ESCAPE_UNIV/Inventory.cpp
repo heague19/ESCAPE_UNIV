@@ -39,7 +39,6 @@ void Inventory::Constructor_Explainer()
     EXIT.Print("EXIT");
     InitCursorColor();
 }
-
 void Inventory::Print_Item_List(BoxUI &List,vector<string> Item)
 {
     Console console;
@@ -48,11 +47,33 @@ void Inventory::Print_Item_List(BoxUI &List,vector<string> Item)
         return;
     else
     {
+        
         for (int i = 0; i < Item.size(); i++)
         {
             console.SetCurrentCursorPos(List.SInit_X + x, List.SInit_Y + y);
-            cout << i+1<<". " <<Item[i];// Info를 알고 있다는 가정하에 각 네모 박스안 리스트 출력
+            cout << i+1<<". " <<Item[i]<<"        ";// Info를 알고 있다는 가정하에 각 네모 박스안 리스트 출력
             y++;
+        }
+        console.SetCurrentCursorPos(List.SInit_X + x, List.SInit_Y + y);
+        cout << "                   ";
+    }
+}
+void Inventory::Print_Item_List(BoxUI& List, vector<string> Item, int select1, int select2)
+{
+    Console console;
+    int x = 1, y = 1;
+    if (Item.empty()) // 벡터 존재 확인 여부 함수
+        return;
+    else
+    {
+        for (int i = 0; i < Item.size(); i++)
+        {
+            console.SetCurrentCursorPos(List.SInit_X + x, List.SInit_Y + y);
+            if (select1 == i)SelectCursorColor(GREEN);
+            if (select2 == i)SelectCursorColor(RED);
+            cout << i + 1 << ". " << Item[i];// Info를 알고 있다는 가정하에 각 네모 박스안 리스트 출력
+            y++;
+            InitCursorColor();
         }
     }
 }

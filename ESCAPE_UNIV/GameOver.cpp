@@ -1,6 +1,10 @@
 #include "GameOver.h"
-void GAMEOVERPrint()
+GameOver::GameOver() {
+}
+void GameOver::GAMEOVERPrint()
 {
+	flag = true;
+	//GameOver::flag = true;
 	BoxUI GAMEOVER(72, 36, 2, 1);
 	SelectCursorColor(RED);
 	GAMEOVER.ConstructorBox();
@@ -26,3 +30,4 @@ void GAMEOVERPrint()
 	ENDING_EXIT.ConstructorBox();
 	ENDING_EXIT.Print("\n\n\             종료하기");
 }
+bool GameOver::flag = false;
