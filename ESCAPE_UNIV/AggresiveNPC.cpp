@@ -93,6 +93,23 @@ void AggresiveNPC::SetActive(bool active) {
 	//비활성화할 경우
 	else if(this->active) {
 		this->active = active;
+		pos.X = -1;
+		pos.Y = -1;
+		DeleteNPC();
+	}
+}
+void AggresiveNPC::SetActive(bool active,COORD startPos) {
+	//활성화할 경우
+	if (active) {
+		this->active = active;
+		pos = startPos;
+		ShowNPC();
+	}
+	//비활성화할 경우
+	else if (this->active) {
+		this->active = active;
+		pos.X = -1;
+		pos.Y = -1;
 		DeleteNPC();
 	}
 }

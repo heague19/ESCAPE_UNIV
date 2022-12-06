@@ -43,5 +43,6 @@ public:
 
 	bool IsActive();
 	void SetActive(bool active);
+	void SetActive(bool active, COORD startPos);
 };
 
