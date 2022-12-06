@@ -88,14 +88,16 @@ void AggresiveNPC::SetActive(bool active) {
 	//활성화할 경우
 	if (active) {
 		this->active = active;
+		playerMove.NPCPos = pos;
 		ShowNPC();
 	}
 	//비활성화할 경우
-	else if(this->active) {
+	else{
+		DeleteNPC();
 		this->active = active;
 		pos.X = -1;
 		pos.Y = -1;
-		DeleteNPC();
+		playerMove.NPCPos = pos;
 	}
 }
 void AggresiveNPC::SetActive(bool active,COORD startPos) {
@@ -103,13 +105,15 @@ void AggresiveNPC::SetActive(bool active,COORD startPos) {
 	if (active) {
 		this->active = active;
 		pos = startPos;
+		playerMove.NPCPos = pos;
 		ShowNPC();
 	}
 	//비활성화할 경우
-	else if (this->active) {
+	else{
+		DeleteNPC();
 		this->active = active;
 		pos.X = -1;
 		pos.Y = -1;
-		DeleteNPC();
+		playerMove.NPCPos = pos;
 	}
 }
