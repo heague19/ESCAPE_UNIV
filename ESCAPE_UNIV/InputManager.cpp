@@ -22,7 +22,7 @@ void InputManager::Input() {
             playerMove.right();
             playerMove.moveTimer = 0;
         }
-        if (playerMove.GetPos().X == playerMove.NPCPos.X && playerMove.GetPos().Y == playerMove.NPCPos.Y)
+        if (playerMove.GetPos().X == playerMove.NPCPos->X && playerMove.GetPos().Y == playerMove.NPCPos->Y)
             GameOver::GAMEOVERPrint();
     }
 
