@@ -7,7 +7,7 @@ AggresiveNPC::AggresiveNPC(MapManager& mapManager, PlayerMove& playerMove, Timer
 	for (int i = 0; i < N; i++)check[i].resize(N);
 	from.resize(N);
 	for (int i = 0; i < N; i++)from[i].resize(N);
-	playerMove.NPCPos = pos;
+	playerMove.NPCPos = &pos;
 }
 void AggresiveNPC::ShowNPC() {
 	if (!active)return;
@@ -34,7 +34,7 @@ void AggresiveNPC::NPCMove(){
 	}
 	DeleteNPC();
 	pos = nextPos;
-	playerMove.NPCPos = pos;
+	//playerMove.NPCPos = pos;
 	ShowNPC();
 }
 COORD AggresiveNPC::NPCPathFind() {
@@ -88,7 +88,7 @@ void AggresiveNPC::SetActive(bool active) {
 	//활성화할 경우
 	if (active) {
 		this->active = active;
-		playerMove.NPCPos = pos;
+		//playerMove.NPCPos = pos;
 		ShowNPC();
 	}
 	//비활성화할 경우
@@ -97,7 +97,7 @@ void AggresiveNPC::SetActive(bool active) {
 		this->active = active;
 		pos.X = -1;
 		pos.Y = -1;
-		playerMove.NPCPos = pos;
+		//playerMove.NPCPos = pos;
 	}
 }
 void AggresiveNPC::SetActive(bool active,COORD startPos) {
@@ -105,7 +105,7 @@ void AggresiveNPC::SetActive(bool active,COORD startPos) {
 	if (active) {
 		this->active = active;
 		pos = startPos;
-		playerMove.NPCPos = pos;
+		//playerMove.NPCPos = pos;
 		ShowNPC();
 	}
 	//비활성화할 경우
@@ -114,6 +114,6 @@ void AggresiveNPC::SetActive(bool active,COORD startPos) {
 		this->active = active;
 		pos.X = -1;
 		pos.Y = -1;
-		playerMove.NPCPos = pos;
+		//playerMove.NPCPos = pos;
 	}
 }

@@ -188,7 +188,7 @@ int PlayerMove::MoveBox(int y, int x, Trans m) {
         if (mapdata[BOX_POS.X][BOX_POS.Y]!=0  || BOX_POS.X >= height-1 || BOX_POS.X < 1 || BOX_POS.Y >= width-1|| BOX_POS.Y < 1 /* || (BOX_POS.X != npc.NPCPathFind().X && BOX_POS.Y != npc.NPCPathFind().Y)*/) {  //박스가 이동 가능한지 검사
             return 0;
         }
-        if (BOX_POS.Y == NPCPos.X&&BOX_POS.X==NPCPos.Y)return 0;
+        if (BOX_POS.Y == NPCPos->X&&BOX_POS.X==NPCPos->Y)return 0;
         mapdata[BOX_POS.X][BOX_POS.Y] = 100; //박스 위치 변경
         mapdata[x][y] = 0;
         Map.SetMap(mapdata);

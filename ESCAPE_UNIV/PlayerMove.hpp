@@ -23,7 +23,7 @@ public:
     //이동 주기와 이동주기 체크용 타이머
     const double moveRate = 0.2;
     double moveTimer = 0.0;
-    COORD NPCPos;
+    COORD* NPCPos;
     PlayerMove(MapManager&,ItemManager&);
     void down();
     void up();
