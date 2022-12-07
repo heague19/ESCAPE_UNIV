@@ -38,5 +38,5 @@ public:
     COORD GetPos();
     int ItemGetChecker(int, int);
     int MoveBox(int,int,Trans); //박스 밀기
-
+    void Setpos(int, int);
 };

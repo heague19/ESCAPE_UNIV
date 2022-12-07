@@ -4,11 +4,7 @@
 PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
     :Map(mapManager),itemmanager(itemManager)
 {
-    pos.X = 26; pos.Y = 10; //콘솔 좌표
-    pox.X = pos.X - MAP_ORIGIN_X / 2;
-    pox.Y = pos.Y - MAP_ORIGIN_Y;
-    console.SetCurrentCursorPos(pox.X, pox.Y);
-    ShowPlayer();
+    Setpos(6, 10);
 }
 
 int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 방향
@@ -20,8 +16,11 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         return 1;
     }
     else if ((objectid - 1) / 100 >= 2) {
+        // 문 충돌 검사 부분
+        //가로문은 200이고 새로 문은 300대이기 때문에 200이면 그대로 가고 300이면 100을 추가로 더 빼준다.
         int id = objectid - 200;
         id = id < 100 ? id : id - 100;
+        
         int beforemapId = Map.mapid;
         int mapId = Map.GetMapIdByRoomNumber(objectid % 100); // 다음 맵 아이디
         if (mapId >= 0) {
@@ -199,4 +198,12 @@ int PlayerMove::MoveBox(int y, int x, Trans m) {
     else {
         return 0;
     }
+}
+
+void PlayerMove::Setpos(int x, int y) {
+    pos.X = x; pos.Y = y; //콘솔 좌표
+    pox.X = pos.X - MAP_ORIGIN_X / 2;
+    pox.Y = pos.Y - MAP_ORIGIN_Y;
+    console.SetCurrentCursorPos(pox.X, pox.Y);
+    ShowPlayer();
 }
