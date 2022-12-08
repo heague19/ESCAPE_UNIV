@@ -24,7 +24,7 @@ void GameManager::MainLoop() {
 	aggresiveNPC.SetActive(false);
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
-	//itemManager.GetItem(2);
+	itemManager.GetItem(1);
 	itemManager.GetItem(3);
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
