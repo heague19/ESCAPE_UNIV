@@ -32,9 +32,15 @@ void Inventory::Constructor_Explainer()
     BoxUI ExplainerBox(EXPLAINER_WIDTH,EXPLAINER_HEIGHT,EXPLAINER_ORIGIN_X,EXPLAINER_ORIGIN_Y);
     ExplainerBox.ConstructorBox();
     ExplainerBox.Print("W : ก่ A : ก็ S : ก้ D : กๆ");
+    Constructor_Exit(false);
+}
+void Inventory::Constructor_Exit(bool flag) {
+    if(!flag)
+        SelectCursorColor(DARK_BLUE);
+    else
+        SelectCursorColor(GREEN);
 
-    SelectCursorColor(DARK_BLUE);
-    BoxUI EXIT(EXIT_WIDTH/2, EXIT_HEIGHT/2, EXIT_ORIGIN_X, EXIT_ORIGIN_Y+2);
+    BoxUI EXIT(EXIT_WIDTH / 2, EXIT_HEIGHT / 2, EXIT_ORIGIN_X, EXIT_ORIGIN_Y + 2);
     EXIT.ConstructorBox();
     EXIT.Print("EXIT");
     InitCursorColor();

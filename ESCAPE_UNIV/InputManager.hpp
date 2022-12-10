@@ -4,6 +4,7 @@
 #include "Timer.hpp"
 #include "GameOver.h"
 #include "Inventory.hpp"
+#include <stdlib.h>
 using namespace std;
 /*
 가상 키 코드
@@ -25,6 +26,7 @@ private:
 	Inventory& inventory;
 	bool flag_p = false;
 	bool flag_i = false;
+	bool flag_esc = false;
 public:
 	InputManager(PlayerMove& playerMove,Timer& timer, MapManager& mapManager, ItemManager& itemManager, Inventory& inventory);
 	void Input();

@@ -17,6 +17,6 @@ public:
 	void Print_Item_List(BoxUI&, vector<string>, int, int);
 	
 	void Constructor_Explainer();
-
+	void Constructor_Exit(bool flag);
 };
 
