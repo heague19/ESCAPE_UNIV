@@ -1,6 +1,6 @@
 #include "InputManager.hpp"
-InputManager::InputManager(PlayerMove& playerMove, Timer& timer, MapManager& mapManager, ItemManager& itemManager, Inventory& inventory)
-    :playerMove(playerMove), timer(timer), mapManager(mapManager), itemManager(itemManager), inventory(inventory) {
+InputManager::InputManager(PlayerMove& playerMove,	 Timer& timer,	 MapManager& mapManager,	 ItemManager& itemManager,	 Inventory& inventory)
+    :playerMove(playerMove),	 timer(timer),	 mapManager(mapManager),	 itemManager(itemManager),	 inventory(inventory) {
 
 }
 void InputManager::Input() {
@@ -60,13 +60,13 @@ void InputManager::Input() {
         //선택 트리거
         bool flag_z=false;
         //선택된 아이템
-        int select1 = 0, select2=-1;
+        int select1 = 0,	 select2=-1;
         //입력 타이머
         double inputRate = 0.3;
         double inputTimer = inputRate;
         //아이템 출력용
         int itemSize = itemManager.items.size();
-        BoxUI Item_List(ITEM_LIST_WIDTH, ITEM_LIST_HEIGHT, ITEM_LIST_ORIGIN_X + 2, ITEM_LIST_ORIGIN_Y);
+        BoxUI Item_List(ITEM_LIST_WIDTH,	 ITEM_LIST_HEIGHT,	 ITEM_LIST_ORIGIN_X + 2,	 ITEM_LIST_ORIGIN_Y);
         vector<string> datas;
         for (int i = 0; i < itemSize; i++)datas.push_back(itemManager.items[i].name);
 
@@ -113,10 +113,10 @@ void InputManager::Input() {
                                 break;
                             }
                             else {
-                                itemManager.CombineItem(itemManager.items[select1].id,itemManager.items[select2].id);
+                                itemManager.CombineItem(itemManager.items[select1].id,	itemManager.items[select2].id);
                                 datas.clear();
                                 for (int i = 0; i < itemManager.items.size(); i++)datas.push_back(itemManager.items[i].name);
-                                inventory.Print_Item_List(Item_List, datas);
+                                inventory.Print_Item_List(Item_List,	 datas);
                                 return;
                             }
                         }
@@ -127,11 +127,11 @@ void InputManager::Input() {
             }
             else inputTimer += timer.GetDeltaTime();
             timer.Update();
-            inventory.Print_Item_List(Item_List, datas,select1,select2);
+            inventory.Print_Item_List(Item_List,	 datas,	select1,	select2);
 
         }
 
-        inventory.Print_Item_List(Item_List, datas);
+        inventory.Print_Item_List(Item_List,	 datas);
         flag_i = true;
     }
     else flag_i = false;
