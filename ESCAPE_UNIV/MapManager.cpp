@@ -1,4 +1,5 @@
 #include "MapManager.hpp"
+#include "Map_2_floor.h"
 #include "Map_3_floor.h"
 #include "Map_4_floor.h"
 #include "Map_5_floor.h"
@@ -31,10 +32,10 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map3_2);
 	
 	mapData.push_back(Map3_3);
-	
+	mapData.push_back(Map2);
 	
 	mapid = 0;
-	mapcpy = mapData[mapid];
+	mapcpy = mapData[16];
 	
 }
 int MapManager::GetMapIdByRoomNumber(int roomNumber) { // 열쇠가 필요한 문이면 -1 반환
@@ -99,7 +100,7 @@ void MapManager::DisplayMap() {
 				break;
 			case 777:
 				Colorset(black, green);
-				printf("ㅁ");
+				printf("♣");
 				Colorset(black, white);
 			default:
 				break;

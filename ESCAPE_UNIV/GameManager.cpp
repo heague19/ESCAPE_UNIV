@@ -28,6 +28,7 @@ void GameManager::MainLoop() {
 	itemManager.GetItem(3);
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
+	itemManager.GetItem(4);
 	//INTROPrint();
 	
 	while (true) {
