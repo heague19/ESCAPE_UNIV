@@ -11,6 +11,9 @@ class MapManager {
 	std::vector<std::vector<std::vector<int>>> mapData; // 모든 맵의 정모를 담아 놓는 3차원 vector
 	vector<vector<int>> mapcpy;
 	vector<int> roomId;
+	typedef enum ColorKinds {      //색깔지정
+		black, blue, green, skyBlue, red, pink, Orange, white, gray, lightBlue, brightGreen, sky, brightRed, brightPink, brightYellow, brightWhite
+	}ColorKinds;
 public:
 	int mapid;
 	MapManager(ItemManager &item);
@@ -26,4 +29,5 @@ public:
 	void SetMap(vector<vector<int>>);
 	void ClearPos(COORD pos);
 	void remap();
+	void Colorset(int , int);
 };

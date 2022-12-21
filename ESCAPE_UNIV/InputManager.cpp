@@ -34,7 +34,7 @@ void InputManager::Input() {
             playerMove.right();
             playerMove.moveTimer = 0;
         }
-        if (playerMove.GetPos().X == playerMove.NPCPos.X && playerMove.GetPos().Y == playerMove.NPCPos.Y)
+        if (playerMove.GetPos().X == playerMove.NPCPos->X && playerMove.GetPos().Y == playerMove.NPCPos->Y)
             GameOver::GAMEOVERPrint();
     }
 
@@ -136,4 +136,21 @@ void InputManager::Input() {
     }
     else flag_i = false;
 
+    if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
+        if (!flag_esc) {
+            int flag = 0;
+            inventory.Constructor_Exit(true);
+            while (1)
+            {
+                if (!(GetAsyncKeyState(VK_ESCAPE) & 0x8000) && flag == 0)flag = 1;
+                if (flag == 1 && (GetAsyncKeyState(VK_ESCAPE) & 0x8000)) {
+                    inventory.Constructor_Exit(false);
+                    break;
+                }
+                if (GetAsyncKeyState(VK_Z) & 0x8000 || GetAsyncKeyState(VK_SPACE) & 0x8000 || GetAsyncKeyState(VK_RETURN) & 0x8000)exit(0);
+            }
+        }
+        flag_esc = true;
+    }
+    else flag_esc = false;
 }

@@ -72,7 +72,9 @@ void MapManager::DisplayMap() {
 			console.SetCurrentCursorPos(curPos.X + x * 2, curPos.Y + y);
 			switch (mapcpy[y][x]) {
 			case 99:
-				printf("■ ");
+				Colorset(white, gray);
+				printf("■");
+				Colorset(black, white);
 				break;
 			case 100: // 미는 박스
 				printf("▨ ");
@@ -81,8 +83,12 @@ void MapManager::DisplayMap() {
 				break;
 			}
 			if ((mapcpy[y][x] - 1) / 100 == 1) printf("ⓘ "); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
-			if ((mapcpy[y][x] - 1) / 100 == 2) printf("─ ");
-			if ((mapcpy[y][x] - 1) / 100 == 3) printf("│ ");
+			if ((mapcpy[y][x] - 1) / 100 == 2) {
+				Colorset( black, brightWhite);
+				printf("━ ");
+				Colorset(black, white);
+			}
+			if ((mapcpy[y][x] - 1) / 100 == 3) printf("┃ ");
 		}
 	}
 	console.SetCurrentCursorPos(curPos.X, curPos.Y);
@@ -130,4 +136,9 @@ void MapManager::SetMap(vector<vector<int>> p) {
 
 void MapManager::remap() {
 	mapcpy = mapData[mapid];
+}
+
+void MapManager::Colorset(int backColor, int textColor) {         //색 변환 함수
+	HANDLE Handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(Handle, (backColor << 4) + textColor);
 }

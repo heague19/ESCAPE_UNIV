@@ -25,12 +25,12 @@ private:
 	queue<COORD> bfs;
 	vector<vector<int>> check;
 	vector<vector<COORD>> from;
+	//현재 위치
+	COORD pos;
 	const int dx[4] = { 1,-1,0,0 };
 	const int dy[4] = { 0,0,1,-1 };
 public:
 	AggresiveNPC(MapManager& mapManager,PlayerMove& playerMove,Timer& timer);
-	//현재 위치
-	COORD pos;
 	//출력
 	void ShowNPC();
 	void DeleteNPC();
@@ -43,5 +43,6 @@ public:
 
 	bool IsActive();
 	void SetActive(bool active);
+	void SetActive(bool active, COORD startPos);
 };
 
