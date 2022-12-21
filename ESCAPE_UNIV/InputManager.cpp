@@ -12,7 +12,7 @@ void InputManager::Input() {
     }
     if (GetAsyncKeyState(VK_UP) & 0x8000)
     {
-        //flag_in--;
+     //   flag_in--;
     }
 
 

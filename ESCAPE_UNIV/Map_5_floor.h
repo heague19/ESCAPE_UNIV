@@ -44,7 +44,7 @@ vector<vector<int>> Box_Quiz_Map5_1 = {
 };
 
 
-vector<vector<int>> Ex;
+
 
 
 vector<vector<int>> Map5_2_Upper = {
