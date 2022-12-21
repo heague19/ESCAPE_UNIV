@@ -175,6 +175,7 @@
     <ClInclude Include="GameManager.hpp" />
     <ClInclude Include="GameTool.hpp" />
     <ClInclude Include="InputManager.hpp" />
+    <ClInclude Include="INTRO.hpp" />
     <ClInclude Include="Inventory.hpp" />
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="ItemManager.hpp" />

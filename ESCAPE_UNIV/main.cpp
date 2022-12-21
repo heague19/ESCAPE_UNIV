@@ -2,6 +2,7 @@
 #include "GameManager.hpp"
 #include "GameOver.h"
 #include "InputManager.hpp"
+#include "INTRO.h"
 
 using namespace std;
 int main() {
@@ -9,7 +10,8 @@ int main() {
     console.SetConsoleSize(150, 40);
     //InputManager main_input;
     
-    //INTRO::INTROPrint();
+    //INTRO intro;
+    //intro.INTROPrint();
 
         //if (INTRO::Iflag)
         //{

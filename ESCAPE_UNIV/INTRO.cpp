@@ -1,10 +1,10 @@
-#include "INTRO.h"
+#include "INTRO.hpp"
 
 INTRO::INTRO()
 {
 
 }
-void INTROPrint(int color)
+void INTRO::  INTROPrint()
 {
 	BoxUI INTRO(72, 36, 2, 1);
 	SelectCursorColor(DARK_SKY);

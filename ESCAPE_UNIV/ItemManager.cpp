@@ -34,7 +34,7 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(1,	 "5층열쇠",	 true));
 	itemData.push_back(Item(2,	 "4층쪽지",	 false,	 []() {ChatDialog::PrintMessage("테스트 텍스트"); }));
 	itemData.push_back(Item(3,	 "랜턴케이스",	 false,	 []() {ChatDialog::PrintMessage("랜턴의 케이스이다.\n내부는 비어있다."); }));
-	itemData.push_back(Item(4,	 "4층열쇠",	 true));
+	itemData.push_back(Item(4,	 "4층열쇠",	 false));
 	itemData.push_back(Item(5,	 "망치",	 false));
 	itemData.push_back(Item(6,	 "심지",	 false,	 []() {ChatDialog::PrintMessage("불을 붙일 수 있는 심지이다.\n그냥 사용하긴 위험할 것 같다."); }));
 	itemData.push_back(Item(7,	 "라이터",	 false));
@@ -65,7 +65,7 @@ bool ItemManager::CombineItem(int id1,	 int id2) {
 	if (!FindItem(id1) || !FindItem(id2) || id1 >= itemData.size() || id2 >= itemData.size()) {
 		ChatDialog::PrintMessage("이 둘은 합쳐지지 않을 것 같다.");
 		return false;
-	}
+	}	
 	auto data = combinedList.find(id1);
 	if (data != combinedList.end()&&data->second.first==id2) {
 		DeleteItem(id1);

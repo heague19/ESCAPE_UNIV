@@ -205,5 +205,11 @@
     <ClInclude Include="MapFloorUI.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Map_3_floor.h">
+      <Filter>소스 파일\MapManger\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="INTRO.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
