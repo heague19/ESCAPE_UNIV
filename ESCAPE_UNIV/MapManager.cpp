@@ -1,4 +1,4 @@
-#include "MapManager.hpp"
+ï»¿#include "MapManager.hpp"
 #include "Map_4_floor.h"
 #include "Map_5_floor.h"
 #include "Map_6_floor.h"
@@ -7,29 +7,29 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	roomId = { 60, 50, 51, 52, 53, 54, 40, 41, 42, 43, 44, 45 };
 	mapData.push_back(Map6); // 0
 	mapData.push_back(Map5); // 1
-	// 5Ãş ¹æ 4°³ (2 ~ 5)
+	// 5ì¸µ ë°© 4ê°œ (2 ~ 5)
 	mapData.push_back(Box_Quiz_Map5_1); // 2
-	mapData.push_back(Map5_2_Bottom); // 3 (ÀÓ½Ã)
-	mapData.push_back(Map5_2_Upper); // 4 (ÀÓ½Ã)
-	mapData.push_back(Map5_4); // 5 (ÀÓ½Ã)
+	mapData.push_back(Map5_2_Bottom); // 3 (ì„ì‹œ)
+	mapData.push_back(Map5_2_Upper); // 4 (ì„ì‹œ)
+	mapData.push_back(Map5_4); // 5 (ì„ì‹œ)
 	mapData.push_back(Map4); // 6
-	// 4Ãş ¹æ 5°³ (7 ~ 11)
+	// 4ì¸µ ë°© 5ê°œ (7 ~ 11)
 	mapData.push_back(Map4_Room1); // 7
-	mapData.push_back(vector<vector<int>>()); // 8 (ÀÓ½Ã)
-	mapData.push_back(vector<vector<int>>()); // 9 (ÀÓ½Ã)
-	mapData.push_back(vector<vector<int>>()); // 10 (ÀÓ½Ã)
-	mapData.push_back(vector<vector<int>>()); // 11 (ÀÓ½Ã)
+	mapData.push_back(vector<vector<int>>()); // 8 (ì„ì‹œ)
+	mapData.push_back(vector<vector<int>>()); // 9 (ì„ì‹œ)
+	mapData.push_back(vector<vector<int>>()); // 10 (ì„ì‹œ)
+	mapData.push_back(vector<vector<int>>()); // 11 (ì„ì‹œ)
 	mapid = 0;
 	mapcpy = mapData[mapid];
 }
-int MapManager::GetMapIdByRoomNumber(int roomNumber) { // ¿­¼è°¡ ÇÊ¿äÇÑ ¹®ÀÌ¸é -1 ¹İÈ¯
+int MapManager::GetMapIdByRoomNumber(int roomNumber) { // ì—´ì‡ ê°€ í•„ìš”í•œ ë¬¸ì´ë©´ -1 ë°˜í™˜
 	int loc = -1;
 	for (int i = 0; i < roomId.size(); i++) {
 		if (roomId[i] == roomNumber) loc = i;
 	}
 	return loc;
 }
-COORD MapManager::CalculateStartLocation(int before, int after, int dy, int dx) { // ¸Ê ¾ÆÀÌµğ Àü°ú ÈÄ°¡ ÁÖ¾îÁö¸é ´ÙÀ½ ½ÃÀÛ À§Ä¡ ¹İÈ¯
+COORD MapManager::CalculateStartLocation(int before, int after, int dy, int dx) { // ë§µ ì•„ì´ë”” ì „ê³¼ í›„ê°€ ì£¼ì–´ì§€ë©´ ë‹¤ìŒ ì‹œì‘ ìœ„ì¹˜ ë°˜í™˜
 	auto& maptmp = mapData[after];
 	for (int i = 0; i < maptmp.size(); i++) {
 		for (int j = 0; j < maptmp[i].size(); j++) {
@@ -60,7 +60,7 @@ void MapManager::ChangeMap(int mapid) {
 }
 void MapManager::DisplayMap() {
 	MapFloorUI::Show(mapid);
-	console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y); // ¸Ê ½ÃÀÛ ÁöÁ¡
+	console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y); // ë§µ ì‹œì‘ ì§€ì 
 	COORD curPos = console.GetCurrentCursorPos();
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
@@ -68,28 +68,28 @@ void MapManager::DisplayMap() {
 			switch (mapcpy[y][x]) {
 			case 99:
 				Colorset(white, gray);
-				printf("¡á");
+				printf("â– ");
 				Colorset(black, white);
 				break;
-			case 100: // ¹Ì´Â ¹Ú½º
-				Colorset(black, Orange);
-				printf("¢É ");
+			case 100: // ë¯¸ëŠ” ë°•ìŠ¤
+				Colorset(black, 7);
+				printf("\033[0;33mâ–¨ ");
 				Colorset(black, white);
 				break;
 			case 777:
 				Colorset(black, green);
-				printf("¤±");
+				printf("â™£");
 				Colorset(black, white);
 			default:
 				break;
 			}
-			if ((mapcpy[y][x] - 1) / 100 == 1) printf("¨Õ "); // 101~150±îÁö °¢°¢ ¾ÆÀÌÅÛ 1¹øºÎÅÍ 50¹ø±îÁö ÇØ´çµÊ
+			if ((mapcpy[y][x] - 1) / 100 == 1) printf("â“˜ "); // 101~150ê¹Œì§€ ê°ê° ì•„ì´í…œ 1ë²ˆë¶€í„° 50ë²ˆê¹Œì§€ í•´ë‹¹ë¨
 			if ((mapcpy[y][x] - 1) / 100 == 2) {
 				Colorset( black, brightWhite);
-				printf("¦¬ ");
+				printf("â” ");
 				Colorset(black, white);
 			}
-			if ((mapcpy[y][x] - 1) / 100 == 3) printf("¦­ ");
+			if ((mapcpy[y][x] - 1) / 100 == 3) printf("â”ƒ ");
 		}
 	}
 	console.SetCurrentCursorPos(curPos.X, curPos.Y);
@@ -139,7 +139,7 @@ void MapManager::remap() {
 	mapcpy = mapData[mapid];
 }
 
-void MapManager::Colorset(int backColor, int textColor) {         //»ö º¯È¯ ÇÔ¼ö
+void MapManager::Colorset(int backColor, int textColor) {         //ìƒ‰ ë³€í™˜ í•¨ìˆ˜
 	HANDLE Handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(Handle, (backColor << 4) + textColor);
 }
