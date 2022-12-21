@@ -28,8 +28,15 @@ void GameManager::MainLoop() {
 	itemManager.GetItem(3);
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
+	itemManager.GetItem(4);
 	//INTROPrint();
-	
+	//경비아저씨 생성(맨 마지막 인자가 활성화 여부)
+	SecurityNPC securityNPC1(2,3,playermove,mapManager,true);
+	//경비아저씨 패턴 추가(저장된 패턴 순서로 방향 전환)
+	securityNPC1.InsertPattern(SecurityNPC::DOWN);
+	securityNPC1.InsertPattern(SecurityNPC::UP);
+	//경비아저씨 비활성화
+	//securityNPC1.SetActive(false);
 	while (true) {
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();
@@ -38,6 +45,7 @@ void GameManager::MainLoop() {
 		timer.Update();
 		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
 		aggresiveNPC.NPCMove();
+		securityNPC1.Update();
 		if (GameOver::flag)return;
 		/*
 		if (Detect == 0) // 이렇게 하면 어떨까 생각해서 만들어 보았습니다. 
