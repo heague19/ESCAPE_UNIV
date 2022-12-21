@@ -1,5 +1,5 @@
 #include "Timer.hpp"
-Timer::Timer():deltaTime(0.0),curTime()
+Timer::Timer():curTime()
 {
 
     QueryPerformanceFrequency((LARGE_INTEGER*)&periodFrequency);
@@ -14,7 +14,7 @@ Timer::Timer():deltaTime(0.0),curTime()
     // 컴퓨터는 나눗셈연산보다 곱셈연산이 더 빠르기때문에 매 프레임마다 연산을 해야할경우 
     //역수로 만들어놓고 실제 계산때 곱셈하게 만들어놓는게 좋다.
 }
-
+double Timer::deltaTime = 0.0;
 
 void Timer::Update()
 {
