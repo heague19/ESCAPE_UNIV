@@ -93,9 +93,14 @@ void MapManager::DisplayMap() {
 				Colorset(black,	 white);
 				break;
 			case 100: // 미는 박스
+				Colorset(black, Orange);
 				printf("▨ ");
+				Colorset(black, white);
 				break;
-			
+			case 777:
+				Colorset(black, green);
+				printf("ㅁ");
+				Colorset(black, white);
 			default:
 				break;
 			}
