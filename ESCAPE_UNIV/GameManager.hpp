@@ -24,4 +24,5 @@ public:
 	AggresiveNPC aggresiveNPC;
 	Timer timer;
 	InputManager inputManager;
+	MapFloorUI mapFloorUI;
 };

@@ -155,6 +155,7 @@
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapFloorUI.cpp" />
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="PlayerMove.cpp" />
     <ClCompile Include="PrintContent.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="Inventory.hpp" />
     <ClInclude Include="Item.hpp" />
     <ClInclude Include="ItemManager.hpp" />
+    <ClInclude Include="MapFloorUI.hpp" />
     <ClInclude Include="MapManager.hpp" />
     <ClInclude Include="Map_6_floor.h" />
     <ClInclude Include="PartPos.hpp" />

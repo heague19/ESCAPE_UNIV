@@ -108,6 +108,9 @@
     <ClCompile Include="INTRO.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="MapFloorUI.cpp">
+      <Filter>소스 파일\MapManger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc">
@@ -191,6 +194,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MapFloorUI.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
