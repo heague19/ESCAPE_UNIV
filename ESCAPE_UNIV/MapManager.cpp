@@ -35,7 +35,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map2);
 	
 	mapid = 0;
-	mapcpy = mapData[16];
+	mapcpy = mapData[mapid];
 	
 }
 int MapManager::GetMapIdByRoomNumber(int roomNumber) { // 열쇠가 필요한 문이면 -1 반환
