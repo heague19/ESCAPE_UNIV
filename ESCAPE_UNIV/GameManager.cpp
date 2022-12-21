@@ -29,7 +29,6 @@ void GameManager::MainLoop() {
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
 	//INTROPrint();
-
 	
 	while (true) {
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);

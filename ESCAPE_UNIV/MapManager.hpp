@@ -3,6 +3,7 @@
 #include <vector>
 #include "PartPos.hpp"
 #include "ItemManager.hpp"
+#include "MapFloorUI.hpp"
 
 class MapManager {
 	Console console;

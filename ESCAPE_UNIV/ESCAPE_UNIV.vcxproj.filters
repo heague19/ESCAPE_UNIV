@@ -114,6 +114,9 @@
     <ClCompile Include="Timer.cpp">
       <Filter>소스 파일\GameManger</Filter>
     </ClCompile>
+    <ClCompile Include="MapFloorUI.cpp">
+      <Filter>소스 파일\MapManger</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc">
@@ -199,8 +202,8 @@
     <ClInclude Include="InputManager.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Map_3_floor.h">
-      <Filter>소스 파일\MapManger\Map</Filter>
+    <ClInclude Include="MapFloorUI.hpp">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

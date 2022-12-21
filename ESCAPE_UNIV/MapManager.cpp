@@ -50,6 +50,7 @@ COORD MapManager::CalculateStartLocation(int before, int after, int dy, int dx) 
 	}
 }
 void MapManager::ChangeMap(int mapid) {
+	MapFloorUI::Show(mapid);
 	console.SetCurrentCursorPos(4, 2);
 	COORD curPos = console.GetCurrentCursorPos();
 	for (int y = 0; y < height; y++) {
@@ -65,6 +66,7 @@ void MapManager::ChangeMap(int mapid) {
 	remap(); DisplayMap();
 }
 void MapManager::DisplayMap() {
+	MapFloorUI::Show(mapid);
 	console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y); // ¸Ê ½ÃÀÛ ÁöÁ¡
 	COORD curPos = console.GetCurrentCursorPos();
 	for (int y = 0; y < height; y++) {
