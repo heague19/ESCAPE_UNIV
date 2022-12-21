@@ -1,17 +1,22 @@
 #include "MapManager.hpp"
+#include "Map_3_floor.h"
 #include "Map_4_floor.h"
 #include "Map_5_floor.h"
 #include "Map_6_floor.h"
+
 using namespace std;
 MapManager::MapManager(ItemManager &item):item(item) {
-	roomId = { 60, 50, 51, 52, 53, 54, 40, 41, 42, 43, 44, 45 };
+	roomId = { 60, 50, 51, 52, 53, 54,55, 40, 41, 42, 43, 44, 45 };
 	mapData.push_back(Map6); // 0
+	
 	mapData.push_back(Map5); // 1
 	// 5층 방 4개 (2 ~ 5)
 	mapData.push_back(Box_Quiz_Map5_1); // 2
 	mapData.push_back(Map5_2_Bottom); // 3 (임시)
 	mapData.push_back(Map5_2_Upper); // 4 (임시)
+	//mapData.push_back(Map5_)
 	mapData.push_back(Map5_4); // 5 (임시)
+	
 	mapData.push_back(Map4); // 6
 	// 4층 방 5개 (7 ~ 11)
 	mapData.push_back(Map4_Room1); // 7
@@ -19,9 +24,10 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(vector<vector<int>>()); // 9 (임시)
 	mapData.push_back(vector<vector<int>>()); // 10 (임시)
 	mapData.push_back(vector<vector<int>>()); // 11 (임시)
+	//mapData.push_back(Map3);
 	mapid = 0;
 	mapcpy = mapData[mapid];
-	*/
+	
 }
 int MapManager::GetMapIdByRoomNumber(int roomNumber) { // 열쇠가 필요한 문이면 -1 반환
 	int loc = -1;

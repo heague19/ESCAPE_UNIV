@@ -16,6 +16,11 @@ https://learn.microsoft.com/ko-kr/windows/win32/inputdev/virtual-key-codes
 #define VK_P 0x50
 #define VK_I 0x49
 #define VK_Z 0x5A
+#define VK_LEFT 0x25
+#define VK_UP 0x26
+#define VK_RIGHT 0x27
+#define VK_DOWN 0x28
+
 class InputManager {
 private:
 	Timer& timer;
@@ -23,6 +28,7 @@ private:
 	MapManager& mapManager;
 	ItemManager& itemManager;
 	Inventory& inventory;
+	bool flag_in = false;
 	bool flag_p = false;
 	bool flag_i = false;
 public:

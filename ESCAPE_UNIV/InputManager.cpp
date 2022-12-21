@@ -1,10 +1,22 @@
 #include "InputManager.hpp"
-InputManager::InputManager(PlayerMove& playerMove,Timer& timer,MapManager& mapManager,ItemManager& itemManager, Inventory& inventory)
-    :playerMove(playerMove),timer(timer), mapManager(mapManager), itemManager(itemManager),inventory(inventory) {
+InputManager::InputManager(PlayerMove& playerMove, Timer& timer, MapManager& mapManager, ItemManager& itemManager, Inventory& inventory)
+    :playerMove(playerMove), timer(timer), mapManager(mapManager), itemManager(itemManager), inventory(inventory) {
 
 }
 void InputManager::Input() {
     playerMove.moveTimer += timer.GetDeltaTime();
+    if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+    {
+        flag_in++;
+
+    }
+    if (GetAsyncKeyState(VK_UP) & 0x8000)
+    {
+        //flag_in--;
+    }
+
+
+
     if (playerMove.moveTimer >= playerMove.moveRate) {
         if (GetAsyncKeyState(VK_W) & 0x8000) {
             playerMove.up();

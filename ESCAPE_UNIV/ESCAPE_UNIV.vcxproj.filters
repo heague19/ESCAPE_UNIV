@@ -52,14 +52,14 @@
     <Filter Include="소스 파일\MapManger\Map">
       <UniqueIdentifier>{1bf94339-92ad-4cc8-afa1-f311353bbaa3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Main">
+      <UniqueIdentifier>{ca5fa666-0c7e-4e0b-bbc5-36d61f2d5789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\GameManger">
+      <UniqueIdentifier>{c6f006fd-9374-4b4b-8812-455d3dc4f280}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="BoxUI.cpp">
       <Filter>소스 파일\GameTool</Filter>
     </ClCompile>
@@ -93,20 +93,26 @@
     <ClCompile Include="PrintContent.cpp">
       <Filter>소스 파일\GameTool</Filter>
     </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Quize_Tool.cpp">
       <Filter>소스 파일\MapManger\Map</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
     <ClCompile Include="GameOver.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Main</Filter>
     </ClCompile>
     <ClCompile Include="INTRO.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일\GameManger</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일\GameManger</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>소스 파일\GameManger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -192,6 +198,9 @@
     </ClInclude>
     <ClInclude Include="InputManager.hpp">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_3_floor.h">
+      <Filter>소스 파일\MapManger\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

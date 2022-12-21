@@ -1,6 +1,10 @@
 #include "INTRO.h"
 
-void INTROPrint()
+INTRO::INTRO()
+{
+
+}
+void INTROPrint(int color)
 {
 	BoxUI INTRO(72, 36, 2, 1);
 	SelectCursorColor(DARK_SKY);
@@ -31,5 +35,6 @@ void INTROPrint()
 	BoxUI EXIT(17, 5, 108, 29);
 	EXIT.ConstructorBox();
 	EXIT.Print("\n\n\             종료하기");
-
+	INTRO::Iflag = true;
 }
+bool INTRO::Iflag = false;

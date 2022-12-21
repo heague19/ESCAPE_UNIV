@@ -3,4 +3,11 @@
 #include "PartPos.hpp"
 #include <iostream>
 using namespace std;
-void INTROPrint();
+class INTRO
+{
+public:
+	INTRO();
+	static bool Iflag;
+	static void INTROPrint();
+	
+};
