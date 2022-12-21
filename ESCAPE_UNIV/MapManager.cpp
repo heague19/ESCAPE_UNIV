@@ -9,9 +9,9 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map5); // 1
 	// 5층 방 4개 (2 ~ 5)
 	mapData.push_back(Box_Quiz_Map5_1); // 2
-	mapData.push_back(vector<vector<int>>()); // 3 (임시)
-	mapData.push_back(vector<vector<int>>()); // 4 (임시)
-	mapData.push_back(vector<vector<int>>()); // 5 (임시)
+	mapData.push_back(Map5_2_Bottom); // 3 (임시)
+	mapData.push_back(Map5_2_Upper); // 4 (임시)
+	mapData.push_back(Map5_4); // 5 (임시)
 	mapData.push_back(Map4); // 6
 	// 4층 방 5개 (7 ~ 11)
 	mapData.push_back(Map4_Room1); // 7
@@ -20,15 +20,6 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(vector<vector<int>>()); // 10 (임시)
 	mapData.push_back(vector<vector<int>>()); // 11 (임시)
 	mapid = 0;
-	mapid = 6;
-	mapcpy = mapData[mapid];
-	/*
-	mapData.push_back(Map6);
-	mapData.push_back(Map5);
-	mapData.push_back(Box_Quiz_Map5_1);
-	mapData.push_back(Map5_2_Upper);
-	mapData.push_back(Map5_2_Bottom);
-	mapData.push_back(Map5_4);
 	mapcpy = mapData[mapid];
 	*/
 }
