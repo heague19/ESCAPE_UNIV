@@ -42,7 +42,7 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(9,	 "²¨Áø·£ÅÏ",	 false,	 {3,	6},	 []() {ChatDialog::PrintMessage("ºÒÀÌ ²¨Áø ·£ÅÏÀÌ´Ù."); }));
 	itemData.push_back(Item(10,	 "2ÃşÂÊÁö",	 false));
 	itemData.push_back(Item(11,	 "2Ãş¿­¼è",	 true));
-	itemData.push_back(Item(16,	 "2Ãş °¡Â¥ ¿­¼è",	 true));
+	//itemData.push_back(Item(16,	 "2Ãş °¡Â¥ ¿­¼è",	 true));
 	itemData.push_back(Item(12,	 "·£ÅÏ",	 false,	 {7,	9}));
 	itemData.push_back(Item(13,	 "6Ãş¿­¼è",	 true,	 
 		[]() {ChatDialog::PrintMessage("6Ãş¿¡¼­ Ã£Àº ¿­¼èÀÌ´Ù."); }));
