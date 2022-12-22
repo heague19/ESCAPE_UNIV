@@ -16,24 +16,24 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map5_2_Upper); // 3 (임시)
 	mapData.push_back(Map5_2_Bottom); // 4 (임시)
 	mapData.push_back(Map5_3); // 5 (임시)
-	mapData.push_back(Map5_4);
+	mapData.push_back(Map5_4); // 6
 	
-	mapData.push_back(Map4); // 6
+	mapData.push_back(Map4); // 7
 	// 4층 방 5개 (7 ~ 11)
-	mapData.push_back(Map4_Room1); // 7
-	mapData.push_back(vector<vector<int>>()); // 8 (임시)
+	mapData.push_back(Map4_Room1); // 8
 	mapData.push_back(vector<vector<int>>()); // 9 (임시)
 	mapData.push_back(vector<vector<int>>()); // 10 (임시)
 	mapData.push_back(vector<vector<int>>()); // 11 (임시)
+	mapData.push_back(vector<vector<int>>()); // 12 (임시)
 
 	//3층 방 3개
-	mapData.push_back(Map3);
-	mapData.push_back(Map3_1);
-	mapData.push_back(Map3_2);
+	mapData.push_back(Map3); // 13
+	mapData.push_back(Map3_1); // 14
+	mapData.push_back(Map3_2); // 15
 	
-	mapData.push_back(Map3_3);
-	mapData.push_back(Map2);
-	mapid = 1;
+	mapData.push_back(Map3_3); // 16
+	mapData.push_back(Map2); // 17
+	mapid = 7;
 	mapcpy = mapData[mapid];
 	
 }

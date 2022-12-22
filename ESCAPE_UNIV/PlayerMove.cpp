@@ -40,6 +40,12 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
             Map.ChangeMap(mapId);
             pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
         }
+        else {
+            if (!itemmanager.FindItem(id)) {
+                ChatDialog::PrintMessage("문이 굳게 닫혀있다.");
+                return 0;
+            }
+        }
         ChatDialog::PrintMessage("문이 열렸다.");
         return 1;
         
