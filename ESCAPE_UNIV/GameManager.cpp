@@ -1,10 +1,11 @@
 #include "GameManager.hpp"
 
 using namespace std;
+/*
 GameManager& GameManager::Instance() {
 	static GameManager instance;
 	return instance;
-}
+}*/
 GameManager::GameManager()
 	:aggresiveNPC(mapManager,playermove,timer)
 	, itemManager(inventory),playermove(mapManager,itemManager),mapManager(itemManager)
@@ -41,7 +42,8 @@ void GameManager::MainLoop() {
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();
 		inputManager.Input();
-		if (GameOver::Oflag)return;
+		if (GameOver::Oflag)
+			return;
 		timer.Update();
 		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
 		aggresiveNPC.NPCMove();

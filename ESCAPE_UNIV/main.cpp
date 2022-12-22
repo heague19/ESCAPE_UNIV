@@ -3,6 +3,7 @@
 #include "GameOver.h"
 #include "InputManager.hpp"
 #include "INTRO.h"
+#include<signal.h>
 
 using namespace std;
 int main() {
@@ -17,7 +18,13 @@ int main() {
 
 
 		try {
-			GameManager::Instance().MainLoop();
+			GameOver::Oflag = false;
+			
+			GameManager gameManager;
+			gameManager.MainLoop();
+			
+			
+			//GameManager::Instance().MainLoop();
 		}
 		catch (const char* str) {
 			cout << str;
