@@ -25,11 +25,14 @@ void GameManager::MainLoop() {
 	aggresiveNPC.SetActive(false);
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
+	/*
+	* 아이템 테스트용
 	itemManager.GetItem(1);
 	itemManager.GetItem(3);
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
-	itemManager.GetItem(4);
+	itemManager.GetItem(4);*/
+
 	//INTROPrint();
 	//경비아저씨 생성(맨 마지막 인자가 활성화 여부)
 	SecurityNPC securityNPC1(2,3,playermove,mapManager,true);
