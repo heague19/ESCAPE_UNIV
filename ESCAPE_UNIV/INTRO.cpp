@@ -28,10 +28,6 @@ void INTRO::  INTROPrint()
 	START.ConstructorBox();
 	START.Print("\n\n\               시작");
 
-	BoxUI RANK(17, 5, 108, 16); //랭크 박스 변수 선언
-	RANK.ConstructorBox();
-	RANK.Print("\n\n\             랭크 보기");
-
 	BoxUI EXIT(17, 5, 108, 29);
 	EXIT.ConstructorBox();
 	EXIT.Print("\n\n\             종료하기");
