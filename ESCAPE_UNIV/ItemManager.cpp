@@ -42,14 +42,16 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(9,	 "²¨Áø·£ÅÏ",	 false,	 {3,	6},	 []() {ChatDialog::PrintMessage("ºÒÀÌ ²¨Áø ·£ÅÏÀÌ´Ù."); }));
 	itemData.push_back(Item(10,	 "2ÃşÂÊÁö",	 false));
 	itemData.push_back(Item(11,	 "2Ãş¿­¼è",	 true));
-	//itemData.push_back(Item(16,	 "2Ãş °¡Â¥ ¿­¼è",	 true));
 	itemData.push_back(Item(12,	 "·£ÅÏ",	 false,	 {7,	9}));
 	itemData.push_back(Item(13,	 "6Ãş¿­¼è",	 true,	 
 		[]() {ChatDialog::PrintMessage("6Ãş¿¡¼­ Ã£Àº ¿­¼èÀÌ´Ù."); }));
 	itemData.push_back(Item(14,	 "³ì½¼¿­¼è",	 true,	
 		[]() {ChatDialog::PrintMessage("5Ãş¿¡¼­ Ã£Àº ³ì½¼ ¿­¼èÀÌ´Ù."); }));
 	itemData.push_back(Item(15,	 "¼¼Á¦",	 false));
-	itemData.push_back(Item(14,	 "ÂÊÁö1",	 false,	 []() {ChatDialog::PrintMessage("Å×½ººz ÂÊÁö ³»¿ë"); }));
+	itemData.push_back(Item(16,	 "ÂÊÁö1",	 false,	 []() {ChatDialog::PrintMessage("Å×½ººz ÂÊÁö ³»¿ë"); }));
+	itemData.push_back(Item(17, "2Ãş °¡Â¥ ¿­¼è", true));
+	itemData.push_back(Item(18,	"¶óÀÌÅÍ ¿ÀÀÏ", true, []() {ChatDialog::PrintMessage("¶óÀÌÅÍ ¿ÀÀÏ"); }));
+	//itemData.push_back(Item(19, "5Ãş 4¹ø ¹æ ¿­¼è", true, []() {ChatDialog::PrintMessage("5Ãş 4¹ø ¹æ"); }));
 
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];

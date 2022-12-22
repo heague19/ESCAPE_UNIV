@@ -7,16 +7,16 @@
 
 using namespace std;
 MapManager::MapManager(ItemManager &item):item(item) {
-	roomId = { 60,	 50,	 51,	 52,	 53,	 54,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33 };
+	roomId = { 60,	 50,	 51,	 52,	 53,	 54, 55,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33 };
 	mapData.push_back(Map6); // 0
 	
 	mapData.push_back(Map5); // 1
 	// 5층 방 4개 (2 ~ 5)
 	mapData.push_back(Box_Quiz_Map5_1); // 2
-	mapData.push_back(Map5_2_Bottom); // 3 (임시)
-	mapData.push_back(Map5_2_Upper); // 4 (임시)
-	//mapData.push_back(Map5_)
-	mapData.push_back(Map5_4); // 5 (임시)
+	mapData.push_back(Map5_2_Upper); // 3 (임시)
+	mapData.push_back(Map5_2_Bottom); // 4 (임시)
+	mapData.push_back(Map5_3); // 5 (임시)
+	mapData.push_back(Map5_4);
 	
 	mapData.push_back(Map4); // 6
 	// 4층 방 5개 (7 ~ 11)
@@ -34,7 +34,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map3_3);
 	mapData.push_back(Map2);
 	
-	mapid = 0;
+	mapid = 6;
 	mapcpy = mapData[mapid];
 	
 }
