@@ -15,6 +15,7 @@ public:
 	//static GameManager& Instance();
 	GameManager();
 	~GameManager() = default;
+	bool securityative = false;
 	void MainLoop();
 	Console console;
 	Inventory inventory;

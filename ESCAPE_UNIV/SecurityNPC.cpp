@@ -8,10 +8,10 @@ SecurityNPC::SecurityNPC(int x, int y, PlayerMove& playerMove,MapManager& mapMan
 	if(active)
 		Show();
 }
-void SecurityNPC::SetActive(bool flag) {
+void SecurityNPC::SetActive(bool flag, int x, int y) {
 	active = flag;
-	if (!active)Delete();
-	else Show();
+	if (!active) { pos.X = -1; pos.Y = -1; Delete(); }
+	else {pos.X = x; pos.Y = y; Show();}
 }
 void SecurityNPC::Show() {
 	if (!active)return;
@@ -68,4 +68,8 @@ bool SecurityNPC::DetectCollision() {
 }
 void SecurityNPC::InsertPattern(Dir dir) {
 	pattern.push_back(dir);
+}
+
+bool SecurityNPC::IsActive() {
+	return active;
 }

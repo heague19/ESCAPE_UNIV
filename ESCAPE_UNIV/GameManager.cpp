@@ -25,9 +25,10 @@ void GameManager::MainLoop() {
 	aggresiveNPC.SetActive(false);
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
+	
+	itemManager.GetItem(4);
 	/*
 	* 아이템 테스트용
-	itemManager.GetItem(1);
 	itemManager.GetItem(3);
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
@@ -35,12 +36,14 @@ void GameManager::MainLoop() {
 
 	//INTROPrint();
 	//경비아저씨 생성(맨 마지막 인자가 활성화 여부)
-	SecurityNPC securityNPC1(2,3,playermove,mapManager,true);
+	//SecurityNPC securityNPC1(2,3,playermove,mapManager,false);
 	//경비아저씨 패턴 추가(저장된 패턴 순서로 방향 전환)
-	securityNPC1.InsertPattern(SecurityNPC::DOWN);
-	securityNPC1.InsertPattern(SecurityNPC::UP);
+	//securityNPC1.InsertPattern(SecurityNPC::DOWN);
+	//securityNPC1.InsertPattern(SecurityNPC::UP);
 	//경비아저씨 비활성화
-	securityNPC1.SetActive(false);
+	//securityNPC1.SetActive(false);
+	SecurityNPC securityNPC1(10, 15, playermove, mapManager, false);
+	SecurityNPC securityNPC2(31, 10, playermove, mapManager, false);
 	while (true) {
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
@@ -49,6 +52,29 @@ void GameManager::MainLoop() {
 			aggresiveNPC.SetActive(true,p);
 		}
 		else if (!playermove.movenpc) aggresiveNPC.SetActive(false);
+
+		if (mapManager.mapid == 2 && !securityative) {
+			securityative = true;
+			securityNPC1.SetActive(true,10,15);
+			securityNPC1.InsertPattern(SecurityNPC::DOWN);
+			securityNPC1.InsertPattern(SecurityNPC::LEFT);
+			securityNPC1.InsertPattern(SecurityNPC::UP);
+			securityNPC1.InsertPattern(SecurityNPC::RIGHT);
+
+			securityNPC2.SetActive(true,31,10);
+			securityNPC2.InsertPattern(SecurityNPC::DOWN);
+			securityNPC2.InsertPattern(SecurityNPC::LEFT);
+			securityNPC2.InsertPattern(SecurityNPC::UP);
+			securityNPC2.InsertPattern(SecurityNPC::RIGHT);
+		}
+		else if(mapManager.mapid != 2){
+			securityative = false;
+			securityNPC1.SetActive(false,0,0);
+			securityNPC2.SetActive(false,0,0);
+		}
+
+
+		
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();
 		inputManager.Input();
