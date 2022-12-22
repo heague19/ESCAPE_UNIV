@@ -35,10 +35,10 @@ void SecurityNPC::Update() {
 }
 bool SecurityNPC::DetectCollision(COORD _pos) {
 	for (int i = 0; i < range; i++) {
-		_pos.X += dx[dir];
-		_pos.Y += dy[dir];
 		if (GameTool::Compare(_pos,playerMove.GetPos()))return true;
 		if (!mapManager.CheckMap(_pos))break;
+		_pos.X += dx[dir];
+		_pos.Y += dy[dir];
 	}
 	return false;
 }
@@ -46,6 +46,7 @@ bool SecurityNPC::DetectCollision() {
 	//중앙부분 체크
 	if(DetectCollision(pos))return true;
 	//양쪽부분 체크
+	/*
 	if (dx[dir] == 0) {
 		COORD _pos = pos;
 		_pos.X--;
@@ -62,6 +63,7 @@ bool SecurityNPC::DetectCollision() {
 		_pos.Y++;
 		if (DetectCollision(_pos))return true;
 	}
+	*/
 	return false;
 }
 void SecurityNPC::InsertPattern(Dir dir) {
