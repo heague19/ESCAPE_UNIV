@@ -42,7 +42,7 @@ void GameManager::MainLoop() {
 	//securityNPC1.InsertPattern(SecurityNPC::UP);
 	//경비아저씨 비활성화
 	//securityNPC1.SetActive(false);
-	SecurityNPC securityNPC1(10, 10, playermove, mapManager, false);
+	SecurityNPC securityNPC1(10, 14, playermove, mapManager, false);
 	SecurityNPC securityNPC2(30, 10, playermove, mapManager, false);
 	while (true) {
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
