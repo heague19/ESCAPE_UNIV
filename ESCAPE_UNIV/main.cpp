@@ -13,15 +13,15 @@ int main() {
 
 	bool reflag = false;
 	int selectflag = 0;
-
+	bool restart = false;
 	bool I_flag_down = false;
 	bool I_flag_up = false;
 
 	while (true) {
 
-		INTRO::INTROPrint();
+		//INTRO::INTROPrint();
 		while (true)
-		{
+		{/*
 			if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 			{
 				if (!I_flag_down) {
@@ -74,7 +74,7 @@ int main() {
 				START.Print("\n\n\               Ω√¿€");
 				reflag = false;
 			}
-
+			*/
 			try {
 				GameOver::Oflag = false;
 
@@ -123,7 +123,8 @@ int main() {
 						break;
 					}
 					else if (selectflag == 1) {
-						return 0;
+						restart = true;
+						break;
 					}
 					else if (selectflag == 2) {
 						return 0;
@@ -161,6 +162,9 @@ int main() {
 				}
 
 			}
+			if (restart)
+				continue;
+			
 		}
 		return 0;
 	}
