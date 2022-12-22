@@ -12,11 +12,10 @@
 #include "SecurityNPC.hpp"
 class GameManager {
 public:
-	static GameManager& Instance();
+	//static GameManager& Instance();
 	GameManager();
 	~GameManager() = default;
 	void MainLoop();
-
 	Console console;
 	Inventory inventory;
 	ItemManager itemManager;
