@@ -51,4 +51,5 @@ public:
 	bool DetectCollision();
 	//방향 전환 패턴 추가
 	void InsertPattern(Dir);
+	bool IsActive();
 };

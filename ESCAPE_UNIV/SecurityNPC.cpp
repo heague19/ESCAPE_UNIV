@@ -69,3 +69,7 @@ bool SecurityNPC::DetectCollision() {
 void SecurityNPC::InsertPattern(Dir dir) {
 	pattern.push_back(dir);
 }
+
+bool SecurityNPC::IsActive() {
+	return active;
+}
