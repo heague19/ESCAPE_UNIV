@@ -33,8 +33,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	
 	mapData.push_back(Map3_3);
 	mapData.push_back(Map2);
-	
-	mapid = 6;
+	mapid = 0;
 	mapcpy = mapData[mapid];
 	
 }
@@ -102,6 +101,19 @@ void MapManager::DisplayMap() {
 				Colorset(black, green);
 				printf("¢À");
 				Colorset(black, white);
+				break;
+			case 776:
+				Colorset(black, brightYellow);
+				printf("¡Ü");
+				break;
+			case 775:
+				Colorset(black, red);
+				printf("¡Ü");
+				break;
+			case 774:
+				Colorset(black, white);
+				printf("¡Ü");
+				break;
 			default:
 				break;
 			}
