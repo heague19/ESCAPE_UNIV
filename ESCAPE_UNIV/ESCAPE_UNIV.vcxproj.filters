@@ -1,230 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="소스 파일">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="헤더 파일">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="소스 파일\GameTool">
-      <UniqueIdentifier>{d8d9944d-c568-45ae-822d-da19b2abea83}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Inventroy">
-      <UniqueIdentifier>{40197dc8-f921-4590-9d99-4f22ed5ddbad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Inventroy\ItemManger">
-      <UniqueIdentifier>{05f4a5ed-0738-4e18-b3c8-7fa63058c64c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\NPC">
-      <UniqueIdentifier>{1e491b52-6953-40ea-a21b-951770dc7f5c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\Inventory">
-      <UniqueIdentifier>{01f876a8-0925-4a0e-bdc5-725ad580a512}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\GameTool">
-      <UniqueIdentifier>{da2793bf-b052-4d4e-bcf2-bb7e84b56bf2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\GameTool\Tools">
-      <UniqueIdentifier>{5e145fa5-c201-4d01-add4-5a79b06e3794}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\Inventory\Item">
-      <UniqueIdentifier>{306f756b-d5c0-4408-946d-8e3d2ac6602c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\Player">
-      <UniqueIdentifier>{da00f047-3daf-4faa-948f-e57eadb95518}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="헤더 파일\NPC">
-      <UniqueIdentifier>{e6b41c02-a1ea-437c-825a-14220bcc6793}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Player">
-      <UniqueIdentifier>{7fdea289-4958-471d-b7ad-5391dd7c3522}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\MapManger">
-      <UniqueIdentifier>{a0ab32d6-7808-43bb-baf1-7f137217cdf7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\MapManger\Map">
-      <UniqueIdentifier>{1bf94339-92ad-4cc8-afa1-f311353bbaa3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\Main">
-      <UniqueIdentifier>{ca5fa666-0c7e-4e0b-bbc5-36d61f2d5789}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\GameManger">
-      <UniqueIdentifier>{c6f006fd-9374-4b4b-8812-455d3dc4f280}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="BoxUI.cpp" />
+    <ClCompile Include="AggresiveNPC.cpp" />
+    <ClCompile Include="ChatDialog.cpp" />
+    <ClCompile Include="Console.cpp" />
+    <ClCompile Include="CursorColor.cpp" />
+    <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameTool.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="INTRO.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemManager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapFloorUI.cpp" />
+    <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="PlayerMove.cpp" />
+    <ClCompile Include="PrintContent.cpp" />
+    <ClCompile Include="SecurityNPC.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Quize_Tool.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BoxUI.cpp">
-      <Filter>소스 파일\GameTool</Filter>
-    </ClCompile>
-    <ClCompile Include="Console.cpp">
-      <Filter>소스 파일\GameTool</Filter>
-    </ClCompile>
-    <ClCompile Include="CursorColor.cpp">
-      <Filter>소스 파일\GameTool</Filter>
-    </ClCompile>
-    <ClCompile Include="Inventory.cpp">
-      <Filter>소스 파일\Inventroy</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemManager.cpp">
-      <Filter>소스 파일\Inventroy\ItemManger</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>소스 파일\Inventroy\ItemManger</Filter>
-    </ClCompile>
-    <ClCompile Include="AggresiveNPC.cpp">
-      <Filter>소스 파일\NPC</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerMove.cpp">
-      <Filter>소스 파일\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="MapManager.cpp">
-      <Filter>소스 파일\MapManger</Filter>
-    </ClCompile>
-    <ClCompile Include="ChatDialog.cpp">
-      <Filter>소스 파일\GameTool</Filter>
-    </ClCompile>
-    <ClCompile Include="PrintContent.cpp">
-      <Filter>소스 파일\GameTool</Filter>
-    </ClCompile>
-    <ClCompile Include="Quize_Tool.cpp">
-      <Filter>소스 파일\MapManger\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="GameOver.cpp">
-      <Filter>소스 파일\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="INTRO.cpp">
-      <Filter>소스 파일\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>소스 파일\GameManger</Filter>
-    </ClCompile>
-    <ClCompile Include="InputManager.cpp">
-      <Filter>소스 파일\GameManger</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>소스 파일\GameManger</Filter>
-    </ClCompile>
-    <ClCompile Include="MapFloorUI.cpp">
-      <Filter>소스 파일\MapManger</Filter>
-    </ClCompile>
-    <ClCompile Include="SecurityNPC.cpp">
-      <Filter>소스 파일\NPC</Filter>
-    </ClCompile>
-    <ClCompile Include="GameTool.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
+    <ClInclude Include="AggresiveNPC.hpp" />
+    <ClInclude Include="BoxUI.hpp" />
+    <ClInclude Include="ChatDialog.hpp" />
+    <ClInclude Include="Console.hpp" />
+    <ClInclude Include="CursorColor.hpp" />
+    <ClInclude Include="Cursor_Function.h" />
+    <ClInclude Include="GameManager.hpp" />
+    <ClInclude Include="GameTool.hpp" />
+    <ClInclude Include="InputManager.hpp" />
+    <ClInclude Include="INTRO.hpp" />
+    <ClInclude Include="Inventory.hpp" />
+    <ClInclude Include="Item.hpp" />
+    <ClInclude Include="ItemManager.hpp" />
+    <ClInclude Include="MapFloorUI.hpp" />
+    <ClInclude Include="MapManager.hpp" />
+    <ClInclude Include="Map_2_floor.h" />
+    <ClInclude Include="Map_3_floor.h" />
+    <ClInclude Include="Map_6_floor.h" />
+    <ClInclude Include="PartPos.hpp" />
+    <ClInclude Include="PlayerMove.hpp" />
+    <ClInclude Include="PrintContent.h" />
+    <ClInclude Include="Quize_Tool.hpp" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Timer.hpp" />
+    <ClInclude Include="Map_5_floor.h" />
+    <ClInclude Include="Map_4_floor.h" />
+    <ClInclude Include="GameOver.h" />
+    <ClInclude Include="SecurityNPC.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="ESCAPE_UNIV.rc">
-      <Filter>리소스 파일</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="GameManager.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MapManager.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="PartPos.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="PartPos.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="PartPos.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameTool.hpp">
-      <Filter>헤더 파일\GameTool</Filter>
-    </ClInclude>
-    <ClInclude Include="BoxUI.hpp">
-      <Filter>헤더 파일\GameTool\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="Console.hpp">
-      <Filter>헤더 파일\GameTool\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="CursorColor.hpp">
-      <Filter>헤더 파일\GameTool\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="Inventory.hpp">
-      <Filter>헤더 파일\Inventory</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemManager.hpp">
-      <Filter>헤더 파일\Inventory\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.hpp">
-      <Filter>헤더 파일\Inventory\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMove.hpp">
-      <Filter>헤더 파일\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Cursor_Function.h">
-      <Filter>헤더 파일\GameTool\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="AggresiveNPC.hpp">
-      <Filter>헤더 파일\NPC</Filter>
-    </ClInclude>
-    <ClInclude Include="Map_5_floor.h">
-      <Filter>소스 파일\MapManger\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Map_4_floor.h">
-      <Filter>소스 파일\MapManger\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="ChatDialog.hpp">
-      <Filter>헤더 파일\GameTool\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="CursorColor.hpp">
-      <Filter>헤더 파일\GameTool\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="PrintContent.h">
-      <Filter>헤더 파일\GameTool\Tools</Filter>
-    </ClInclude>
-    <ClInclude Include="Map_6_floor.h">
-      <Filter>소스 파일\MapManger\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="Quize_Tool.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameOver.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="InputManager.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="MapFloorUI.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Map_2_floor.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Map_3_floor.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="SecurityNPC.hpp">
-      <Filter>헤더 파일\NPC</Filter>
-    </ClInclude>
-    <ClInclude Include="Map_3_floor.h">
-      <Filter>소스 파일\MapManger\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="INTRO.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
+    <ResourceCompile Include="ESCAPE_UNIV.rc" />
   </ItemGroup>
 </Project>

@@ -153,4 +153,6 @@ void InputManager::Input() {
         flag_esc = true;
     }
     else flag_esc = false;
+
+    
 }

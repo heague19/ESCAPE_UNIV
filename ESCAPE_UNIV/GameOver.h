@@ -7,6 +7,7 @@ class GameOver {
 public:
 	GameOver();
 	//게임 오버 여부
-	static bool flag;
+	static bool Oflag;
 	static void GAMEOVERPrint();
+	static void GAMEOVERrePrint();
 };

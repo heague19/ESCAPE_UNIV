@@ -41,12 +41,12 @@ void GameManager::MainLoop() {
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();
 		inputManager.Input();
-		if (GameOver::flag)return;
+		if (GameOver::Oflag)return;
 		timer.Update();
 		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
 		aggresiveNPC.NPCMove();
 		securityNPC1.Update();
-		if (GameOver::flag)return;
+		if (GameOver::Oflag)return;
 		/*
 		if (Detect == 0) // 이렇게 하면 어떨까 생각해서 만들어 보았습니다. 
 		{ //넘버링으로 하면 되지 않을까라는 생각, 정확하게는 INPUT Manger를 만들고 다시 생각해야 될것 같 기도 합니다. 

@@ -3,7 +3,7 @@ GameOver::GameOver() {
 }
 void GameOver::GAMEOVERPrint()
 {
-	flag = true;
+	Oflag = true;
 	//GameOver::flag = true;
 	BoxUI GAMEOVER(72, 36, 2, 1);
 	SelectCursorColor(RED);
@@ -30,4 +30,21 @@ void GameOver::GAMEOVERPrint()
 	ENDING_EXIT.ConstructorBox();
 	ENDING_EXIT.Print("\n\n\             종료하기");
 }
-bool GameOver::flag = false;
+
+void GameOver::GAMEOVERrePrint()
+{
+
+	SelectCursorColor(WHITE);
+	BoxUI RE_START(17, 5, 108, 3);
+	RE_START.ConstructorBox();
+	RE_START.Print("\n\n\              재시작");
+
+	BoxUI RE_MENU(17, 5, 108, 16);
+	RE_MENU.ConstructorBox();
+	RE_MENU.Print("\n\n\          메뉴로 돌아가기");
+
+	BoxUI ENDING_EXIT(17, 5, 108, 29);
+	ENDING_EXIT.ConstructorBox();
+	ENDING_EXIT.Print("\n\n\             종료하기");
+}
+bool GameOver::Oflag = false;

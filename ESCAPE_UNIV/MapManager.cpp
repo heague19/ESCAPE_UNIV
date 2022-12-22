@@ -34,7 +34,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map3_3);
 	mapData.push_back(Map2);
 	
-	mapid = 13;
+	mapid = 0;
 	mapcpy = mapData[mapid];
 	
 }
