@@ -1,8 +1,8 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
 
-PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
-    :Map(mapManager),itemmanager(itemManager)
+PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager, AggresiveNPC& aggresiveNPC)
+    :Map(mapManager), itemmanager(itemManager), aggresiveNPC(aggresiveNPC)
 {
     Setpos(6, 10);
 }
@@ -13,6 +13,9 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         itemmanager.GetItem(objectid - 100);
         Map.ClearPos(pox);
         ChatDialog::PrintMessage(itemmanager.GetItemData(objectid - 100).name + "을(를) 얻었다.");
+        if (objectid == 113) {
+            
+        }
         return 1;
     }
     else if ((objectid - 1) / 100 >= 2) {
