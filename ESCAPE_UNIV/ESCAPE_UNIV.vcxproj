@@ -43,7 +43,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -148,6 +148,7 @@
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="CursorColor.cpp" />
     <ClCompile Include="GameManager.cpp" />
+    <ClCompile Include="GameTool.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="INTRO.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="MapManager.cpp" />
     <ClCompile Include="PlayerMove.cpp" />
     <ClCompile Include="PrintContent.cpp" />
+    <ClCompile Include="SecurityNPC.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Quize_Tool.cpp" />
   </ItemGroup>
@@ -181,6 +183,7 @@
     <ClInclude Include="ItemManager.hpp" />
     <ClInclude Include="MapFloorUI.hpp" />
     <ClInclude Include="MapManager.hpp" />
+    <ClInclude Include="Map_2_floor.h" />
     <ClInclude Include="Map_3_floor.h" />
     <ClInclude Include="Map_6_floor.h" />
     <ClInclude Include="PartPos.hpp" />
@@ -192,6 +195,7 @@
     <ClInclude Include="Map_5_floor.h" />
     <ClInclude Include="Map_4_floor.h" />
     <ClInclude Include="GameOver.h" />
+    <ClInclude Include="SecurityNPC.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

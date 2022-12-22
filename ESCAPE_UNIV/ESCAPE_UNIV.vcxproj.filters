@@ -117,6 +117,12 @@
     <ClCompile Include="MapFloorUI.cpp">
       <Filter>소스 파일\MapManger</Filter>
     </ClCompile>
+    <ClCompile Include="SecurityNPC.cpp">
+      <Filter>소스 파일\NPC</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTool.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ESCAPE_UNIV.rc">
@@ -204,6 +210,15 @@
     </ClInclude>
     <ClInclude Include="MapFloorUI.hpp">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_2_floor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_3_floor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SecurityNPC.hpp">
+      <Filter>헤더 파일\NPC</Filter>
     </ClInclude>
     <ClInclude Include="Map_3_floor.h">
       <Filter>소스 파일\MapManger\Map</Filter>
