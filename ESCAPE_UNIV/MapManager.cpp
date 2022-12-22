@@ -21,8 +21,8 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map4); // 7
 	// 4층 방 5개 (7 ~ 11)
 	mapData.push_back(Map4_Room1); // 8
-	mapData.push_back(vector<vector<int>>()); // 9 (임시)
-	mapData.push_back(vector<vector<int>>()); // 10 (임시)
+	mapData.push_back(Map4_Room2); // 9 (임시)
+	mapData.push_back(Map4_Room3); // 10 (임시)
 	mapData.push_back(vector<vector<int>>()); // 11 (임시)
 	mapData.push_back(vector<vector<int>>()); // 12 (임시)
 
