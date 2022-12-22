@@ -53,6 +53,10 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(18,	"라이터 오일", true, []() {ChatDialog::PrintMessage("라이터 오일"); }));
 	//itemData.push_back(Item(19, "5층 4번 방 열쇠", true, []() {ChatDialog::PrintMessage("5층 4번 방"); }));
 
+	itemData.push_back(Item(19, "큐대", true, []() {ChatDialog::PrintMessage("길고 단단한 막대기이다."); 
+			
+	}));
+
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];
 		itemDictionary.insert({item.name,	 item});
@@ -62,6 +66,7 @@ void ItemManager::InitItemData() {
 		}
 	}
 }
+
 
 bool ItemManager::CombineItem(int id1,	 int id2) {
 	if (!FindItem(id1) || !FindItem(id2) || id1 >= itemData.size() || id2 >= itemData.size()) {

@@ -1,8 +1,8 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
 
-PlayerMove::PlayerMove(MapManager& mapManager,ItemManager& itemManager)
-    :Map(mapManager),itemmanager(itemManager)
+PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager)
+    :Map(mapManager), itemmanager(itemManager)
 {
     Setpos(6, 10);
 }
@@ -13,6 +13,9 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         itemmanager.GetItem(objectid - 100);
         Map.ClearPos(pox);
         ChatDialog::PrintMessage(itemmanager.GetItemData(objectid - 100).name + "을(를) 얻었다.");
+        if (objectid == 113) {
+            movenpc = true;
+        }
         return 1;
     }
     else if ((objectid - 1) / 100 >= 2) {
@@ -24,6 +27,7 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         int beforemapId = Map.mapid;
         int mapId = Map.GetMapIdByRoomNumber(objectid % 100); // 다음 맵 아이디
         if (mapId >= 0) {
+            movenpc = false;
             Map.ChangeMap(mapId);
             pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
         }

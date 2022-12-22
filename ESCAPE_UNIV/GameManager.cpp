@@ -42,6 +42,13 @@ void GameManager::MainLoop() {
 	//경비아저씨 비활성화
 	//securityNPC1.SetActive(false);
 	while (true) {
+		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
+			COORD p;
+			if(mapManager.GetMapid() == 0){p.X = 32;p.Y = 13;}
+			
+			aggresiveNPC.SetActive(true,p);
+		}
+		else if (!playermove.movenpc) aggresiveNPC.SetActive(false);
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();
 		inputManager.Input();

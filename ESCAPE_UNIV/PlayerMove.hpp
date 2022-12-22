@@ -6,6 +6,7 @@
 #include "MapManager.hpp"
 #include "PartPos.hpp"
 #include "ItemManager.hpp"
+
 using namespace std;
 
 class PlayerMove {
@@ -21,6 +22,7 @@ private:
 
 public:
     //이동 주기와 이동주기 체크용 타이머
+    bool movenpc = false;
     const double moveRate = 0.2;
     double moveTimer = 0.0;
     COORD* NPCPos;
