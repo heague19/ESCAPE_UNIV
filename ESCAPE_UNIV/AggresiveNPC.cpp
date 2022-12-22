@@ -59,7 +59,7 @@ COORD AggresiveNPC::NPCPathFind() {
 			COORD newData;
 			newData.X = data.X + dx[i];
 			newData.Y = data.Y + dy[i];
-			if (!mapManager.CheckMap(newData))continue;
+			if (!mapManager.NpcCheckMap(newData))continue;
 			if (check[newData.X][newData.Y] != 0)continue;
 			check[newData.X][newData.Y] = check[data.X][data.Y] + 1;
 			from[newData.X][newData.Y] = data;
@@ -89,7 +89,6 @@ void AggresiveNPC::SetActive(bool active) {
 	if (active) {
 		this->active = active;
 		//playerMove.NPCPos = pos;
-		ShowNPC();
 	}
 	//비활성화할 경우
 	else{
@@ -106,7 +105,6 @@ void AggresiveNPC::SetActive(bool active,COORD startPos) {
 		this->active = active;
 		pos = startPos;
 		//playerMove.NPCPos = pos;
-		ShowNPC();
 	}
 	//비활성화할 경우
 	else{

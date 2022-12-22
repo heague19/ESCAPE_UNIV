@@ -20,7 +20,7 @@ private:
 	double moveRate = 0.5;
 	double moveTimer = 0.0;
 	Timer& timer;
-	bool active=false;
+	bool active = true;
 	//°æ·Î Å½»ö¿ë
 	queue<COORD> bfs;
 	vector<vector<int>> check;
