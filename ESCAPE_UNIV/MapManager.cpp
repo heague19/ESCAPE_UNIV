@@ -7,7 +7,7 @@
 
 using namespace std;
 MapManager::MapManager(ItemManager &item):item(item) {
-	roomId = { 60,	 50,	 51,	 52,	 53,	 54, 55,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33 };
+	roomId = { 60,	 50,	 51,	52,  53,	 54, 55,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33 };
 	mapData.push_back(Map6); // 0
 	
 	mapData.push_back(Map5); // 1
@@ -33,7 +33,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	
 	mapData.push_back(Map3_3);
 	mapData.push_back(Map2);
-	mapid = 0;
+	mapid = 1;
 	mapcpy = mapData[mapid];
 	
 }
@@ -117,7 +117,7 @@ void MapManager::DisplayMap() {
 			default:
 				break;
 			}
-			if ((mapcpy[y][x] - 1) / 100 == 1) printf("ⓘ "); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
+			if ((mapcpy[y][x] - 1) / 100 == 1) if ((mapcpy[y][x]) == 120)printf("＊ "); else printf("ⓘ "); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
 			if ((mapcpy[y][x] - 1) / 100 == 2) {
 				Colorset( black,	 brightWhite);
 				printf("━ ");

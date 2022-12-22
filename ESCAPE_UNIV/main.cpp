@@ -1,8 +1,6 @@
 #include <iostream>
 #include "GameManager.hpp"
 #include "GameOver.h"
-#include "InputManager.hpp"
-#include "INTRO.h"
 #include<signal.h>
 
 using namespace std;
@@ -19,9 +17,9 @@ int main() {
 
 	while (true) {
 
-		//INTRO::INTROPrint();
+		INTRO::INTROPrint();
 		while (true)
-		{/*
+		{
 			if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 			{
 				if (!I_flag_down) {
@@ -74,7 +72,7 @@ int main() {
 				START.Print("\n\n\               Ω√¿€");
 				reflag = false;
 			}
-			*/
+			
 			try {
 				GameOver::Oflag = false;
 
