@@ -8,7 +8,7 @@ GameManager& GameManager::Instance() {
 }*/
 GameManager::GameManager()
 	:aggresiveNPC(mapManager,playermove,timer)
-	, itemManager(inventory),playermove(mapManager,itemManager, aggresiveNPC),mapManager(itemManager)
+	, itemManager(inventory),playermove(mapManager,itemManager),mapManager(itemManager)
 	,inputManager(playermove,timer,mapManager,itemManager,inventory)
 {
 	mapManager.ChangeMap(mapManager.mapid);
@@ -22,7 +22,7 @@ void GameManager::MainLoop() {
 	
 	mapManager.DisplayMap();
 	//적 npc 활성화/비활성화 함수
-	aggresiveNPC.SetActive(false);
+	//aggresiveNPC.SetActive(false);
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
 	/*
@@ -42,6 +42,15 @@ void GameManager::MainLoop() {
 	//경비아저씨 비활성화
 	//securityNPC1.SetActive(false);
 	while (true) {
+		if (playermove.movenpc) {
+			COORD p;
+			p.X = 10;
+			p.Y = 10;
+			aggresiveNPC.SetActive(true,p);
+		}
+		else {
+			aggresiveNPC.SetActive(false);
+		}
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();
 		inputManager.Input();

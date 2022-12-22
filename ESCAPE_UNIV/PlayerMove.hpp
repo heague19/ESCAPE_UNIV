@@ -6,7 +6,6 @@
 #include "MapManager.hpp"
 #include "PartPos.hpp"
 #include "ItemManager.hpp"
-#include "AggresiveNPC.hpp"
 
 using namespace std;
 
@@ -17,17 +16,17 @@ private:
     Console console;
     MapManager& Map;
     ItemManager& itemmanager;
-    AggresiveNPC& aggresiveNPC;
     enum Trans { M_UP,M_DOWN,M_LEFT,M_RIGHT };
     int state = 0;// 플레이어 충돌 상태 변수 by 이해규 
     //vector<vector<int>>::iterator mapdata;
 
 public:
     //이동 주기와 이동주기 체크용 타이머
+    bool movenpc = false;
     const double moveRate = 0.2;
     double moveTimer = 0.0;
     COORD* NPCPos;
-    PlayerMove(MapManager&,ItemManager&,AggresiveNPC&);
+    PlayerMove(MapManager&,ItemManager&);
     void down();
     void up();
     void left();
