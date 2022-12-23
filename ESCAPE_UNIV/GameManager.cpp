@@ -27,7 +27,6 @@ void GameManager::MainLoop() {
 	ChatDialog::PrintMessage("Ahahahah");
 	
 	//itemManager.GetItem(4);
-	itemManager.GetItem(19);
 	//itemManager.GetItem(15);
 	//itemManager.GetItem(14);
 	/*
