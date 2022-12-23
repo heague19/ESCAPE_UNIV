@@ -9,7 +9,7 @@
 #include "InputManager.hpp"
 #include "GameOver.h"
 #include "SecurityNPC.hpp"
-#include <string>
+#include "OutTro.hpp"
 
 class GameManager {
 public:

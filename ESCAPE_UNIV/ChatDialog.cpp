@@ -31,6 +31,9 @@ int ChatDialog::InputMessage()
 	int password;
 	Console console;
 	console.SetCurrentCursorPos(DIALOG_ORIGIN_X + 2, DIALOG_ORIGIN_Y + 1);
+	
+	
+	cin >> password;
 	cin >> password;
 	return password;
 }
