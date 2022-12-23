@@ -37,12 +37,8 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         if (mapId >= 0) {
             movenpc = false;
             Map.ChangeMap(mapId);
-            if (beforemapId == 4) {
-                pox = Map.CalculateStartLocation(beforemapId, mapId, dy+1, dx);
-            }
-            else {
-                pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
-            }
+            pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
+            
         }
         /*
         else {
