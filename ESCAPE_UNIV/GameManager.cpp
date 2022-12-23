@@ -26,7 +26,10 @@ void GameManager::MainLoop() {
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
 	
-	itemManager.GetItem(4);
+	//itemManager.GetItem(4);
+	itemManager.GetItem(19);
+	//itemManager.GetItem(15);
+	//itemManager.GetItem(14);
 	/*
 	* 아이템 테스트용
 	itemManager.GetItem(3);
@@ -72,7 +75,9 @@ void GameManager::MainLoop() {
 			securityNPC1.SetActive(false,0,0);
 			securityNPC2.SetActive(false,0,0);
 		}
-
+		if (itemManager.usesit) {
+			playermove.Usestick();
+		}
 
 		
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
