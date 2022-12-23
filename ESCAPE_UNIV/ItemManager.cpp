@@ -52,7 +52,7 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(17, "2층 가짜 열쇠", true));
 	itemData.push_back(Item(18,	"라이터 오일", true, []() {ChatDialog::PrintMessage("라이터 오일"); }));
 	itemData.push_back(Item(19, "큐대", true, []() {ChatDialog::PrintMessage("길고 단단한 막대기이다."); }));
-	itemData.push_back(Item(20, "4층 남자 화장실", true, []() {ChatDialog::PrintMessage("숨겨진 열쇠였다."); }));
+	itemData.push_back(Item(20, "5층 남자 화장실", true, []() {ChatDialog::PrintMessage("숨겨진 열쇠였다."); }));
 
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];

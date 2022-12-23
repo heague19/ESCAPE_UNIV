@@ -76,6 +76,7 @@ int main() {
 				reflag = false;
 				}
 			}
+			selectflag = 0;
 			try {
 				GameOver::Oflag = false;
 
