@@ -5,7 +5,7 @@ PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager):Map(map
 {
     Setpos(6, 10);
 }
-
+bool cflag = false;
 int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 방향
     int objectid = Map.GetMapAt(pox);
     if ((objectid - 1) / 100 == 1) {
@@ -36,10 +36,17 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         if (id == 90)
         {
             ChatDialog::PrintMessage("비밀번호를 입력해주세요 : ");
-            if (321== ChatDialog::InputMessage())
-            {
-                
+            Sleep(1500);
+            cout.flush();
+            
+            if ("321" == ChatDialog::InputMessage()&&!cflag) {
+               
                 ChatDialog::PrintMessage("문이 열립니다.");
+                cflag = true;
+            }
+            else {
+                ChatDialog::PrintMessage("비밀번호가 틀렸습니다.");
+                return 0;
             }
         }
 

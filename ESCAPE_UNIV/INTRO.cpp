@@ -29,6 +29,10 @@ void INTRO::  INTROPrint()
 	START.ConstructorBox();
 	START.Print("\n\n\               시작");
 
+	BoxUI Ex(17, 5, 108, 16);
+	Ex.ConstructorBox();
+	Ex.Print("\n      SPACE_BAR : 선택 확인\n     방향키(위, 아래) : 선택");
+
 	BoxUI EXIT(17, 5, 108, 29);
 	EXIT.ConstructorBox();
 	EXIT.Print("\n\n\             종료하기");

@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <	limits>
 #include <string>
 #include<sstream>
 #include "GameTool.hpp"
@@ -12,5 +13,5 @@ public:
 	ChatDialog();
 	static void Init();
 	static void PrintMessage(string msg);
-	static int InputMessage();
+	static string InputMessage();
 };
