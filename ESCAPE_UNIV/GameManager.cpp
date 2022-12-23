@@ -27,6 +27,7 @@ void GameManager::MainLoop() {
 	ChatDialog::PrintMessage("Ahahahah");
 	
 	itemManager.GetItem(4);
+	itemManager.GetItem(19);
 	/*
 	* 아이템 테스트용
 	itemManager.GetItem(3);
@@ -72,7 +73,9 @@ void GameManager::MainLoop() {
 			securityNPC1.SetActive(false,0,0);
 			securityNPC2.SetActive(false,0,0);
 		}
-
+		if (itemManager.usesit) {
+			playermove.Usestick();
+		}
 
 		
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);

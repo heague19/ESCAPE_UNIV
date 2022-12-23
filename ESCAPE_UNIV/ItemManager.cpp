@@ -51,7 +51,7 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(16,	 "쪽지",	 false,	 []() {ChatDialog::PrintMessage("테스틑 쪽지 내용"); }));
 	itemData.push_back(Item(17, "2층 가짜 열쇠", true));
 	itemData.push_back(Item(18,	"라이터 오일", true, []() {ChatDialog::PrintMessage("라이터 오일"); }));
-	itemData.push_back(Item(19, "큐대", true, []() {ChatDialog::PrintMessage("길고 단단한 막대기이다."); }));
+	itemData.push_back(Item(19, "큐대", true));
 	itemData.push_back(Item(20, "4층 남자 화장실", true, []() {ChatDialog::PrintMessage("숨겨진 열쇠였다."); }));
 
 	for (int i = 0; i < itemData.size(); i++) {
@@ -84,6 +84,7 @@ bool ItemManager::CombineItem(int id1,	 int id2) {
 bool ItemManager::UseItem(int num) {
 	if (items.size()<num)return false;
 	items[num-1].func();
+	if (items[num - 1].id == 19)usesit = true;
 	return true;
 }
 void ItemManager::GetItem(int id) {

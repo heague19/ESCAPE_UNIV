@@ -220,3 +220,28 @@ void PlayerMove::Setpos(int x, int y) {
     console.SetCurrentCursorPos(pox.X, pox.Y);
     ShowPlayer();
 }
+
+void PlayerMove::Usestick() {
+    auto m = Map.GetMap();
+    int id = 0;
+    int i ;
+    for (i = pox.Y; i > 1 ; i--) {
+        if (m[pox.X][i] > 100 && m[pox.X][i] < 200) {
+            ChatDialog::PrintMessage("!!! 일어나지 않았다");
+            id = m[pox.X][i];
+            break;
+        }
+    }
+    if (id) {
+        COORD pk;
+        pk.X = pox.X;
+        pk.Y = i;
+        itemmanager.GetItem(id - 100);
+        Map.ClearPos(pk);
+        ChatDialog::PrintMessage(itemmanager.GetItemData(id - 100).name + "을(를) 얻었다.");
+    }
+    else {
+        ChatDialog::PrintMessage("아무일도 일어나지 않았다");
+    }
+    itemmanager.usesit = false;
+}
