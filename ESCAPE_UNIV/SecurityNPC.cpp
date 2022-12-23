@@ -16,6 +16,7 @@ void SecurityNPC::SetActive(bool flag, int x, int y) {
 void SecurityNPC::Show() {
 	if (!active)return;
 	console.SetCurrentCursorPos(pos.X * 2 + MAP_ORIGIN_X, pos.Y + MAP_ORIGIN_Y);
+	Colorset(black, red);
 	cout << icon[dir];
 }
 void SecurityNPC::Delete() {
@@ -72,4 +73,8 @@ void SecurityNPC::InsertPattern(Dir dir) {
 
 bool SecurityNPC::IsActive() {
 	return active;
+}
+void SecurityNPC::Colorset(int backColor, int textColor) {         //색 변환 함수
+	HANDLE Handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(Handle, (backColor << 4) + textColor);
 }

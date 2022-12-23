@@ -62,6 +62,12 @@ void GameManager::MainLoop() {
 	securityNPC3.InsertPattern(SecurityNPC::LEFT);
 	securityNPC3.InsertPattern(SecurityNPC::RIGHT);
 
+	SecurityNPC floor3NPC1(21, 7, playermove, mapManager, false);
+	floor3NPC1.InsertPattern(SecurityNPC::LEFT);
+	floor3NPC1.InsertPattern(SecurityNPC::UP);
+	SecurityNPC floor3NPC2(29, 18, playermove, mapManager, false);
+	floor3NPC2.InsertPattern(SecurityNPC::UP);
+	floor3NPC2.InsertPattern(SecurityNPC::DOWN);
 	while (true) {
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
@@ -89,6 +95,16 @@ void GameManager::MainLoop() {
 			securityNPC2.SetActive(false,0,0);
 			securityNPC3.SetActive(false, 0, 0);
 		}
+		if (mapManager.mapid == 13 && !securityative) {
+			securityative = true;
+			floor3NPC1.SetActive(true,21, 6);
+			floor3NPC2.SetActive(true,29, 18);
+		}
+		else if (mapManager.mapid != 13) {
+			securityative = false;
+			floor3NPC1.SetActive(false, 21, 7);
+			floor3NPC2.SetActive(false, 29, 18);
+		}
 		if (itemManager.usesit) {
 			playermove.Usestick();
 		}
@@ -104,6 +120,9 @@ void GameManager::MainLoop() {
 		aggresiveNPC.NPCMove();
 		securityNPC1.Update();
 		securityNPC2.Update();
+		floor3NPC1.Update();
+		floor3NPC2.Update();
+
 		if (GameOver::Oflag)return;
 		/*
 		if (Detect == 0) // 이렇게 하면 어떨까 생각해서 만들어 보았습니다. 

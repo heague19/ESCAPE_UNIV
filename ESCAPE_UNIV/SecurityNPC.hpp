@@ -24,6 +24,10 @@ class SecurityNPC {
 	int patternIdx = 0;
 	//시야 사거리
 	const int range = 10;
+	//색 지정
+	typedef enum ColorKinds {      //색깔지정
+		black, blue, green, skyBlue, red, pink, Orange, white, gray, lightBlue, brightGreen, sky, brightRed, brightPink, brightYellow, brightWhite
+	}ColorKinds;
 public:
 	//방향
 	enum Dir
@@ -52,4 +56,5 @@ public:
 	//방향 전환 패턴 추가
 	void InsertPattern(Dir);
 	bool IsActive();
+	void Colorset(int, int);
 };
