@@ -8,6 +8,6 @@ class INTRO
 public:
 	INTRO();
 	static bool Iflag;
-	void INTROPrint();
+	static void INTROPrint();
 
 };
