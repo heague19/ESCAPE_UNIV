@@ -1,8 +1,7 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
 
-PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager)
-    :Map(mapManager), itemmanager(itemManager)
+PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager):Map(mapManager), itemmanager(itemManager)
 {
     Setpos(6, 10);
 }
@@ -23,11 +22,11 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         //가로문은 200이고 새로 문은 300대이기 때문에 200이면 그대로 가고 300이면 100을 추가로 더 빼준다.
         int id = objectid - 200;
         id = id < 100 ? id : id - 100;
-        
+
         int beforemapId = Map.mapid;
-        if (id == 52 ||id==13|| id ==4 ) {
-            if ((id == 13 && itemmanager.FindItem(id))||(id==52&&itemmanager.FindItem(20))||
-                (id == 4 && itemmanager.FindItem(4))){
+        if (id == 52 || id == 13 || id == 4) {
+            if ((id == 13 && itemmanager.FindItem(id)) || (id == 52 && itemmanager.FindItem(20)) ||
+                (id == 4 && itemmanager.FindItem(4))) {
             }
             else {
                 ChatDialog::PrintMessage("문이 굳게 닫혀있다.");
@@ -40,15 +39,17 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
             Map.ChangeMap(mapId);
             pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
         }
+        /*
         else {
             if (!itemmanager.FindItem(id)) {
                 ChatDialog::PrintMessage("문이 굳게 닫혀있다.");
                 return 0;
             }
         }
+        */
         ChatDialog::PrintMessage("문이 열렸다.");
         return 1;
-        
+
         //item.DeleteItem(id);
     }
 }
