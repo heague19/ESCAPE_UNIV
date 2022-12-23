@@ -3,7 +3,7 @@
 
 PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager):Map(mapManager), itemmanager(itemManager)
 {
-    Setpos(10, 2);
+    Setpos(5, 5);
 }
 
 int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 방향
