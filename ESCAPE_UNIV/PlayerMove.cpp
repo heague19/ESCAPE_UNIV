@@ -3,7 +3,7 @@
 
 PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager):Map(mapManager), itemmanager(itemManager)
 {
-    Setpos(6, 10);
+    Setpos(5, 5);
 }
 bool cflag = false;
 int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 방향
@@ -24,9 +24,9 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         id = id < 100 ? id : id - 100;
 
         int beforemapId = Map.mapid;
-        if (id == 52 || id == 13 || id == 4) {
+        if (id == 52 || id == 13 || id == 4 || id == 11) {
             if ((id == 13 && itemmanager.FindItem(id)) || (id == 52 && itemmanager.FindItem(20)) ||
-                (id == 4 && itemmanager.FindItem(4))) {
+                (id == 4 && itemmanager.FindItem(4)) || (id == 11 && itemmanager.FindItem(11))) {
             }
             else {
                 ChatDialog::PrintMessage("문이 굳게 닫혀있다.");

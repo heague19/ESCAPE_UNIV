@@ -26,15 +26,13 @@ void GameManager::MainLoop() {
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
 	
-	//itemManager.GetItem(4);
-	//itemManager.GetItem(15);
-	//itemManager.GetItem(14);
-	/*
-	* 아이템 테스트용
+	itemManager.GetItem(4);
+	itemManager.GetItem(15);
+	itemManager.GetItem(14);
 	itemManager.GetItem(3);
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
-	itemManager.GetItem(4);*/
+	itemManager.GetItem(4);
 
 	//INTROPrint();
 	//경비아저씨 생성(맨 마지막 인자가 활성화 여부)
@@ -68,19 +66,25 @@ void GameManager::MainLoop() {
 	SecurityNPC floor3NPC2(29, 18, playermove, mapManager, false);
 	floor3NPC2.InsertPattern(SecurityNPC::UP);
 	floor3NPC2.InsertPattern(SecurityNPC::DOWN);
+	int cnt = 0;
+	BoxUI l(18, 20, 108, 3);
+	int x = 1, y = 1;
 	while (true) {
+
+
+
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
-			if(mapManager.GetMapid() == 0){p.X = 32;p.Y = 13;}
-			
-			aggresiveNPC.SetActive(true,p);
+			if (mapManager.GetMapid() == 0) { p.X = 32; p.Y = 13; }
+
+			aggresiveNPC.SetActive(true, p);
 		}
 		else if (!playermove.movenpc) aggresiveNPC.SetActive(false);
 
 		if (mapManager.mapid == 2 && !securityative) {
 			securityative = true;
-			securityNPC1.SetActive(true,10,15);
-			securityNPC2.SetActive(true,31,10);
+			securityNPC1.SetActive(true, 10, 15);
+			securityNPC2.SetActive(true, 31, 10);
 		}
 		else if (mapManager.mapid == 5 && !securityative)
 		{
@@ -89,16 +93,16 @@ void GameManager::MainLoop() {
 			securityNPC2.SetActive(true, 31, 12);
 			securityNPC3.SetActive(true, 6, 20);
 		}
-		else if(mapManager.mapid != 2 && mapManager.mapid != 5){
+		else if (mapManager.mapid != 2 && mapManager.mapid != 5) {
 			securityative = false;
-			securityNPC1.SetActive(false,0,0);
-			securityNPC2.SetActive(false,0,0);
+			securityNPC1.SetActive(false, 0, 0);
+			securityNPC2.SetActive(false, 0, 0);
 			securityNPC3.SetActive(false, 0, 0);
 		}
 		if (mapManager.mapid == 13 && !securityative) {
 			securityative = true;
-			floor3NPC1.SetActive(true,21, 6);
-			floor3NPC2.SetActive(true,29, 18);
+			floor3NPC1.SetActive(true, 21, 6);
+			floor3NPC2.SetActive(true, 29, 18);
 		}
 		else if (mapManager.mapid != 13) {
 			securityative = false;
@@ -108,7 +112,63 @@ void GameManager::MainLoop() {
 		if (itemManager.usesit) {
 			playermove.Usestick();
 		}
+		COORD px = playermove.GetPos();
+		int f = 1;
+		
 
+
+		if (mapManager.mapid == 17 && px.X < 35 && y==1) {
+			for (int i = 0; i < 22; i++) {
+				if (itemManager.FindItem(i)) {
+					itemManager.DeleteItem(i);
+					console.SetCurrentCursorPos(l.SInit_X + x, l.SInit_Y + y);
+					cout << "                   ";
+					y++;
+				}
+			}
+			for (int i = 22; i < 27; i++) {
+				itemManager.GetItem(i);
+			}
+			while (f) {
+				ChatDialog::PrintMessage("논문들을 읽어볼까?                                     ```ENTER");
+				inputManager.Input();
+				if (inputManager.flg == true) {
+					inputManager.flg = false;
+					f = false;
+				}
+
+			}
+		}
+
+		if (mapManager.mapid == 17 && px.X < 25) {
+			Sleep(100);
+			inputManager.Input();
+
+			if (inputManager.flg == true) {
+				inputManager.flg = false;
+				cnt++;
+			}
+			if (cnt == 0) {
+				ChatDialog::PrintMessage("STAY....?    이게 뭐지?                                  ```ENTER");
+			}
+			if (cnt == 1) {
+				ChatDialog::PrintMessage("잠시만 근데 나 분명 6층에서부터 내려왔을텐데 지금 2층이라고? ```ENTER");
+			}
+			if (cnt == 2) {
+				ChatDialog::PrintMessage("??? : 종이야 너 논문은 다 쓰고 지금 이러고 있는거니?        ```ENTER");
+			}
+			if (cnt == 3) {
+				ChatDialog::PrintMessage("??? : 종이야 빨리 일어나라 종이야!!!!!                     ```ENTER");
+			}
+			if (cnt == 4) {
+				//여기 아웃트로
+				break;
+			}
+
+		}
+	
+			
+		
 		
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();

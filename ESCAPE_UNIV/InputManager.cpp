@@ -4,6 +4,7 @@ InputManager::InputManager(PlayerMove& playerMove,	 Timer& timer,	 MapManager& m
 
 }
 void InputManager::Input() {
+    
     playerMove.moveTimer += timer.GetDeltaTime();
     if (GetAsyncKeyState(VK_DOWN) & 0x8000)
     {
@@ -154,5 +155,7 @@ void InputManager::Input() {
     }
     else flag_esc = false;
 
-    
+    if (mapManager.mapid == 17 && GetAsyncKeyState(VK_RETURN)) {
+        flg = true;
+    }
 }
