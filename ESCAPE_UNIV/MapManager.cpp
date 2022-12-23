@@ -155,7 +155,7 @@ int MapManager::CheckMap(COORD pos) {
 }
 int MapManager::NpcCheckMap(COORD pos) {
 	if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0)return false;
-	if (mapcpy[pos.Y][pos.X] != 99 && mapcpy[pos.Y][pos.X] != 100)return 1;
+	if (mapcpy[pos.Y][pos.X] != 99 && mapcpy[pos.Y][pos.X] != 100 && mapcpy[pos.Y][pos.X] != 97)return 1;
 	if ((mapcpy[pos.Y][pos.X] - 1) / 100 == 1)return mapcpy[pos.Y][pos.X];
 	return 0;
 }

@@ -12,9 +12,10 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         itemmanager.GetItem(objectid - 100);
         Map.ClearPos(pox);
         ChatDialog::PrintMessage(itemmanager.GetItemData(objectid - 100).name + "을(를) 얻었다.");
-        if (objectid == 113) {
+        if (objectid == 113 || objectid == 111) {
             movenpc = true;
         }
+  
         return 1;
     }
     else if ((objectid - 1) / 100 >= 2) {
@@ -38,8 +39,8 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
             ChatDialog::PrintMessage("비밀번호를 입력해주세요 : ");
             if (321== ChatDialog::InputMessage())
             {
-                
                 ChatDialog::PrintMessage("문이 열립니다.");
+
             }
         }
 
