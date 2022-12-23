@@ -237,7 +237,10 @@ void PlayerMove::Usestick() {
     }
     if (id) {
         itemmanager.GetItem(id - 100);
-        Map.ClearPos(pt);
+        auto m = Map.GetMap();
+        m[pt.Y][pt.X] = 0;
+        Map.SetMap(m);
+        ChatDialog::PrintMessage( + "을(를) 얻었다.");
         ChatDialog::PrintMessage(itemmanager.GetItemData(id - 100).name + "을(를) 얻었다.");
     }
     else {
