@@ -163,6 +163,7 @@ int MapManager::NpcCheckMap(COORD pos) {
 void MapManager::ClearPos(COORD pos) {
 	if (pos.X >= width || pos.X < 0 || pos.Y >= height || pos.Y < 0)return;
 	mapcpy[pos.Y][pos.X] = 0;
+	ChatDialog::PrintMessage("Clear map");
 }
 
 vector<vector<int>> MapManager::GetMap()
