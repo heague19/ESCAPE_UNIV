@@ -7,6 +7,7 @@ using namespace std;
 int main() {
 	Console console;
 	console.SetConsoleSize(150, 40);
+	console.RemoveCursor();
 
 
 	bool reflag = false;
