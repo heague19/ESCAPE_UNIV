@@ -25,13 +25,9 @@ void OutTro::OutTroPrint()
 	InitCursorColor();
 
 
-	BoxUI START(17, 5, 108, 3); //스타트 박스 변수 선언
+	BoxUI START(17, 32, 108, 38); //스타트 박스 변수 선언
 	START.ConstructorBox();
-	START.Print("\n\n\               시작");
-
-	BoxUI EXIT(17, 5, 108, 29);
-	EXIT.ConstructorBox();
-	EXIT.Print("\n\n\             종료하기");
+	START.Print("\n\n\             제작자\n\n             정재현\n\n             이건무\n\n             이해규\n\n             한정환");
 	OutTro::Iflag = true;
 }
 bool OutTro::Iflag = false;

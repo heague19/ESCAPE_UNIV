@@ -22,7 +22,7 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         //가로문은 200이고 새로 문은 300대이기 때문에 200이면 그대로 가고 300이면 100을 추가로 더 빼준다.
         int id = objectid - 200;
         id = id < 100 ? id : id - 100;
-
+        
         int beforemapId = Map.mapid;
         if (id == 52 || id == 13 || id == 4 || id == 11) {
             if ((id == 13 && itemmanager.FindItem(id)) || (id == 52 && itemmanager.FindItem(20)) ||
@@ -36,11 +36,10 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         if (id == 90)
         {
             ChatDialog::PrintMessage("비밀번호를 입력해주세요 : ");
-            Sleep(1500);
-            cout.flush();
+            Sleep(1000);
             
-            if ("321" == ChatDialog::InputMessage()&&!cflag) {
-               
+            cin.ignore
+            if ((321 == ChatDialog::InputMessage())&&!cflag) {
                 ChatDialog::PrintMessage("문이 열립니다.");
                 cflag = true;
             }

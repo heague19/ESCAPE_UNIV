@@ -37,5 +37,6 @@ void INTRO::  INTROPrint()
 	EXIT.ConstructorBox();
 	EXIT.Print("\n\n\             종료하기");
 	INTRO::Iflag = true;
+
 }
 bool INTRO::Iflag = false;

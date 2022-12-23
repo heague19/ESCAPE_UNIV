@@ -24,15 +24,15 @@ void ChatDialog::PrintMessage(string msg) {
 	}
 }
 
-string ChatDialog::InputMessage()
+int ChatDialog::InputMessage()
 {
-	string password;
+	
+	int password;
 	Console console;
 	console.SetCurrentCursorPos(DIALOG_ORIGIN_X + 2, DIALOG_ORIGIN_Y + 1);
-	Sleep(1000);
 	
 	
-
+	cin >> password;
 	cin >> password;
 	
 

@@ -161,7 +161,9 @@ void GameManager::MainLoop() {
 				ChatDialog::PrintMessage("??? : 종이야 빨리 일어나라 종이야!!!!!                     ```ENTER");
 			}
 			if (cnt == 4) {
-				//여기 아웃트로
+				OutTro::OutTroPrint();
+				Sleep(5000);
+				
 				break;
 			}
 
