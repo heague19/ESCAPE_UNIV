@@ -84,6 +84,7 @@ bool ItemManager::CombineItem(int id1,	 int id2) {
 bool ItemManager::UseItem(int num) {
 	if (items.size()<num)return false;
 	items[num-1].func();
+	if (items[num - 1].id == 19)usesit = true;
 	return true;
 }
 void ItemManager::GetItem(int id) {

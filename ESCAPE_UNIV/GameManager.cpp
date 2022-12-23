@@ -72,7 +72,9 @@ void GameManager::MainLoop() {
 			securityNPC1.SetActive(false,0,0);
 			securityNPC2.SetActive(false,0,0);
 		}
-
+		if (itemManager.usesit) {
+			playermove.Usestick();
+		}
 
 		
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
