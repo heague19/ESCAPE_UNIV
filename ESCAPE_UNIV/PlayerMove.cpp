@@ -25,7 +25,16 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         id = id < 100 ? id : id - 100;
         
         int beforemapId = Map.mapid;
-        int mapId = Map.GetMapIdByRoomNumber(objectid % 100); // 다음 맵 아이디
+        if (id == 52 ||id==13|| id ==4 ) {
+            if ((id == 13 && itemmanager.FindItem(id))||(id==52&&itemmanager.FindItem(20))||
+                (id == 4 && itemmanager.FindItem(4))){
+            }
+            else {
+                ChatDialog::PrintMessage("문이 굳게 닫혀있다.");
+                return 0;
+            }
+        }
+        int mapId = Map.GetMapIdByRoomNumber(objectid % 100);
         if (mapId >= 0) {
             movenpc = false;
             Map.ChangeMap(mapId);

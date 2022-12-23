@@ -31,10 +31,10 @@ bool ItemManager::DeleteItem(int id) {
 }
 void ItemManager::InitItemData() {
 	itemData.push_back(Item(0,	 "논문",	 true));
-	itemData.push_back(Item(1,	 "5층열쇠",	 true));
+	itemData.push_back(Item(1, "논문2", true));
 	itemData.push_back(Item(2,	 "4층쪽지",	 false,	 []() {ChatDialog::PrintMessage("테스트 텍스트"); }));
 	itemData.push_back(Item(3,	 "랜턴케이스",	 false,	 []() {ChatDialog::PrintMessage("랜턴의 케이스이다.\n내부는 비어있다."); }));
-	itemData.push_back(Item(4,	 "4층열쇠",	 false));
+	itemData.push_back(Item(4, "5층열쇠", false, {14,15}, []() {ChatDialog::PrintMessage("녹슨 열쇠의 녹을 세제로 지웠다!"); }));
 	itemData.push_back(Item(5,	 "망치",	 false));
 	itemData.push_back(Item(6,	 "심지",	 false,	 []() {ChatDialog::PrintMessage("불을 붙일 수 있는 심지이다.\n그냥 사용하긴 위험할 것 같다."); }));
 	itemData.push_back(Item(7,	 "라이터",	 false));
@@ -48,14 +48,11 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(14,	 "녹슨열쇠",	 true,	
 		[]() {ChatDialog::PrintMessage("5층에서 찾은 녹슨 열쇠이다."); }));
 	itemData.push_back(Item(15,	 "세제",	 false));
-	itemData.push_back(Item(16,	 "쪽지1",	 false,	 []() {ChatDialog::PrintMessage("테스틑 쪽지 내용"); }));
+	itemData.push_back(Item(16,	 "쪽지",	 false,	 []() {ChatDialog::PrintMessage("테스틑 쪽지 내용"); }));
 	itemData.push_back(Item(17, "2층 가짜 열쇠", true));
 	itemData.push_back(Item(18,	"라이터 오일", true, []() {ChatDialog::PrintMessage("라이터 오일"); }));
-	//itemData.push_back(Item(19, "5층 4번 방 열쇠", true, []() {ChatDialog::PrintMessage("5층 4번 방"); }));
-
-	itemData.push_back(Item(19, "큐대", true, []() {ChatDialog::PrintMessage("길고 단단한 막대기이다."); 
-			
-	}));
+	itemData.push_back(Item(19, "큐대", true, []() {ChatDialog::PrintMessage("길고 단단한 막대기이다."); }));
+	itemData.push_back(Item(20, "4층 남자 화장실", true, []() {ChatDialog::PrintMessage("숨겨진 열쇠였다."); }));
 
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];

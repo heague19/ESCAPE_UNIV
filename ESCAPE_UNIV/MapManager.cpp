@@ -7,7 +7,7 @@
 
 using namespace std;
 MapManager::MapManager(ItemManager &item):item(item) {
-	roomId = { 60,	 50,	 51,	 52,	 53,	 54, 55,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33 };
+	roomId = { 60,	 50,	 51,	52,  53,	 54, 55,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33 };
 	mapData.push_back(Map6); // 0
 	
 	mapData.push_back(Map5); // 1
@@ -16,23 +16,23 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map5_2_Upper); // 3 (임시)
 	mapData.push_back(Map5_2_Bottom); // 4 (임시)
 	mapData.push_back(Map5_3); // 5 (임시)
-	mapData.push_back(Map5_4);
+	mapData.push_back(Map5_4); // 6
 	
-	mapData.push_back(Map4); // 6
+	mapData.push_back(Map4); // 7
 	// 4층 방 5개 (7 ~ 11)
-	mapData.push_back(Map4_Room1); // 7
-	mapData.push_back(vector<vector<int>>()); // 8 (임시)
-	mapData.push_back(vector<vector<int>>()); // 9 (임시)
-	mapData.push_back(vector<vector<int>>()); // 10 (임시)
+	mapData.push_back(Map4_Room1); // 8
+	mapData.push_back(Map4_Room2); // 9 (임시)
+	mapData.push_back(Map4_Room3); // 10 (임시)
 	mapData.push_back(vector<vector<int>>()); // 11 (임시)
+	mapData.push_back(vector<vector<int>>()); // 12 (임시)
 
 	//3층 방 3개
-	mapData.push_back(Map3);
-	mapData.push_back(Map3_1);
-	mapData.push_back(Map3_2);
+	mapData.push_back(Map3); // 13
+	mapData.push_back(Map3_1); // 14
+	mapData.push_back(Map3_2); // 15
 	
-	mapData.push_back(Map3_3);
-	mapData.push_back(Map2);
+	mapData.push_back(Map3_3); // 16
+	mapData.push_back(Map2); // 17
 	mapid = 0;
 	mapcpy = mapData[mapid];
 	
@@ -117,7 +117,7 @@ void MapManager::DisplayMap() {
 			default:
 				break;
 			}
-			if ((mapcpy[y][x] - 1) / 100 == 1) printf("ⓘ "); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
+			if ((mapcpy[y][x] - 1) / 100 == 1) if ((mapcpy[y][x]) == 120)printf("＊ "); else printf("ⓘ "); // 101~150까지 각각 아이템 1번부터 50번까지 해당됨
 			if ((mapcpy[y][x] - 1) / 100 == 2) {
 				Colorset( black,	 brightWhite);
 				printf("━ ");

@@ -39,7 +39,7 @@ public:
 
 	SecurityNPC(int x, int y,PlayerMove&,MapManager&,bool active);
 	//활성화/비활성화
-	void SetActive(bool);
+	void SetActive(bool,int,int);
 	//맵에 표시/제거
 	void Show();
 	void Delete();
@@ -51,4 +51,5 @@ public:
 	bool DetectCollision();
 	//방향 전환 패턴 추가
 	void InsertPattern(Dir);
+	bool IsActive();
 };

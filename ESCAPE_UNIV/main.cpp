@@ -1,8 +1,6 @@
 #include <iostream>
 #include "GameManager.hpp"
 #include "GameOver.h"
-#include "InputManager.hpp"
-#include "INTRO.h"
 #include<signal.h>
 
 using namespace std;
