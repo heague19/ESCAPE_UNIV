@@ -1,4 +1,5 @@
 #include "ChatDialog.hpp"
+#include <stdio.h>
 ChatDialog::ChatDialog() {
 	
 
@@ -26,10 +27,10 @@ void ChatDialog::PrintMessage(string msg) {
 
 int ChatDialog::InputMessage()
 {
+	
 	int password;
 	Console console;
 	console.SetCurrentCursorPos(DIALOG_ORIGIN_X + 2, DIALOG_ORIGIN_Y + 1);
 	cin >> password;
-
 	return password;
 }

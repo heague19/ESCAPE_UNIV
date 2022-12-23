@@ -9,6 +9,8 @@
 #include "InputManager.hpp"
 #include "GameOver.h"
 #include "SecurityNPC.hpp"
+#include <string>
+
 class GameManager {
 public:
 	//static GameManager& Instance();

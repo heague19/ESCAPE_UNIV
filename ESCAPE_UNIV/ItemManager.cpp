@@ -38,7 +38,7 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(4, "5층열쇠", true, {14,15}, []() {ChatDialog::PrintMessage("녹슨 열쇠의 녹을 세제로 지웠다!"); }));
 	itemData.push_back(Item(5,	 "망치",	 false));
 	itemData.push_back(Item(6,	 "심지",	 false,	 []() {ChatDialog::PrintMessage("불을 붙일 수 있는 심지이다.\n그냥 사용하긴 위험할 것 같다."); }));
-	itemData.push_back(Item(7,	 "라이터	",	 false));
+	itemData.push_back(Item(7,	 "금고 열쇠	",	 false, []() {ChatDialog::PrintMessage("금고를 열 수 있는 열쇠 같다."); }));
 	itemData.push_back(Item(8,	 "3층열쇠",	 true));
 	itemData.push_back(Item(9,	 "꺼진랜턴",	 false,	 {3,	6},	 []() {ChatDialog::PrintMessage("불이 꺼진 랜턴이다."); }));
 	itemData.push_back(Item(10,	 "2층쪽지",	 false));

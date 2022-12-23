@@ -9,11 +9,13 @@ void InputManager::Input() {
     if (GetAsyncKeyState(VK_DOWN) & 0x8000)
     {
         flag_in++;
+        cmt++;
 
     }
     if (GetAsyncKeyState(VK_UP) & 0x8000)
     {
      //   flag_in--;
+        cmt++;
     }
 
 
@@ -22,18 +24,22 @@ void InputManager::Input() {
         if (GetAsyncKeyState(VK_W) & 0x8000) {
             playerMove.up();
             playerMove.moveTimer = 0;
+            cmt++;
         }
         if (GetAsyncKeyState(VK_A) & 0x8000) {
             playerMove.left();
             playerMove.moveTimer = 0;
+            cmt++;
         }
         if (GetAsyncKeyState(VK_S) & 0x8000) {
             playerMove.down();
             playerMove.moveTimer = 0;
+            cmt++;
         }
         if (GetAsyncKeyState(VK_D) & 0x8000) {
             playerMove.right();
             playerMove.moveTimer = 0;
+            cmt++;
         }
         if (playerMove.GetPos().X == playerMove.NPCPos->X && playerMove.GetPos().Y == playerMove.NPCPos->Y)
             GameOver::GAMEOVERPrint();
@@ -41,10 +47,14 @@ void InputManager::Input() {
 
     for (int i = 0x31; i <= 0x39; i++)
         if (GetAsyncKeyState(i) & 0x8000)
+        {
+            cmt++;
             itemManager.UseItem(i - 0x30);
+        }
 
     //맵 리로딩
     if (GetAsyncKeyState(VK_P) & 0x8000) {
+        cmt++;
         if (!flag_p) {
             mapManager.ReBox();
             mapManager.remap();
@@ -56,6 +66,7 @@ void InputManager::Input() {
 
     //인벤토리 접근
     if (GetAsyncKeyState(VK_I) & 0x8000) {
+        cmt++;
         //종료 트리거
         int flag = 0;
         //선택 트리거
@@ -75,11 +86,12 @@ void InputManager::Input() {
         while (!flag_i)
         {
             //인벤토리 접근 종료
-            if (flag == 0 && !(GetAsyncKeyState(VK_I) & 0x8000))flag++;
-            if (flag == 1 && (GetAsyncKeyState(VK_I) & 0x8000))break;
+            if (flag == 0 && !(GetAsyncKeyState(VK_I) & 0x8000)) { flag++; cmt++; }
+            if (flag == 1 && (GetAsyncKeyState(VK_I) & 0x8000)) { cmt++; break; }
             if (inputTimer >= inputRate) {
                 //선택 위로
                 if (GetAsyncKeyState(VK_W) & 0x8000) {
+                    cmt++;
                     if (select2 == -1) {
                         select1--;
                         if (select1 < 0)select1 = 0;
@@ -92,6 +104,7 @@ void InputManager::Input() {
                 }
                 //선택 아래로
                 if (GetAsyncKeyState(VK_S) & 0x8000) {
+                    cmt++;
                     if (select2 == -1) {
                         select1++;
                         if (select1 >= itemSize)select1 = itemSize-1;
@@ -104,6 +117,7 @@ void InputManager::Input() {
                 }
                 //선택
                 if (GetAsyncKeyState(VK_Z) & 0x8000) {
+                    cmt++;
                     if (!flag_z) {
                         if (select2 == -1) {
                             select2 = select1;
@@ -138,17 +152,19 @@ void InputManager::Input() {
     else flag_i = false;
 
     if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
+        cmt++;
         if (!flag_esc) {
             int flag = 0;
             inventory.Constructor_Exit(true);
             while (1)
             {
-                if (!(GetAsyncKeyState(VK_ESCAPE) & 0x8000) && flag == 0)flag = 1;
+                if (!(GetAsyncKeyState(VK_ESCAPE) & 0x8000) && flag == 0){flag = 1; cmt++;}
                 if (flag == 1 && (GetAsyncKeyState(VK_ESCAPE) & 0x8000)) {
+                    cmt++;
                     inventory.Constructor_Exit(false);
                     break;
                 }
-                if (GetAsyncKeyState(VK_Z) & 0x8000 || GetAsyncKeyState(VK_SPACE) & 0x8000 || GetAsyncKeyState(VK_RETURN) & 0x8000)exit(0);
+                if (GetAsyncKeyState(VK_Z) & 0x8000 || GetAsyncKeyState(VK_SPACE) & 0x8000 || GetAsyncKeyState(VK_RETURN) & 0x8000) { cmt++; exit(0); }
             }
         }
         flag_esc = true;
@@ -156,6 +172,7 @@ void InputManager::Input() {
     else flag_esc = false;
 
     if (mapManager.mapid == 17 && GetAsyncKeyState(VK_RETURN)) {
+        cmt++;
         flg = true;
     }
 }

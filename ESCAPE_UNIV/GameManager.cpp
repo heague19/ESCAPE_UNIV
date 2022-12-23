@@ -70,9 +70,7 @@ void GameManager::MainLoop() {
 	BoxUI l(18, 20, 108, 3);
 	int x = 1, y = 1;
 	bool zzz = false;
-	while (true) {
-
-
+	while (true) {	
 
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
