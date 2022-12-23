@@ -12,4 +12,5 @@ public:
 	ChatDialog();
 	static void Init();
 	static void PrintMessage(string msg);
+	static int InputMessage();
 };

@@ -30,10 +30,10 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map3); // 13
 	mapData.push_back(Map3_1); // 14
 	mapData.push_back(Map3_2); // 15
-	
 	mapData.push_back(Map3_3); // 16
+	
 	mapData.push_back(Map2); // 17
-	mapid = 13;
+	mapid =  0;
 	mapcpy = mapData[mapid];
 	
 }

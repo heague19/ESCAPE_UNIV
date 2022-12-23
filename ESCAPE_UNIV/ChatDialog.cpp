@@ -8,6 +8,7 @@ void ChatDialog::Init() {
 	BoxUI box(DIALOG_WIDTH,DIALOG_HEIGHT,DIALOG_ORIGIN_X,DIALOG_ORIGIN_Y);
 	box.ConstructorBox();
 }
+
 void ChatDialog::PrintMessage(string msg) {
 	Console console;
 	string msgBuffer;
@@ -21,4 +22,14 @@ void ChatDialog::PrintMessage(string msg) {
 			cout << msgBuffer;
 		}
 	}
+}
+
+int ChatDialog::InputMessage()
+{
+	int password;
+	Console console;
+	console.SetCurrentCursorPos(DIALOG_ORIGIN_X + 2, DIALOG_ORIGIN_Y + 1);
+	cin >> password;
+
+	return password;
 }
