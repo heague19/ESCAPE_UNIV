@@ -57,7 +57,10 @@ void Inventory::Print_Item_List(BoxUI &List,	vector<string> Item)
         for (int i = 0; i < Item.size(); i++)
         {
             console.SetCurrentCursorPos(List.SInit_X + x,	 List.SInit_Y + y);
-            cout << i+1<<". " <<Item[i]<<"        ";// Info를 알고 있다는 가정하에 각 네모 박스안 리스트 출력
+            if (Item[i]=="5층 남자 화장실 열쇠") {
+                cout << i + 1 << ". " << Item[i];
+            }
+            else { cout << i + 1 << ". " << Item[i] << "               "; }// Info를 알고 있다는 가정하에 각 네모 박스안 리스트 출력
             y++;
         }
         console.SetCurrentCursorPos(List.SInit_X + x,	 List.SInit_Y + y);
