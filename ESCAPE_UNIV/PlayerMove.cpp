@@ -37,12 +37,8 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         if (mapId >= 0) {
             movenpc = false;
             Map.ChangeMap(mapId);
-            if (beforemapId == 4) {
-                pox = Map.CalculateStartLocation(beforemapId, mapId, dy+1, dx);
-            }
-            else {
-                pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
-            }
+            pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
+            
         }
         /*
         else {
@@ -241,7 +237,10 @@ void PlayerMove::Usestick() {
     }
     if (id) {
         itemmanager.GetItem(id - 100);
-        Map.ClearPos(pt);
+        auto m = Map.GetMap();
+        m[pt.Y][pt.X] = 0;
+        Map.SetMap(m);
+        ChatDialog::PrintMessage( + "을(를) 얻었다.");
         ChatDialog::PrintMessage(itemmanager.GetItemData(id - 100).name + "을(를) 얻었다.");
     }
     else {

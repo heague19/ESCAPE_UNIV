@@ -27,7 +27,6 @@ void GameManager::MainLoop() {
 	ChatDialog::PrintMessage("Ahahahah");
 	
 	//itemManager.GetItem(4);
-	itemManager.GetItem(19);
 	//itemManager.GetItem(15);
 	//itemManager.GetItem(14);
 	/*
@@ -46,7 +45,15 @@ void GameManager::MainLoop() {
 	//경비아저씨 비활성화
 	//securityNPC1.SetActive(false);
 	SecurityNPC securityNPC1(10, 15, playermove, mapManager, false);
+	securityNPC1.InsertPattern(SecurityNPC::DOWN);
+	securityNPC1.InsertPattern(SecurityNPC::LEFT);
+	securityNPC1.InsertPattern(SecurityNPC::UP);
+	securityNPC1.InsertPattern(SecurityNPC::RIGHT);
 	SecurityNPC securityNPC2(31, 10, playermove, mapManager, false);
+	securityNPC2.InsertPattern(SecurityNPC::DOWN);
+	securityNPC2.InsertPattern(SecurityNPC::UP);
+	securityNPC2.InsertPattern(SecurityNPC::LEFT);
+	securityNPC2.InsertPattern(SecurityNPC::RIGHT);
 	while (true) {
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
@@ -59,16 +66,7 @@ void GameManager::MainLoop() {
 		if (mapManager.mapid == 2 && !securityative) {
 			securityative = true;
 			securityNPC1.SetActive(true,10,15);
-			securityNPC1.InsertPattern(SecurityNPC::DOWN);
-			securityNPC1.InsertPattern(SecurityNPC::LEFT);
-			securityNPC1.InsertPattern(SecurityNPC::UP);
-			securityNPC1.InsertPattern(SecurityNPC::RIGHT);
-
 			securityNPC2.SetActive(true,31,10);
-			securityNPC2.InsertPattern(SecurityNPC::DOWN);
-			securityNPC2.InsertPattern(SecurityNPC::LEFT);
-			securityNPC2.InsertPattern(SecurityNPC::UP);
-			securityNPC2.InsertPattern(SecurityNPC::RIGHT);
 		}
 		else if(mapManager.mapid != 2){
 			securityative = false;
@@ -89,6 +87,7 @@ void GameManager::MainLoop() {
 		console.SetCurrentCursorPos(MAP_ORIGIN_X, MAP_ORIGIN_Y);
 		aggresiveNPC.NPCMove();
 		securityNPC1.Update();
+		securityNPC2.Update();
 		if (GameOver::Oflag)return;
 		/*
 		if (Detect == 0) // 이렇게 하면 어떨까 생각해서 만들어 보았습니다. 
