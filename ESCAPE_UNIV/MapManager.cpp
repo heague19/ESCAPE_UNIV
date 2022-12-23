@@ -23,7 +23,7 @@ MapManager::MapManager(ItemManager &item):item(item) {
 	mapData.push_back(Map4_Room1); // 8
 	mapData.push_back(Map4_Room2); // 9 (임시)
 	mapData.push_back(Map4_Room3); // 10 (임시)
-	mapData.push_back(vector<vector<int>>()); // 11 (임시)
+	mapData.push_back(Map4_Room4); // 11 (임시)
 	mapData.push_back(vector<vector<int>>()); // 12 (임시)
 
 	//3층 방 3개
