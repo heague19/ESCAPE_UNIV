@@ -7,7 +7,7 @@
 
 using namespace std;
 MapManager::MapManager(ItemManager &item):item(item) {
-	roomId = { 60,	 50,	 51,	52,  53,	 54, 55,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33 };
+	roomId = { 60,	 50,	 51,	52,  53,	 54, 55,	 40,	 41,	 42,	 43,	 44,	 45,	30,	31,	32,	33,20 };
 	mapData.push_back(Map6); // 0
 	
 	mapData.push_back(Map5); // 1

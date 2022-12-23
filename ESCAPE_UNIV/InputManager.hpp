@@ -38,4 +38,5 @@ private:
 public:
 	InputManager(PlayerMove& playerMove,Timer& timer, MapManager& mapManager, ItemManager& itemManager, Inventory& inventory);
 	void Input();
+	bool flg= false;
 };

@@ -3,7 +3,7 @@
 
 PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager):Map(mapManager), itemmanager(itemManager)
 {
-    Setpos(6, 10);
+    Setpos(10, 2);
 }
 
 int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 방향
@@ -33,6 +33,8 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
                 return 0;
             }
         }
+        
+
         int mapId = Map.GetMapIdByRoomNumber(objectid % 100);
         if (mapId >= 0) {
             movenpc = false;

@@ -18,6 +18,7 @@ void SecurityNPC::Show() {
 	console.SetCurrentCursorPos(pos.X * 2 + MAP_ORIGIN_X, pos.Y + MAP_ORIGIN_Y);
 	Colorset(black, red);
 	cout << icon[dir];
+	Colorset(black, white);
 }
 void SecurityNPC::Delete() {
 	console.SetCurrentCursorPos(pos.X * 2 + MAP_ORIGIN_X, pos.Y + MAP_ORIGIN_Y);

@@ -68,7 +68,11 @@ void GameManager::MainLoop() {
 	SecurityNPC floor3NPC2(29, 18, playermove, mapManager, false);
 	floor3NPC2.InsertPattern(SecurityNPC::UP);
 	floor3NPC2.InsertPattern(SecurityNPC::DOWN);
+	int cnt = 0;
 	while (true) {
+
+		
+
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
 			if(mapManager.GetMapid() == 0){p.X = 32;p.Y = 13;}
@@ -108,7 +112,30 @@ void GameManager::MainLoop() {
 		if (itemManager.usesit) {
 			playermove.Usestick();
 		}
-
+		COORD px = playermove.GetPos();
+		if (mapManager.mapid == 17 && px.X < 30) {
+			while (true) {
+				Sleep(100);
+				inputManager.Input();
+				if (inputManager.flg == true) {
+					inputManager.flg = false;
+					cnt++;
+				}
+				if (cnt == 0) {
+					ChatDialog::PrintMessage("STAY....?    이게 뭐지?                                  ```ENTER");
+				}
+				if (cnt == 1) {
+					ChatDialog::PrintMessage("잠시만 근데 나 분명 6층에서부터 내려왔을텐데 지금 2층이라고? ```ENTER");
+				}
+				if (cnt == 2) {
+					ChatDialog::PrintMessage("??? : 종이야 너 논문은 다 쓰고 지금 이러고 있는거니?        ```ENTER");
+				}
+				if (cnt == 3) {
+					ChatDialog::PrintMessage("??? : 종이야 빨리 일어나라 종이야!!!!!                     ```ENTER");
+				}
+			}
+			//여기 아웃트로
+		}
 		
 		//ChatDialog::PrintMessage(playermove.NPCPos.X + " " + playermove.NPCPos.Y);
 		//playermove.Move();
