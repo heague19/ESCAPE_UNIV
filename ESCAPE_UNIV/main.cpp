@@ -17,9 +17,12 @@ int main() {
 
 	while (true) {
 
-		INTRO::INTROPrint();
+		
 		while (true)
 		{
+			INTRO::INTROPrint();
+			while (true)
+			{
 			if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 			{
 				if (!I_flag_down) {
@@ -71,8 +74,9 @@ int main() {
 				START.ConstructorBox();
 				START.Print("\n\n\               Ω√¿€");
 				reflag = false;
+				}
 			}
-			
+			selectflag = 0;
 			try {
 				GameOver::Oflag = false;
 
