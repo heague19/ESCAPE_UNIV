@@ -59,7 +59,7 @@ int main() {
 			if (reflag) {
 				if (selectflag == 2)
 				{
-					SelectCursorColor(YELLOW);
+					SelectCursorColor(BLUE);
 				}
 				else SelectCursorColor(WHITE);
 				BoxUI EXIT(17, 5, 108, 29);
@@ -68,7 +68,7 @@ int main() {
 
 				if (selectflag == 0)
 				{
-					SelectCursorColor(YELLOW);
+					SelectCursorColor(BLUE);
 				}
 				else SelectCursorColor(WHITE);
 				BoxUI START(17, 5, 108, 3); //스타트 박스 변수 선언
