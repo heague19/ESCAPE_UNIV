@@ -26,7 +26,7 @@ void GameManager::MainLoop() {
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
 	
-	itemManager.GetItem(4);
+	//itemManager.GetItem(4);
 	/*
 	* 아이템 테스트용
 	itemManager.GetItem(3);
