@@ -158,6 +158,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapFloorUI.cpp" />
     <ClCompile Include="MapManager.cpp" />
+    <ClCompile Include="OutTro.cpp" />
     <ClCompile Include="PlayerMove.cpp" />
     <ClCompile Include="PrintContent.cpp" />
     <ClCompile Include="SecurityNPC.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="Map_2_floor.h" />
     <ClInclude Include="Map_3_floor.h" />
     <ClInclude Include="Map_6_floor.h" />
+    <ClInclude Include="OutTro.hpp" />
     <ClInclude Include="PartPos.hpp" />
     <ClInclude Include="PlayerMove.hpp" />
     <ClInclude Include="PrintContent.h" />

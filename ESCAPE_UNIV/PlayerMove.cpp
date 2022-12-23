@@ -33,6 +33,16 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
                 return 0;
             }
         }
+        if (id == 90)
+        {
+            ChatDialog::PrintMessage("비밀번호를 입력해주세요 : ");
+            if (321== ChatDialog::InputMessage())
+            {
+                
+                ChatDialog::PrintMessage("문이 열립니다.");
+            }
+        }
+
         int mapId = Map.GetMapIdByRoomNumber(objectid % 100);
         if (mapId >= 0) {
             movenpc = false;
