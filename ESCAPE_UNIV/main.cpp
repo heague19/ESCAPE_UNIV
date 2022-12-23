@@ -2,6 +2,7 @@
 #include "GameManager.hpp"
 #include "GameOver.h"
 #include<signal.h>
+#include"INTRO.hpp"
 
 using namespace std;
 int main() {
