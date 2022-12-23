@@ -1,6 +1,5 @@
 #include "PlayerMove.hpp"
 #include "Console.hpp"
-
 PlayerMove::PlayerMove(MapManager& mapManager, ItemManager& itemManager):Map(mapManager), itemmanager(itemManager)
 {
     Setpos(5, 5);
@@ -12,9 +11,10 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         itemmanager.GetItem(objectid - 100);
         Map.ClearPos(pox);
         ChatDialog::PrintMessage(itemmanager.GetItemData(objectid - 100).name + "을(를) 얻었다.");
-        if (objectid == 113) {
+        if (objectid == 113 || objectid == 111) {
             movenpc = true;
         }
+  
         return 1;
     }
     else if ((objectid - 1) / 100 >= 2) {
@@ -24,27 +24,12 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         id = id < 100 ? id : id - 100;
         
         int beforemapId = Map.mapid;
-        if (id == 52 || id == 13 || id == 4 || id == 11) {
+        if (id == 52 || id == 13 || id == 4 || id == 11 || id == 7) {
             if ((id == 13 && itemmanager.FindItem(id)) || (id == 52 && itemmanager.FindItem(20)) ||
-                (id == 4 && itemmanager.FindItem(4)) || (id == 11 && itemmanager.FindItem(11))) {
+                (id == 4 && itemmanager.FindItem(4)) || (id == 11 && itemmanager.FindItem(11)) || (id == 7 && itemmanager.FindItem(7))) {
             }
             else {
                 ChatDialog::PrintMessage("문이 굳게 닫혀있다.");
-                return 0;
-            }
-        }
-        if (id == 90)
-        {
-            ChatDialog::PrintMessage("비밀번호를 입력해주세요 : ");
-            Sleep(1000);
-            
-            cin.ignore
-            if ((321 == ChatDialog::InputMessage())&&!cflag) {
-                ChatDialog::PrintMessage("문이 열립니다.");
-                cflag = true;
-            }
-            else {
-                ChatDialog::PrintMessage("비밀번호가 틀렸습니다.");
                 return 0;
             }
         }

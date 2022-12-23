@@ -1,4 +1,5 @@
 #include "ChatDialog.hpp"
+#include <stdio.h>
 ChatDialog::ChatDialog() {
 	
 
@@ -34,7 +35,5 @@ int ChatDialog::InputMessage()
 	
 	cin >> password;
 	cin >> password;
-	
-
 	return password;
 }

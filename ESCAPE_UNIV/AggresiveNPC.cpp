@@ -24,7 +24,7 @@ void AggresiveNPC::NPCMove(){
 	//console.SetCurrentCursorPos(0, 1);
 	//cout << pos.X << " " << pos.Y << "  ";
 	if (!active)return;
-	moveTimer += timer.GetDeltaTime();
+	moveTimer += timer.GetDeltaTime()*speed;
 	if (moveTimer < moveRate)return;
 	moveTimer = 0.0;
 	COORD nextPos = NPCPathFind();

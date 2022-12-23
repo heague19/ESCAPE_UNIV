@@ -25,7 +25,7 @@ void GameManager::MainLoop() {
 	aggresiveNPC.SetActive(false);
 	ChatDialog::Init();// 인자를 받아 일반적으로 사용할 수 있게 만들었습니다. 
 	ChatDialog::PrintMessage("Ahahahah");
-	
+	/*
 	itemManager.GetItem(4);
 	itemManager.GetItem(15);
 	itemManager.GetItem(14);
@@ -33,7 +33,7 @@ void GameManager::MainLoop() {
 	itemManager.GetItem(6);
 	itemManager.GetItem(7);
 	itemManager.GetItem(4);
-
+	*/
 	//INTROPrint();
 	//경비아저씨 생성(맨 마지막 인자가 활성화 여부)
 	//SecurityNPC securityNPC1(2,3,playermove,mapManager,false);
@@ -69,17 +69,30 @@ void GameManager::MainLoop() {
 	int cnt = 0;
 	BoxUI l(18, 20, 108, 3);
 	int x = 1, y = 1;
-	while (true) {
-
-
+	bool zzz = false;
+	while (true) {	
 
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
 			if (mapManager.GetMapid() == 0) { p.X = 32; p.Y = 13; }
-
+			if (mapManager.GetMapid() == 14) { p.X = 20; p.Y = 10; zzz = true; }
 			aggresiveNPC.SetActive(true, p);
 		}
 		else if (!playermove.movenpc) aggresiveNPC.SetActive(false);
+
+		if (mapManager.GetMapid() == 13 && zzz == true ) {
+			COORD z = playermove.GetPos();
+			if (z.X >3) {
+				zzz = false;
+				playermove.movenpc = true;
+				COORD p;
+				p.X = 1; p.Y = 2;
+				aggresiveNPC.speed = 2;
+				aggresiveNPC.SetActive(true, p);
+			}
+		}
+		else if(!playermove.movenpc) aggresiveNPC.SetActive(false);
+
 
 		if (mapManager.mapid == 2 && !securityative) {
 			securityative = true;
@@ -109,6 +122,8 @@ void GameManager::MainLoop() {
 			floor3NPC1.SetActive(false, 21, 7);
 			floor3NPC2.SetActive(false, 29, 18);
 		}
+
+
 		if (itemManager.usesit) {
 			playermove.Usestick();
 		}
@@ -148,16 +163,17 @@ void GameManager::MainLoop() {
 				inputManager.flg = false;
 				cnt++;
 			}
-			if (cnt == 0) {
+			
+			if (cnt == 1) {
 				ChatDialog::PrintMessage("STAY....?    이게 뭐지?                                  ```ENTER");
 			}
-			if (cnt == 1) {
+			if (cnt == 2) {
 				ChatDialog::PrintMessage("잠시만 근데 나 분명 6층에서부터 내려왔을텐데 지금 2층이라고? ```ENTER");
 			}
-			if (cnt == 2) {
+			if (cnt == 3) {
 				ChatDialog::PrintMessage("??? : 종이야 너 논문은 다 쓰고 지금 이러고 있는거니?        ```ENTER");
 			}
-			if (cnt == 3) {
+			if (cnt == 4) {
 				ChatDialog::PrintMessage("??? : 종이야 빨리 일어나라 종이야!!!!!                     ```ENTER");
 			}
 			if (cnt == 4) {
