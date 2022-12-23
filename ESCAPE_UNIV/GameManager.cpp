@@ -49,11 +49,19 @@ void GameManager::MainLoop() {
 	securityNPC1.InsertPattern(SecurityNPC::LEFT);
 	securityNPC1.InsertPattern(SecurityNPC::UP);
 	securityNPC1.InsertPattern(SecurityNPC::RIGHT);
+	
 	SecurityNPC securityNPC2(31, 10, playermove, mapManager, false);
 	securityNPC2.InsertPattern(SecurityNPC::DOWN);
 	securityNPC2.InsertPattern(SecurityNPC::UP);
 	securityNPC2.InsertPattern(SecurityNPC::LEFT);
 	securityNPC2.InsertPattern(SecurityNPC::RIGHT);
+
+	SecurityNPC securityNPC3(6, 20, playermove, mapManager, false);
+	securityNPC3.InsertPattern(SecurityNPC::DOWN);
+	securityNPC3.InsertPattern(SecurityNPC::UP);
+	securityNPC3.InsertPattern(SecurityNPC::LEFT);
+	securityNPC3.InsertPattern(SecurityNPC::RIGHT);
+
 	while (true) {
 		if (playermove.movenpc && !aggresiveNPC.IsActive()) {
 			COORD p;
@@ -68,10 +76,18 @@ void GameManager::MainLoop() {
 			securityNPC1.SetActive(true,10,15);
 			securityNPC2.SetActive(true,31,10);
 		}
-		else if(mapManager.mapid != 2){
+		else if (mapManager.mapid == 5 && !securityative)
+		{
+			securityative = true;
+			securityNPC1.SetActive(true, 10, 6);
+			securityNPC2.SetActive(true, 31, 12);
+			securityNPC3.SetActive(true, 6, 20);
+		}
+		else if(mapManager.mapid != 2 && mapManager.mapid != 5){
 			securityative = false;
 			securityNPC1.SetActive(false,0,0);
 			securityNPC2.SetActive(false,0,0);
+			securityNPC3.SetActive(false, 0, 0);
 		}
 		if (itemManager.usesit) {
 			playermove.Usestick();
