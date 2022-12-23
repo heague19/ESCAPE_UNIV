@@ -14,18 +14,19 @@ Item ItemManager::GetItemData(string name) {
 }
 bool ItemManager::FindItem(int id) {
 	if (id >= itemData.size()) return false; // id 범위 벗어나는지 체크. 안하면 오류.
-	auto item = lower_bound(items.begin(),	 items.end(),	 itemData[id],	 [](const Item& a,	 const Item& b) {return a.id < b.id; });
-	if (item == items.end())return false;
-	if (item->id == id)return true;
+	for (int i = 0; i < items.size(); i++) {
+		if (items[i].id == id)return true;
+	}
 	return false;
 }
 bool ItemManager::DeleteItem(int id) {
 	if (id >= itemData.size()) return false;
-	auto item = lower_bound(items.begin(),	 items.end(),	 itemData[id],	 [](const Item& a,	 const Item& b) {return a.id < b.id; });
-	if (item == items.end())return false;
-	if (item->id == id) {
-		items.erase(item);
-		return true;
+
+	for (auto i = items.begin(); i!=items.end(); ++i) {
+		if (i->id == id) {
+			items.erase(i);
+			return true;
+		}
 	}
 	return false;
 }
