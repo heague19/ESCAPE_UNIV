@@ -45,9 +45,9 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(12,	 "랜턴",	 false,	 {7,	9}));
 	itemData.push_back(Item(13,	 "6층열쇠",	 true,	 
 		[]() {ChatDialog::PrintMessage("6층에서 찾은 열쇠이다."); }));
-	itemData.push_back(Item(14,	 "녹슨열쇠",	 true,	
+	itemData.push_back(Item(14,	 "녹슨열쇠",	 false,	
 		[]() {ChatDialog::PrintMessage("5층에서 찾은 녹슨 열쇠이다."); }));
-	itemData.push_back(Item(15,	 "세제",	 false));
+	itemData.push_back(Item(15, "세제", false, []() {ChatDialog::PrintMessage("녹을 지울 수 있을 것 같다."); }));
 	itemData.push_back(Item(16,	 "쪽지",	 false,	 []() {ChatDialog::PrintMessage("테스틑 쪽지 내용"); }));
 	itemData.push_back(Item(17, "2층 가짜 열쇠", true));
 	itemData.push_back(Item(18,	"라이터 오일", true, []() {ChatDialog::PrintMessage("라이터 오일"); }));

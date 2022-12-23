@@ -38,7 +38,12 @@ int PlayerMove::ItemGetChecker(int dy, int dx) { // 인자는 지금 움직이려고 하는 
         if (mapId >= 0) {
             movenpc = false;
             Map.ChangeMap(mapId);
-            pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
+            if (beforemapId == 4) {
+                pox = Map.CalculateStartLocation(beforemapId, mapId, dy+1, dx);
+            }
+            else {
+                pox = Map.CalculateStartLocation(beforemapId, mapId, dy, dx);
+            }
         }
         ChatDialog::PrintMessage("문이 열렸다.");
         return 1;
