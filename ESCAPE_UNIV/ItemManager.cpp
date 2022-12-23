@@ -54,12 +54,13 @@ void ItemManager::InitItemData() {
 	itemData.push_back(Item(18,	"라이터 오일", true, []() {ChatDialog::PrintMessage("라이터 오일"); }));
 	itemData.push_back(Item(19, "대걸레 자루", true, []() {ChatDialog::PrintMessage("길고 단단한 막대기이다."); }));
 	itemData.push_back(Item(20, "5층 남자 화장실 열쇠", true, []() {ChatDialog::PrintMessage("숨겨진 열쇠였다."); }));
-	itemData.push_back(Item(21, "눈물", true, []() {ChatDialog::PrintMessage("애기들은 식기에 매우 민감하다"); }));
-	itemData.push_back(Item(22, "논문1", true, []() {ChatDialog::PrintMessage("이가 나지 않은 유아들은 실리콘으로 된 수저를 사용한다."); }));
-	itemData.push_back(Item(23, "논문2", true, []() {ChatDialog::PrintMessage("플라스틱에 최대한 닿지 않게 하기 위한 부모님의 노력이다."); }));
-	itemData.push_back(Item(24, "논문3", true, []() {ChatDialog::PrintMessage("주식은 미음으로 일반적인 죽보다 곱게 갈린 쌀을 먹는다."); }));
-	itemData.push_back(Item(25, "논문4", true, []() {ChatDialog::PrintMessage("세상에 나온지 얼마 되지 않았기에 자극적인 맛은 좋지 않다."); }));
-	itemData.push_back(Item(26, "논문5", true, []() {ChatDialog::PrintMessage("요령이 생기면 다양한 재료로 미음을 만들 수 있을 것 같다."); }));
+	itemData.push_back(Item(21, "눈물", true, []() {ChatDialog::PrintMessage("소설기 수강생들의 눈물이다."); }));
+	itemData.push_back(Item(22, "논문1", true, []() {ChatDialog::PrintMessage("애기들은 식기에 매우 민감하다"); }));
+	itemData.push_back(Item(23, "논문2", true, []() {ChatDialog::PrintMessage("이가 나지 않은 유아들은 실리콘으로 된 수저를 사용한다."); }));
+	itemData.push_back(Item(24, "논문3", true, []() {ChatDialog::PrintMessage("플라스틱에 최대한 닿지 않게 하기 위한 부모님의 노력이다."); }));
+	itemData.push_back(Item(25, "논문4", true, []() {ChatDialog::PrintMessage("주식은 미음으로 일반적인 죽보다 곱게 갈린 쌀을 먹는다."); }));
+	itemData.push_back(Item(26, "논문5", true, []() {ChatDialog::PrintMessage("세상에 나온지 얼마 되지 않았기에 자극적인 맛은 좋지 않다."); }));
+	itemData.push_back(Item(27, "논문6", true, []() {ChatDialog::PrintMessage("요령이 생기면 다양한 재료로 미음을 만들 수 있을 것 같다."); }));
 	for (int i = 0; i < itemData.size(); i++) {
 		Item item = itemData[i];
 		itemDictionary.insert({item.name,	 item});
